@@ -1,2 +1,2 @@
 # UniBo
-Repository del mio materiale di triennale e magistrale in UniBO
+My repository for projects I've done along my AI master in University of Bolgna
