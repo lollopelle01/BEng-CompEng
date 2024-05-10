@@ -1,0 +1,48 @@
+Es.1
+#include <stdio.h>
+#include "list.h"
+
+list testLists(list p, list q, int n){
+	if(n==0)
+		return emptylist();
+	if(n>0){
+		if(head(p)>=head(q))
+			return cons(head(p), testLists(tail(p), tail(q), n);
+		if(head(p)<=head(q))
+			return cons(head(q), testLists(tail(p), tail(q), n);
+	}
+	if(n<0){
+		if(head(p)<=head(q))
+			return cons(head(p), testLists(tail(p), tail(q), n);
+		if(head(p)>=head(q))
+			return cons(head(q), testLists(tail(p), tail(q), n);
+	}
+}
+
+int main(){
+	list p, q, r1, r2, r3;
+	q=cons(-1, cons(0, cons(5, emptylist())));
+	p=cons(-1, cons(4, cons(3, emptylist())));
+	r1=testLists(p, q, 3);
+	r2=testLists(p, q, -2);
+	r3=testLists(p, q, 0);
+}
+
+Es.2
+15=00001111
+-15=11110001
+11=00001011
+-15+11=1111100=00000100=-4
+
+Es.3
+Il main definisce n=2, vett=(rosa) e k=prova(2, vett).
+La funzione prova incrementa la variabile globale z da 3 a 4, incrementa *n da 2 a 3 e poi il ciclo while con 3 iterazioni sostituisce con 'a' le prime tre lettere di vett, al termine la funzione restituisce z.
+Il main infine stampa vett, k e n.
+
+Il programma stampa:
+aaaa
+4
+3
+
+Es.4
+la strcmp è una funzione della libreria string.h che prende in ingresso una stringa s1 e una stringa s2, poi le confronta carattere per carattere e restituisce: 0 se le due stringhe combaciano; un numero minore di 0 se la s1 risulta avere il primo carattere diverso da s2 minore di s2; oppure un numero maggiore di 0 se la s1 risulta avere il primo carattere diverso da s2 maggiore di s2.

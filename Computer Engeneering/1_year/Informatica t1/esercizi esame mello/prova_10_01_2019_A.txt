@@ -1,0 +1,37 @@
+Es.1
+#include <stdio.h>
+#include "list.h"
+
+list intervalList(int n, int m){
+	if(n<m)
+		return cons(n, intervalList(n+1, m));
+	if(n>m)
+		return cons(n, intervalList(n-1, m));
+	if(n==m)
+		return cons(n, emptylist());
+}
+
+int main(){
+	list l1, l2;
+	l1=intervalList(3, 5);
+	l2=intervalList(5, 3);
+	while(!empty(l1){
+		printf("%d\n", head(l1));
+		l1=tail(l1);
+	}
+}
+
+Es.3
+l'output prodotto è:
+0
+1
+2
+
+il main definisce il vettore di interi a[]={3, -4, -1, 2} e invoca cheackEach(a, 4, 'M').
+checkEach copia il vettore a in inf e inizializza count a 0. poi con un ciclo for vengono fatte 4-3 iterazioni: ad ogni iterazione count viene aumentato del valore restituito da check(ind, ind[1], M) e poi viene stampato.
+la funzione check(int* n0, int n1, char c) usa un ciclo switch case in cui in base al carattere vengono prese due strade, nel nostro caso abbiamo sempre M quindi prenderemo sempre la prima che restituisce 0 se un elemento del vettore è maggiore del successivo altrimenti restituisce 1.
+nel ciclo for di checkEach avremo quindi che:
+3>-4 count=0
+-4<-1 count=0+1
+-1<2 count=1+1=2
+

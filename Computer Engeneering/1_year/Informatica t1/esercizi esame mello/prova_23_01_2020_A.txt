@@ -1,0 +1,86 @@
+Es.1 
+#include <stdio.h>
+#include "list.h"
+
+list charSelect(list listA, char k1, char k2){
+	if(empty(listA))
+		return emptylist();
+	if((head(listA)>=k1) && (head(listA)<=k2)
+		return cons(head(listA), charSelect(tail(listA), k1, k2));
+	else	
+		return charSelect(tail(listA), k1, k2);
+}
+
+char lastEl(list l){
+	char kp;
+	while(!empty(l)){
+		kp=head(l);
+		l=tail(l);
+	}
+	return kp;
+}
+
+main(){
+	list listB, listC;
+	char k1, k2, kp;
+
+	listC=emptylist();
+	listB=cons('a', cons('b', cons('t', cons('t', cons('a', cons('c', emptylist()))))));
+	k1=head(listB)
+	k2=lastEl(listB);
+
+	if (k2 >= k1)
+	list2 = charSelect(list1, k1,k2); else
+	list2 = charSelect(list1, k2,k1);
+	
+	while(!empty(listC)){
+		printf("%c/n", head(listC));
+		listC=tail(listC)
+	}
+	
+	return 0;
+}
+
+Es.2
+prova(2)=2+prova(4)=2+2+prova(6)=2+2+2=6
+
+Es.3
+Nel main viene definito il vettore A, di questo vettore vengono contati i numeri positivi dalla funzione aaa e il risultato viene assegnato ad n (n=3). 
+Viene poi assegnato ad x il primo valore di A (x=3) e poi questo viene stampato.
+Poi con un ciclo for vengono fatte 2 iterazioni in cui x prima prende il valore di 3+A[1]=5 poichè A[1]=2 è divisibile per 2 e viene stampato.
+Poi nella seconda iterazione poichè A[2]=5 non è divisibile per 2 allora x prende il valore di 5-A[2]=0 e poi viene stampato.
+
+L'output quindi é:
+3
+5
+0
+
+Es.4
+
+il programma stampa:
+2
+16 ??
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

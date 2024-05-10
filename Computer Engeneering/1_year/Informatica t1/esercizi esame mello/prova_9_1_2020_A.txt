@@ -1,0 +1,95 @@
+Es.1
+#include stdio.h
+#include "list.h"
+#include "PDCount.h"
+
+list CancellaPariDispari (list l, int flag){
+	if(empty(l))
+		return emptylist();
+	else{
+		if(((head(l)%2==0) && (flag==1)) || ((head(l)%2!=0) && (flag==0)))
+			return CancellaPariDispari (tail(l), flag);
+		else
+			return cons(head(l), CancellaPariDispari (tail(l), flag));
+
+	}
+}
+
+int main(){
+	list l1, l2;
+	int P, D, value;
+	l1=emptylist();
+	l1=cons(21, cons(6, cons(0, cons(3, cons(44, cons(2,l1))))));
+	ContaPariDispari (l1, &P, &D);
+	if(P>=D)
+		l2=CancellaPariDispari (l1, 0);
+	else
+		l2=CancellaPariDispari (l1, 1);
+	printf("[");
+	while(!empty(l2)){
+		printf("%d ", head(l2));
+		l2=tail(l2);
+	}
+	printf("]");
+	
+	return 0;
+}
+
+
+Es.2
+14 = 00001110
+11 = 00001011
+-11 = 11110101
+14-11 = 00000011 = 3
+
+Es.3
+Nel main, dati x e y, a z viene assegnato il risultato della funzione aggVet. 
+aggVet prende x, y e 3.
+Poi punta res e x alla stessa area di memoria e poi cambia x da (1, 2, 3 ,4) in (1, 2, 3 ,5, 6, 7) con un ciclo for che sostituisce all'elemento in posizione i+3 di x l'elemento in posizione i di y e lascia immutata y.
+z, siccome punta alla stessa memoria di x, diventa uguale a x.
+Infine viene stampato z elemento per elemento con un ciclo for.
+
+Quindi il programma stampa:
+1
+2
+3
+5
+6
+7
+
+Es.4
+funzione corretta:
+void ContaPariDispari (list l, int * par, int * disp) { 
+	*par = 0;
+	*disp = 0; 
+	while(!empty(l)){
+		if(head(l) % 2 == 0) 
+			(*par)++;
+		else
+			(*disp)++;
+		l=tail(l);
+
+ 	}; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
