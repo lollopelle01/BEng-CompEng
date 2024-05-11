@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.IndexUnitService" name="Song List">
+  <UseFirstRowAsDefaultCurrent>false</UseFirstRowAsDefaultCurrent>
+  <MaxResults/>
+  <Query entity="ent2">
+    <Input id="p0" param="rcond1.att1" type="integer" implied="false" expandStyle="in"/>
+    <Output id="att4" name="bid" index="0"/>
+    <Output id="att5" name="titolo" index="1"/>
+    <HQL>select a_brano.bid, a_brano.titolo from Brano a_brano
+      <Where defaultPolicy="fill" allImplied="false">(({[p0](a_brano.branoToAlbum.aid in(?))}))</Where>order by a_brano.titolo asc, a_brano.durata asc
+    </HQL>
+  </Query>
+</Descriptor>

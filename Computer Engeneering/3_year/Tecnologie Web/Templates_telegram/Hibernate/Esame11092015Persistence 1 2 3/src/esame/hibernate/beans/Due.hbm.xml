@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="esame.hibernate.beans.Due" table="due">
+		<id name="id" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="due1" column="due1"/>
+		<property name="due2" column="due2"/>
+		<set name="unos" table="uno_due">
+        	<!-- colonna della tabella di mapping che referenzia questo bean -->
+			<key column="iddue" />
+			<!-- colonna della tabella di mapping che referenzia l'altro bean -->
+			<many-to-many column="iduno" class="esame.hibernate.beans.Uno"/>
+		</set>
+		<set name="tres" table="tre">
+			<!-- colonna dell'altra tabella che referenzia questo bean -->
+			<key column="iddue"></key>
+			<one-to-many class="esame.hibernate.beans.Tre"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+1. Quoting
+	mkdir f ; cp * f --> dà errore perchè con * sto comprendendo anche f
+3. Variabili posizionali
+	  $* = $1 $2 --> da chiedere
+	  $@ = $1 $2 --> da chiedere
+	"$*" = "$1 $2"
+	"$@" = "$1" "$2"
+4. Array associativi
+	Generalizzazione di matrici attraverso rinominazioni a runtime di array associativi
+6. Esempi di sequenze
+	$'\x0A' --> '\n'
+

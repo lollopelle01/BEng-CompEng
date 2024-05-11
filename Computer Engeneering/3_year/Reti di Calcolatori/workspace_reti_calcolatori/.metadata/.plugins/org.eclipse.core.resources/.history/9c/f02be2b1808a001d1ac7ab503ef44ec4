@@ -1,0 +1,5 @@
+package lorenzo_pellegrino_0000971455;
+
+public class lorenzo_pellegrino_0000971455_Server2B extends Thread{
+	
+}

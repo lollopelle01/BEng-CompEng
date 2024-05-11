@@ -1,0 +1,20 @@
+Si realizzi una applicazione Web per l’elaborazione server-side di un testo, basandosi
+principalmente sulle tecnologie Java Servlet e JSP.
+L’applicazione Web deve permettere a utenti autenticati di inserire due stringhe: la prima
+stringa target rappresenta la parola da cercare in un testo; la seconda stringa nomeFile è il nome
+di un file già disponibile server-side; si controlli che entrambe le stringhe contengano solo
+caratteri alfabetici.
+Nel momento in cui l’utente avrà inserito il carattere speciale ‘€’ come ultimo carattere (da
+eliminarsi) della stringa nomeFile, i dati di input devono essere inviati automaticamente al
+servitore, senza alcun intervento esplicito dell’utente, per una elaborazione in pipeline del
+seguente tipo: una servlet S1 dovrà aprire il file nomeFile e trasformarne ogni carattere
+alfabetico minuscolo nel corrispondente maiuscolo; il risultato dell’elaborazione di S1 dovrà
+essere inviato a una JSP J2, che dovrà contare il numero di occorrenze di target (con tutti i suoi
+caratteri in maiuscolo) nel testo passatole da S1. Il conteggio, insieme al testo ricevuto tutto in
+maiuscolo, dovrà essere restituito al cliente in formato JSON.
+In ogni momento di esecuzione dell’applicazione, previa autenticazione, un amministratore
+deve avere la possibilità di visualizzare:
+- Il numero di richieste totali di servizio sottomesse da utenti non amministratori negli
+ultimi 60 minuti;
+- Il numero di richieste totali sottomesse da parte dell’amministratore dall’inizio della
+esecuzione della applicazione Web.

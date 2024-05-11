@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <script src="./scripts/webSocket.js"></script>
+        <script src="./scripts/utils.js"></script>
+        <link rel="stylesheet" type="text/css" href="./styles/default.css">
+    </head>
+    <body>
+
+        <div id="wrapper">
+            
+            <h1>Servizio di notifica automatica tramite server push</h1>
+            <br>
+            <div id="pane">
+            	<div id="chatterDiv">
+                    Per iscriverti, inserisci il tuo nickname e password.
+                    <form id="addIscrizione">
+                        My nickname: 
+                        <input type="text" name="nickname" id="nickname"/>
+                        <input type="password" name="password" id="password"/>
+                        <input type="button" id="registrami" class="button" value="Go" onclick="addIscrizione()"/>
+                    </form>
+                    <br>
+	            </div>
+	            <hr/>
+	            <div id="iscrizione">
+	            </div>
+	            <hr>
+	            <br>
+	            <div>
+	                <textarea id="news" rows="30" readonly></textarea>
+	                <br/>
+           		</div>
+           	</div>
+        </div>
+    </body>
+</html>

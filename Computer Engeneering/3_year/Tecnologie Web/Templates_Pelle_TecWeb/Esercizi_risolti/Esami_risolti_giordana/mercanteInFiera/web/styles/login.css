@@ -1,0 +1,132 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: whitesmoke;
+    margin: 0;
+}
+
+.header, header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #222222;
+    text-align: center;
+    z-index: 1;
+}
+
+.footer, footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #222222;
+    text-align: center;
+}
+
+main {
+    background-color: #222222;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+label {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+input, select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 220px;
+    padding: 10px;
+    border-width: 1px;
+    border-style:solid;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 242px;
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+    background-color: rgb(46, 145, 145);
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+form {
+    background-color: #1d1d1d;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+}
+
+button:disabled {
+    background-color: #919191;
+}
+
+button:disabled:hover{
+    background-color: #919191;
+    cursor:default;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: teal;
+}
+
+h1 {
+    padding: 10px;
+}
+
+p {
+    margin-top: -10px;
+    text-align: left;
+    padding-left: 5px;
+    color: gray;
+    display: none;
+}
+
+p:hover {
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.registration {
+    margin-top: 20px;
+    background-color: #1d1d1d;
+    border-radius: 10px;
+    border: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(82, 168, 168);
+    font-weight: bold;
+}
+
+a:hover{
+    color: rgb(0, 155, 155);
+}
+
+.message {
+    color: rgb(235, 70, 70);
+}
+
+h1{
+	color: red;
+	font-size: x-large;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Trasforma testo</title>
+		<link type="text/css" href="styles/default.css" rel="stylesheet"></link>
+	  
+		  <!-- script necessari: -->
+	   		<script type="text/javascript" src="scripts/utils.js"></script>
+			<script type="text/javascript" src="scripts/basic.js"></script>
+	</head>
+<body>
+	<div>
+		Inserisci il nome del file di salvataggio:
+		<input type="text" id="fileName" size="10" value="" onMouseOut="checkText()" ><br>
+		Inserisci il testo da trasformare in maiuscolo [1000-2000 caratteri]:
+		<input type="text" id="text" size="2000" value="" onMouseOut="checkText()" ><br>
+	</div>
+	
+	<div id="secret" style=" display: none;">
+		<input type="button" id="trasforma" value="trasforma testo" onclick="toUpperCase( myGetElementById('minuscoli') )"><br>
+		Caratteri cambiati in maiuscolo: <input type="text" size="4" id="minuscoli" value=""><br>
+	</div>
+		
+</body>
+</html>

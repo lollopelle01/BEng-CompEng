@@ -1,0 +1,7 @@
+- name: restart networking
+  ansible.builtin.service:
+    name: networking
+    state: restarted
+
+- name: set ldap conf
+  command: "/home/vagrant/conf_ldap.sh"

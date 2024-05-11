@@ -1,0 +1,549 @@
+Last login: Wed Dec 21 17:15:28 on ttys006
+pelle@Air-di-Lorenzo ~ % cd /Users/pelle/Desktop/UniBo/3°\ anno/1°\ semestre/Reti\ di\ Calcolatori/C/es_7_svolta
+pelle@Air-di-Lorenzo es_7_svolta % rpcgen operazioni.x
+pelle@Air-di-Lorenzo es_7_svolta % cd es_1_operazioni 
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_client.c operazioni_clnt.c operazioni_xdr.c 
+operazioni_clnt.c:18:2: error: implicitly declaring library function 'memset' with type 'void *(void *, int, unsigned long)' [-Werror,-Wimplicit-function-declaration]
+        memset((char *)&clnt_res, 0, sizeof(clnt_res));
+        ^
+operazioni_clnt.c:18:2: note: include the header <string.h> or explicitly provide a declaration for 'memset'
+operazioni_clnt.c:19:29: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                   ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:19:49: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                       ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+operazioni_clnt.c:32:39: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                             ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:32:59: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                                 ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+4 warnings and 1 error generated.
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_client.c operazioni_clnt.c operazioni_xdr.c
+operazioni_clnt.c:20:29: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                   ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:20:49: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                       ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+operazioni_clnt.c:33:39: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                             ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:33:59: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                                 ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+4 warnings generated.
+Undefined symbols for architecture x86_64:
+  "_main", referenced from:
+     implicit entry/start for main executable
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pelle@Air-di-Lorenzo es_1_operazioni % clear
+
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_client.c operazioni_clnt.c operazioni_xdr.c
+operazioni_clnt.c:20:29: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                   ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:20:49: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                       ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+operazioni_clnt.c:33:39: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                             ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:33:59: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                                 ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+4 warnings generated.
+Undefined symbols for architecture x86_64:
+  "_main", referenced from:
+     implicit entry/start for main executable
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pelle@Air-di-Lorenzo es_1_operazioni % -v
+zsh: command not found: -v
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -ooperazioni operazioni_client.c operazioni_clnt.c operazioni_xdr.c
+clang: error: no such file or directory: 'operazioni_client.c'
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -ooperazioni operazioni_client.c operazioni_clnt.c operazioni_xdr.c
+operazioni_client.c:18:9: error: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Werror,-Wimplicit-function-declaration]
+        exit(1);
+        ^
+operazioni_client.c:18:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+operazioni_client.c:27:14: error: implicit declaration of function 'atoi' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    op.op1 = atoi(argv[3]);
+             ^
+2 errors generated.
+operazioni_clnt.c:20:29: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                   ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:20:49: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                       ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+operazioni_clnt.c:33:39: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                             ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:33:59: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                                 ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+4 warnings generated.
+pelle@Air-di-Lorenzo es_1_operazioni % clear
+
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -ooperazioni operazioni_client.c operazioni_clnt.c operazioni_xdr.c
+operazioni_client.c:18:9: error: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Werror,-Wimplicit-function-declaration]
+        exit(1);
+        ^
+operazioni_client.c:18:9: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+operazioni_client.c:27:14: error: implicit declaration of function 'atoi' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    op.op1 = atoi(argv[3]);
+             ^
+2 errors generated.
+operazioni_clnt.c:20:29: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                   ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:20:49: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                       ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+operazioni_clnt.c:33:39: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                             ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:33:59: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                                 ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+4 warnings generated.
+pelle@Air-di-Lorenzo es_1_operazioni % lear
+zsh: command not found: lear
+pelle@Air-di-Lorenzo es_1_operazioni % clear
+
+
+
+
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -ooperazioni operazioni_client.c operazioni_clnt.c operazioni_xdr.c
+operazioni_clnt.c:20:29: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                   ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:20:49: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, SOMMA, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                       ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+operazioni_clnt.c:33:39: warning: incompatible function pointer types passing 'int (XDR *, Operandi *)' (aka 'int (struct __rpc_xdr *, struct Operandi *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                             ^~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+operazioni_clnt.c:33:59: warning: incompatible function pointer types passing 'int (XDR *, int *)' (aka 'int (struct __rpc_xdr *, int *)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, MOLTIPLICAZIONE, xdr_Operandi, argp, xdr_int, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                                 ^~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c   
+operazioni_svc.c:57:11: error: implicit declaration of function 'getdtablesize' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                        size = getdtablesize();
+                               ^
+operazioni_svc.c:65:9: error: implicit declaration of function 'alarm' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        (void) alarm(_RPCSVC_CLOSEDOWN);
+               ^
+operazioni_svc.c:136:48: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        if (getsockname(0, (struct sockaddr *)&saddr, &asize) == 0) {
+                                                      ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:730:78: note: passing argument to parameter here
+int     getsockname(int, struct sockaddr * __restrict, socklen_t * __restrict)
+                                                                             ^
+operazioni_svc.c:142:26: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                                (char *)&_rpcfdtype, &ssize) == -1)
+                                                     ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:732:76: note: passing argument to parameter here
+int     getsockopt(int, int, int, void * __restrict, socklen_t * __restrict);
+                                                                           ^
+operazioni_svc.c:153:9: error: implicit declaration of function 'fork' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                pid = fork();
+                      ^
+operazioni_svc.c:160:10: error: implicit declaration of function 'getdtablesize' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                size = getdtablesize();
+                       ^
+operazioni_svc.c:162:11: error: implicit declaration of function 'close' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                        (void) close(i);
+                               ^
+operazioni_svc.c:164:10: error: implicit declaration of function 'dup2' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                (void) dup2(i, 1);
+                       ^
+operazioni_svc.c:174:10: error: implicit declaration of function 'pmap_unset' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                (void) pmap_unset(OPERAZIONIPROG, OPERAZIONIVERS);
+                       ^
+operazioni_svc.c:214:10: error: implicit declaration of function 'alarm' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                (void) alarm(_RPCSVC_CLOSEDOWN);
+                       ^
+2 warnings and 8 errors generated.
+pelle@Air-di-Lorenzo es_1_operazioni % clear
+
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c
+operazioni_svc.c:18:2: error: invalid preprocessing directive
+#inlcude <unistd.h>
+ ^
+operazioni_svc.c:58:11: error: implicit declaration of function 'getdtablesize' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                        size = getdtablesize();
+                               ^
+operazioni_svc.c:66:9: error: implicit declaration of function 'alarm' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        (void) alarm(_RPCSVC_CLOSEDOWN);
+               ^
+operazioni_svc.c:137:48: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        if (getsockname(0, (struct sockaddr *)&saddr, &asize) == 0) {
+                                                      ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:730:78: note: passing argument to parameter here
+int     getsockname(int, struct sockaddr * __restrict, socklen_t * __restrict)
+                                                                             ^
+operazioni_svc.c:143:26: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                                (char *)&_rpcfdtype, &ssize) == -1)
+                                                     ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:732:76: note: passing argument to parameter here
+int     getsockopt(int, int, int, void * __restrict, socklen_t * __restrict);
+                                                                           ^
+operazioni_svc.c:154:9: error: implicit declaration of function 'fork' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                pid = fork();
+                      ^
+operazioni_svc.c:161:10: error: implicit declaration of function 'getdtablesize' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                size = getdtablesize();
+                       ^
+operazioni_svc.c:163:11: error: implicit declaration of function 'close' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                        (void) close(i);
+                               ^
+operazioni_svc.c:165:10: error: implicit declaration of function 'dup2' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                (void) dup2(i, 1);
+                       ^
+operazioni_svc.c:175:10: error: implicit declaration of function 'pmap_unset' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                (void) pmap_unset(OPERAZIONIPROG, OPERAZIONIVERS);
+                       ^
+operazioni_svc.c:215:10: error: implicit declaration of function 'alarm' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                (void) alarm(_RPCSVC_CLOSEDOWN);
+                       ^
+2 warnings and 9 errors generated.
+pelle@Air-di-Lorenzo es_1_operazioni % clear 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c
+operazioni_svc.c:140:48: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        if (getsockname(0, (struct sockaddr *)&saddr, &asize) == 0) {
+                                                      ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:730:78: note: passing argument to parameter here
+int     getsockname(int, struct sockaddr * __restrict, socklen_t * __restrict)
+                                                                             ^
+operazioni_svc.c:146:26: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                                (char *)&_rpcfdtype, &ssize) == -1)
+                                                     ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:732:76: note: passing argument to parameter here
+int     getsockopt(int, int, int, void * __restrict, socklen_t * __restrict);
+                                                                           ^
+operazioni_svc.c:178:10: error: implicit declaration of function 'pmap_unset' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                (void) pmap_unset(OPERAZIONIPROG, OPERAZIONIVERS);
+                       ^
+2 warnings and 1 error generated.
+pelle@Air-di-Lorenzo es_1_operazioni % clear                                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c
+operazioni_svc.c:141:48: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        if (getsockname(0, (struct sockaddr *)&saddr, &asize) == 0) {
+                                                      ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:730:78: note: passing argument to parameter here
+int     getsockname(int, struct sockaddr * __restrict, socklen_t * __restrict)
+                                                                             ^
+operazioni_svc.c:147:26: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                                (char *)&_rpcfdtype, &ssize) == -1)
+                                                     ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:732:76: note: passing argument to parameter here
+int     getsockopt(int, int, int, void * __restrict, socklen_t * __restrict);
+                                                                           ^
+operazioni_svc.c:179:10: error: implicit declaration of function 'pmap_unset' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                (void) pmap_unset(OPERAZIONIPROG, OPERAZIONIVERS);
+                       ^
+2 warnings and 1 error generated.
+pelle@Air-di-Lorenzo es_1_operazioni % clear                                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c
+operazioni_svc.c:22:10: fatal error: 'rpc.h' file not found
+#include <rpc.h>
+         ^~~~~~~
+1 error generated.
+pelle@Air-di-Lorenzo es_1_operazioni % clear                                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c
+operazioni_svc.c:22:10: fatal error: 'pmap_pro.h' file not found
+#include <pmap_pro.h>
+         ^~~~~~~~~~~~
+1 error generated.
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c
+operazioni_svc.c:22:10: fatal error: 'pmap_cln.h' file not found
+#include <pmap_cln.h>
+         ^~~~~~~~~~~~
+1 error generated.
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c
+operazioni_svc.c:141:48: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        if (getsockname(0, (struct sockaddr *)&saddr, &asize) == 0) {
+                                                      ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:730:78: note: passing argument to parameter here
+int     getsockname(int, struct sockaddr * __restrict, socklen_t * __restrict)
+                                                                             ^
+operazioni_svc.c:147:26: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                                (char *)&_rpcfdtype, &ssize) == -1)
+                                                     ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:732:76: note: passing argument to parameter here
+int     getsockopt(int, int, int, void * __restrict, socklen_t * __restrict);
+                                                                           ^
+operazioni_svc.c:179:10: error: implicit declaration of function 'pmap_unset' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                (void) pmap_unset(OPERAZIONIPROG, OPERAZIONIVERS);
+                       ^
+2 warnings and 1 error generated.
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c
+operazioni_svc.c:21:10: fatal error: 'pmap_clnt.h' file not found
+#include <pmap_clnt.h>
+         ^~~~~~~~~~~~~
+1 error generated.
+pelle@Air-di-Lorenzo es_1_operazioni % gcc -o operazioni_server operazioni_proc.c operazioni_svc.c operazioni_xdr.c
+operazioni_svc.c:141:48: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        if (getsockname(0, (struct sockaddr *)&saddr, &asize) == 0) {
+                                                      ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:730:78: note: passing argument to parameter here
+int     getsockname(int, struct sockaddr * __restrict, socklen_t * __restrict)
+                                                                             ^
+operazioni_svc.c:147:26: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                                (char *)&_rpcfdtype, &ssize) == -1)
+                                                     ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:732:76: note: passing argument to parameter here
+int     getsockopt(int, int, int, void * __restrict, socklen_t * __restrict);
+                                                                           ^
+2 warnings generated.
+pelle@Air-di-Lorenzo es_1_operazioni % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

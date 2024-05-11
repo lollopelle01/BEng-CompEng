@@ -1,0 +1,8 @@
+jobs:
+ - name: 'job' 
+   job: /root/failback.sh
+   minute: '1-59/2'
+   hour: '*'
+   month: '*'
+   dom: '*'
+   dow: '*'

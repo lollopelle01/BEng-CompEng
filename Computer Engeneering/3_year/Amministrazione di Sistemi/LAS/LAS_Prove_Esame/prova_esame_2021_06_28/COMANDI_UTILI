@@ -1,0 +1,25 @@
+# COMANDI UTILI x ESAME
+
+# Fa ssh subito senza flag e non mangia input [ps: probabilmente c'è modo migliore per evitare warning]
+ssh -n -i ~/.ssh/id_rsa_ansible -o StrictHostKeyChecking=no <ip_destinatario> "<comando>" 2>/dev/null
+
+# LDAP
+ldapsearch -LLL -x -D "cn=admin,dc=labammsis" -w "gennaio.marzo" -H ldap://$IP_SERVER/ -b "sn=<>,ou=Peolple,dc=labammsis" -s sub #one 
+ldapdelete -LLL -x -D "cn=admin,dc=labammsis" -w "gennaio.marzo" -H ldap://$IP_SERVER/ -r "ou=People,dc=labammsis"
+ldapadd -LLL -x -D "cn=admin,dc=labammsis" -w "gennaio.marzo" -H ldap://$IP_SERVER/ -f <nome_ile.ldif> # Può anche prendere in input
+
+# SNMP
+snmpget -v 1 -c public $IP_SERVER .1.3.6.1.2.1.1.4.0
+snmpget -v 1 -c public $IP_SERVER NET-SNMP-EXTEND-MIB::nsExtendOutputFull.\"sshd\"
+snmpwalk -On -v 1 -c public $IP_SERVER .1.3.6.1.2.1.1
+snmpset -v 1 -c supercom $IP_SERVER .1.3.6.1.2.1.1.6.0 s "proprio qui"
+
+# IP
+ip a add <address>/<mask> dev <interface>
+ip a del <address>/<mask> dev <interface>
+ip r add <dst_net>/<mask> via <gw_addr>
+ip r add <dst_net>/<mask> dev <interface>
+ip r del <address>/<mask>
+
+# TCPDUMP
+tcpdump -i eth2 -nlp '((dst net 10.222.222.0/24 and dst port 2049) or (src net 10.222.222.0/24 and src port 2049))'

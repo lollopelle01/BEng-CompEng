@@ -1,0 +1,23 @@
+---
+- hosts: all
+  tasks:
+
+     - name: Ensure passwd is backed up
+       ansible.builtin.lineinfile:
+         path: /etc/save.list
+         line: /etc/passwd
+ 
+     - name: Eliminazione di righe da save.list
+       become: true
+       ansible.builtin.lineinfile:
+         path: /etc/save.list
+         state: absent
+         regexp: '^(\/etc\/passwd|\/etc\/shadow|\/etc\/group).*$' 
+
+     - name: Inserisco johnd nei sudoers
+       become: true
+       ansible.builtin.lineinfile:
+         path: /etc/sudoers
+         state: present
+         line: 'johnd ALL=(ALL:ALL) ALL'
+         validate: /usr/sbin/visudo -cf %s

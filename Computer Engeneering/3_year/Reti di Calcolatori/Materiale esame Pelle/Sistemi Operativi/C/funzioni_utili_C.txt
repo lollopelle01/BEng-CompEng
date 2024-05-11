@@ -1,0 +1,28 @@
+#include <fcntl.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <time.h>
+
+void wait_child() {
+    int pid_terminated, status;
+    pid_terminated = wait(&status);
+    if (pid_terminated < 0)    {
+        fprintf(stderr, "P0: errore in wait. \n");
+        exit(EXIT_FAILURE);
+    }
+    if (WIFEXITED(status)) {
+        printf("P0: terminazione volontaria del figlio %d con stato %d\n", pid_terminated, WEXITSTATUS(status));
+        if (WEXITSTATUS(status) == EXIT_FAILURE) {
+            fprintf(stderr, "P0: errore nella terminazione del figlio pid_terminated\n");
+            exit(EXIT_FAILURE);
+        }
+    }
+    else if (WIFSIGNALED(status)) {
+        fprintf(stderr, "P0: terminazione involontaria del figlio %d a causa del segnale %d\n", pid_terminated,WTERMSIG(status));
+        exit(EXIT_FAILURE);
+    }
+

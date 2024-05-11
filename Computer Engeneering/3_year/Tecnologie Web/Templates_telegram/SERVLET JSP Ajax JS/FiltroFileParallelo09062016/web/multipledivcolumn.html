@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Home</title>
+	<link rel="stylesheet" href="styles/default.css" type="text/css"></link>
+	<script type="text/javascript" src="scripts/utils.js"></script>
+	<script type="text/javascript" src="scripts/ajax.js"></script>
+	<script type="text/javascript" src="scripts/json.js"></script>
+	<script type="text/javascript" src="scripts/formCheck.js"></script>
+</head>
+<body>
+
+	
+	<div id="left" style="float: left; width: 32%; border-right: 1px solid grey">
+			
+		<form onsubmit="return false">
+			<label for="stringa1">Stringa 1: </label><input type="text" name="stringa1" id="stringa1" onKeyUp="checkAndCall(myGetElementById('stringa1'), myGetElementById('results1'))"/><br/>	
+		</form>	
+
+		<div id="results1">
+		</div>
+		
+	</div>
+			
+	<div id="center" style="float: left; width: 32%; margin-left: 10px; border-right: 1px solid grey">
+		
+		<form onsubmit="return false">
+			<label for="stringa1">Stringa 2: </label><input type="text" name="stringa2" id="stringa2" onKeyUp="checkAndCall(myGetElementById('stringa2'), myGetElementById('results2'))"/><br/>	
+		</form>	
+		
+		<div id="results2">
+		</div>		
+
+	</div>
+	
+	<div id="right" style="float: left; width: 32%; margin-left: 10px">
+
+		<form onsubmit="return false">
+			<label for="stringa1">Stringa 3: </label><input type="text" name="stringa3" id="stringa3" onKeyUp="checkAndCall(myGetElementById('stringa3'), myGetElementById('results3'))"/><br/>	
+		</form>	
+		
+		<div id="results3">
+		</div>
+
+	</div>
+		
+	<div class="clear">
+		<p>&nbsp;</p>
+	</div>
+
+</body>
+
+</html>

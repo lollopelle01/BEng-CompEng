@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="visita">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="email" type="email"/>
+                            <xs:element name="password" type="password"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="scelta" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="capo">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="foto" type="xs:normalizedString"/>
+                                        <xs:element name="descrizione" type="xs:string"/>
+                                        <xs:element name="prezzo" type="prezzoEuroType"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="selected" type="selectedType" use="optional" default="no"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="type" type="categoriaType" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="prezzoEuroType">
+    <xs:annotation>
+            <xs:documentation>
+                Prezzo numerico con al piu 2 decimali
+            </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+        <xs:fractionDigits value="2" />
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="email">
+    <xs:annotation>
+            <xs:documentation>
+                email@email.it
+            </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[^@]+@[^@]+\..+"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="password">
+    <xs:annotation>
+            <xs:documentation>
+                password di 8 caratteri precisi, tra cui almeno un numero e un {?!*$}
+            </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:length value="8"/>
+        <xs:pattern value=".*[0-9]+.*"/>
+        <xs:pattern value=".*[?!*$]+.*"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="categoriaType">
+    <xs:annotation>
+            <xs:documentation>
+                Insieme di categorie consentite
+            </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="abiti" />
+        <xs:enumeration value="camice" />
+        <xs:enumeration value="giacche" />
+        <xs:enumeration value="gonne" />
+        <xs:enumeration value="pantaloni" />
+        <xs:enumeration value="ultimi arrivi" />
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="selectedType">
+    <xs:annotation>
+            <xs:documentation>
+                Attributo che indica se l'oggetto è selezionato. L'attributo va messo optional, se presente il valore e' solo "yes" o "no", il default va messo "no"
+            </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="yes" />
+        <xs:enumeration value="no" />
+    </xs:restriction>
+</xs:simpleType>
+    
+</xs:schema>

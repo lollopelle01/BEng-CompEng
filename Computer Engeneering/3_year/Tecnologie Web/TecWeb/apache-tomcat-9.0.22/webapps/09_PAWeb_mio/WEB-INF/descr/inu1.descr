@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.IndexUnitService" name="Album List">
+  <UseFirstRowAsDefaultCurrent>false</UseFirstRowAsDefaultCurrent>
+  <MaxResults/>
+  <Query entity="ent1">
+    <Output id="att1" name="aid" index="0"/>
+    <Output id="att2" name="titolo" index="1"/>
+    <HQL>select a_album.aid, a_album.titolo from Album a_album order by a_album.titolo asc, a_album.anno desc</HQL>
+  </Query>
+</Descriptor>

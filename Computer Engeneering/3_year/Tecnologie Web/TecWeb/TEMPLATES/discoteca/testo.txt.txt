@@ -1,0 +1,17 @@
+Si realizzi una applicazione Web per la gestione degli ordini di drink dei clienti di una
+discoteca, basandosi principalmente sulle tecnologie Java Servlet e JSP.
+L’applicazione Web deve permettere a un utente non autenticato di inserire il numero del suo
+tavolo in discoteca al suo primo accesso. In tutti gli accessi successivi, l’utente potrà
+aggiungere un drink al suo ordine, tramite opportuno form in una pagina JSP. Ovviamente
+anche altri utenti dello stesso tavolo potranno aggiungere in ogni istante nuovi drink all’ordine
+del tavolo. Il cameriere che consegna i drink potrà cambiare lo stato del drink ordinato in
+“consegnato”.
+Al termine della serata, dovrà essere possibile per ogni utente richiedere i) il calcolo del costo
+totale da pagare per il proprio tavolo intero e ii) il calcolo del costo dei suoi drink ordinati
+e consegnati. Tali funzionalità dovranno essere realizzate tramite servlet.
+In ogni momento di esecuzione dell’applicazione, previa autenticazione, un amministratore
+della discoteca deve avere la possibilità di visualizzare tutti i tavoli occupati, con la loro lista
+di drink ordinati e consegnati o solo ordinati. A fine serata, l’amministratore avrà la possibilità
+di comandare “chiusura del bar” e di forzare il conto finale per ogni tavolo, terminando la
+possibilità di effettuare nuovi ordini e forzando il conto totale del tavolo alla cifra minima
+di 100€ nel caso in cui gli ordini del tavolo non fossero ancora arrivati a quella cifra

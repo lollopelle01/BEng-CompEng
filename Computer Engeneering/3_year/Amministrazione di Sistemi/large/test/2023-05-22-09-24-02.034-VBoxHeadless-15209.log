@@ -1,0 +1,12 @@
+Log created: 2023-05-22T09:24:02.341800000Z
+Process ID:  15209 (0x3b69)
+Parent PID:  1 (0x1)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: host_only_net_router_1684327975134_30245
+Arg[3]: --startvm
+Arg[4]: d099e989-9fd4-4085-98f2-1ffa6b746e96
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2

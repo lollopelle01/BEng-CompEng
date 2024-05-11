@@ -1,0 +1,17 @@
+Si realizzi una applicazione Web per l’elaborazione casuale server-side di un testo, basandosi
+principalmente sulle tecnologie Java Servlet e JSP.
+L’applicazione Web deve permettere a utenti autenticati di inserire una stringa nomeFile che
+rappresenti il nome di un file già disponibile server-side; si controlli che tale stringa contenga
+solo caratteri alfabetici e numerici. Oltre a tale stringa, l’utente deve poter inserire un carattere
+car alfabetico minuscolo: all’inserimento di tale carattere, i dati di input devono essere inviati
+automaticamente al servitore, senza alcun intervento esplicito dell’utente, per una elaborazione
+in pipeline del seguente tipo: una servlet S1 dovrà eliminare tutte le occorrenze, sia minuscole
+che maiuscole, del carattere car dal testo di nomeFile; il risultato dell’elaborazione di S1 dovrà
+essere inviato a una JSP J2, che dovrà contare il numero di maiuscole presenti nel testo
+risultante. Il testo modificato più il conteggio dovranno essere restituiti al cliente in formato
+JSON.
+In ogni momento di esecuzione dell’applicazione, previa autenticazione, un amministratore
+deve avere la possibilità di visualizzare:
+- Il numero di richieste fatte dall’amministratore stesso in questa sessione di interazione;
+- Il numero di richieste totali di servizio sottomesse da utenti non amministratori negli
+ultimi 60 minuti

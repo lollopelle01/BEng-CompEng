@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Copia e configurazione di eth1 
+      ansible.builtin.copy:
+        src: Seth1
+        dest: /etc/network/interfaces.d/eth1
+        validate: /usr/sbin/ifup --no-act -i %s eth1
+      notify: Restart Networking
+  
+    - name: Change allow-hotplug with auto
+      ansible.builtin.replace: 
+        path: '/etc/network/interfaces'
+        regexp: '^allow\-hotplug'
+        replace: 'auto'
+        validate: /usr/sbin/ifup --no-act -i %s eth0
+
+  handlers:
+  - name: Restart Networking
+    ansible.builtin.service:
+      name: networking
+      state: restarted

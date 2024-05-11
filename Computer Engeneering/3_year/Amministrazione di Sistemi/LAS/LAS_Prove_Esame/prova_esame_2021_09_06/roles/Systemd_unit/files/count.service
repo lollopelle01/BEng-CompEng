@@ -1,0 +1,10 @@
+[Unit]
+Description=Start /home/count.sh on boot
+
+[Service]
+Type=simple
+ExecStart=/home/count.sh
+Restart=on-failure
+
+[Install]
+WantedBy=basic.target

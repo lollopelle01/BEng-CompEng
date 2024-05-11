@@ -1,0 +1,91 @@
+// ArrayList<Tennista>
+var database = "";
+var tennista = "";
+
+$("#invio").on({
+    click : function() {
+        tennista = $("#tennista").val();
+
+        if(tennista == "") {
+            return;
+        }
+        
+        // Controllo di pre-fetching, analizzo il database e controllo il nome del tennista
+        if (database != ""){
+        	for(var i=0; i<database.length; i++){
+        		   
+            	if (database[i].nome == tennista){ // match effettuato --> risposta istantanea
+            		
+            		var risposta = database[i];
+            		
+            		// Scriviamo risposta
+            		var stringa = 	"- - Pre-fetching - - -" +
+            						"\n Ranking: " + risposta.rank_atp +
+    								"\n Titoli vinti: " + risposta.titoli_vinti +
+    								"\n Partite vinte: " + risposta.partite_vinte + 
+    								"\n Partite perse: " + risposta.partite_perse +
+    								"\n";
+            		
+                	$("#ajax_message").text(stringa);
+                	return;
+            	}
+            }
+        }
+        
+        // Non avevamo il tennista, lo chiediamo al server
+        let xhr = new XMLHttpRequest();
+
+        if(xhr) {
+
+            xhr.onreadystatechange = function() {
+                callback(xhr);
+            }
+
+            try {
+                xhr.open("get", "service?tennista=" + tennista, true);
+            }
+            catch(e) {
+                alert(e);
+            }
+
+            xhr.send(null);
+
+        } else {
+            $("#ajax_message").text("Impossibile eseguire l'operazione. Browser troppo vecchio!")
+        }
+    }
+})
+
+function gestioneRisposta(risposta_json){
+	var risposta = JSON.parse(risposta_json);
+
+	console.log(risposta_json);
+	
+	// Estraiamo risposta testuale
+	var stringa = 	"\n Ranking: " + risposta.rank_atp +
+					"\n Titoli vinti: " + risposta.titoli_vinti +
+					"\n Partite vinte: " + risposta.partite_vinte + 
+					"\n Partite perse: " + risposta.partite_perse +
+					"\n";
+	
+	// Scriviamo risposta
+	$("#ajax_message").text(stringa);
+}
+
+//in questa funzione dobbiamo eliminare un carattere random dal testo in modo client-side, per poi rmandare un altra volta la richiesta alla servlet
+function callback(xhr) {
+	if ( xhr.readyState === 2 ) {
+        $("#ajax_message").text("Richiesta inviata...")
+    } else if ( xhr.readyState === 3 ) {
+        $("#ajax_message").text("Attesa risposta...")
+    } else if ( xhr.readyState === 4 ) {
+        if ( xhr.status === 200 ) {
+        	
+        	// Risposta ricevuta --> ArrayList<Tennista>
+        	gestioneRisposta(xhr.responseText);
+        	 
+        } else {
+            $("#ajax_message").text("Impossibile eseguire l'operazione.")
+        }
+    }
+}

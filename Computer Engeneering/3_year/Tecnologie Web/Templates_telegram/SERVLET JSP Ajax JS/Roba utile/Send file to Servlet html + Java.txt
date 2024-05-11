@@ -1,0 +1,66 @@
+//+++++++++++++++VIA FORM+++++++++++++++++++
+<form action="upload" method="post" enctype="multipart/form-data">
+    <input type="text" name="description" />
+    <input type="file" name="file" />
+    <input type="submit" />
+</form>
+
+
+
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String description = request.getParameter("description"); // Retrieves <input type="text" name="description">
+    Part filePart = request.getPart("file"); // Retrieves <input type="file" name="file">
+    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+    InputStream fileContent = filePart.getInputStream();
+    // ... (do your job here)
+
+    //Get path of something
+    String webInfPath = getServletConfig().getServletContext().getRealPath("/WEB-INF");
+    //Write a file there
+    File newFile = new File(webInfPath + "/fileName.xml");
+}
+
+
+
+
+
+//+++++++++++++++++Via AJAX+JSON+++++++++++++++++++++++
+//Form with some input type file, for each of them checks and sends
+function checkAndSend(form, resDiv) {
+	for (var i=0; i<form.numerofiles.value; i++) {
+		if (!isBlank(myGetElementById("file"+i)) && myGetElementById("file"+i).value.substr(0,2) != "C:") {
+			alert("Invalid file path");
+			return;
+		}
+	}
+	if (isAllCompiled(form)) {
+		for (var i=0; i<form.numerofiles.value; i++) {
+			var fileInput = myGetElementById("file"+i);
+			var file = fileInput.files[0];
+			
+			sendFile(file, i);
+			
+		    
+		}
+	}
+}
+
+function sendFile(file, i) {
+	var reader = new FileReader();
+	reader.onload = function() {
+		var fileContent = reader.result;
+	    var fileString = JSON.stringify(fileContent);
+		var myI = i;
+		var resDiv = myGetElementById("result"+myI);
+		eseguiRichiesta("./addizioneServlet", resDiv, "file="+fileString);
+    }
+	reader.readAsText(file);
+}
+
+
+
+//Split lines in js
+file.split("/[\r\n]+/g");
+
+//Split lines in Java
+file.split("\\r?\\n");

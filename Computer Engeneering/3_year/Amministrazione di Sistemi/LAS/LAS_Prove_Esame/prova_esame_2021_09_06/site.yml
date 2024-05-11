@@ -1,0 +1,31 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - common
+
+- hosts: client1
+  become: true
+  roles:
+    - client
+
+- hosts: router
+  become: true
+  roles:
+    - router1
+
+- hosts: servermain
+  become: true
+  roles:
+    - server
+    - LDAP_setup_server
+
+- hosts: server1
+  become: true
+  roles:
+    - server
+
+- hosts: server2
+  become: true
+  roles:
+    - server

@@ -1,0 +1,15 @@
+- name: Copy script helper.sh
+  ansible.builtin.copy:
+    src:  helper.sh
+    dest:  /bin/helper.sh
+    owner: vagrant
+    group: vagrant
+    mode: 0744
+
+- name: Copy script backup.sh
+  ansible.builtin.copy:
+    src:  backup.sh
+    dest:  /bin/backup.sh
+    owner: vagrant
+    group: vagrant
+    mode: 0744

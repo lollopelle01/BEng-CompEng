@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+        <title>Battaglia navale ws</title>
+         <link type="text/css" href="styles/default.css" rel="stylesheet"></link>
+    </head>
+    <body>
+    	
+    	<p id="client_id_field">Il tuo id e': </p>
+    	<div id="controls">
+    		<p>Please select row and column:</p>
+    		Riga: <input type="text" id="row_field"><br>
+    		Colonna: <input type="number" id="col_field"><br>
+    		<button type="button" onclick="sendHitRequestFunction();">Spara!</button>
+    	</div>
+    	<div style="display: flex;">
+    		<div id="hit_request_actions" style="display: none;">
+				<p id="hit_question"></p>
+				<button onclick="sendHitResponseFunction('colpito')">Colpito :/</button>
+				<button onclick="sendHitResponseFunction('acqua')">Acqua :)</button>
+				<button onclick="sendHitResponseFunction('affondato')">Affondato :(</button>
+	    	</div>
+	    	<div id="hit_results">
+	    		<p><big>Qui compaiono i risultati dei colpi</big></p>
+	    	</div>
+    	</div>
+    	
+    	<script type="text/javascript" src="scripts/battle.js"></script>
+    </body>
+
+   
+
+</html>

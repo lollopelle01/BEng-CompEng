@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <!-- per non avere problema di cache -> aggiungo nell'header delle pagine HTML -->
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <meta http-equiv="Expires" content="-1"/>
+	
+		<script type="text/javascript" src="scripts/articolo.js"></script>
+        <script type="text/javascript" src="scripts/utils.js"></script>
+	
+		<title> Pagina Login </title>
+	
+		</head>
+    <body>
+        <div>
+        	<h5>Benvenuto, inserisci il tuo nome e il nome dell'articolo a cui vuoi accedere</h5>
+        	<form id="start" action="servletStart" method="POST">
+        		<table>
+        			<tr>
+        				<td>Username:</td>
+        				<td><input id="username" name="username" type="text" placeholder="username"/></td>
+        			</tr>
+        			<tr>
+        				<td>Nome articolo:</td>
+        				<td><textarea id="contenuto" name="nome" onKeyUp="myfunction()" cols="40" rows="5" placeholder="Inserire il nome dell'articolo con al più 64 caratter"></textarea></td>
+        			</tr>
+        			<tr>
+        				<td><input type="submit" value="Login" style="display: none"/></td>
+        			</tr>
+        		</table>
+        	</form>
+        </div>
+	</body>
+</html>
+
+

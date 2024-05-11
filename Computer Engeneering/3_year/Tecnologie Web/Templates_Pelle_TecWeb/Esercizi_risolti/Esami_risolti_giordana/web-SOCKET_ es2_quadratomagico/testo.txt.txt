@@ -1,0 +1,20 @@
+Si realizzi una applicazione Web per determinare se una matrice 3 * 3 rappresenta un
+quadrato magico. Si definisce “quadrato magico” una qualunque matrice quadrata di numeri
+naturali in cui sono rispettate le seguenti proprietà: non ci possono essere elementi ripetuti; la
+somma di ogni riga è uguale alla somma di ogni colonna ed è uguale alla somma di ciascuna
+delle due diagonali. L’applicazione Web deve essere basata principalmente su tecnologie
+Javascript e WebSocket.
+In particolare, l’applicazione Web deve permettere a ogni utente collegato di potere inserire
+uno qualunque dei 9 elementi della matrice condivisa considerata, controllando che siano
+effettivamente numeri naturali, non siano già stati inseriti da altri e non siano ripetuti (tramite
+controlli puramente locali). Dopo avere terminato l’inserimento di un elemento valido,
+l’elemento deve essere automaticamente inviato al servitore, senza pressione esplicita di
+pulsanti, e il servitore deve aggiornare tutti gli utenti collegati tramite WebSocket.
+Una volta completato l’inserimento di tutti i 9 elementi, sempre in modo automatico,
+l’applicazione server-side deve verificare se si tratta di quadrato magico in modo concorrente:
+una servlet S1 dovrà controllare che le somme di ogni riga siano uguali; una servlet S2 dovrà
+controllare che le somme di ogni colonna e delle due diagonali siano uguali. In particolare, ogni
+servlet dovrà restituire in modo autonomo e in formato JSON un valore “vero”/”falso” a
+seconda del risultato di tale controllo e, nel caso di “vero”, anche il risultato della somma.
+Solo dopo avere ricevuto tutti e due i risultati, ogni cliente dovrà visualizzare il risultato
+complessivo, ovvero se gli elementi inseriti appartengono a un quadrato magico oppure no.

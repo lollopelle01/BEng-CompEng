@@ -1,0 +1,41 @@
+.grid {
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#Resetta {
+    display: none;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    border-style: solid 1px rgb(117, 117, 108);
+    background-color: rgb(169, 169, 160);
+    text-align: center;
+}
+
+#stat {
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.bottone {
+    background-color: rgb(127, 127, 124);
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.bottone:hover {
+    cursor: pointer;
+    background-color: rgb(218, 217, 210) !important;
+}
+
+#dim, #mine {
+    width: 150px;
+}

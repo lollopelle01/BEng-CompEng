@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<visita xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="visita.xsd">
+	<user>
+		<email>prova@ciao.it</email>
+		<password>1234?cio</password>
+	</user>
+
+	<scelta type="abiti">
+		<capo selected="yes">
+			<foto>prova.jpg</foto>
+			<descrizione>Un bel capo</descrizione>
+			<prezzo>3.50</prezzo>
+		</capo>
+		<capo>
+			<foto>prova2.jpg</foto>
+			<descrizione>Un altro bel capo</descrizione>
+			<prezzo>30.50</prezzo>
+		</capo>
+	</scelta>
+
+	<scelta type="camice">
+		<capo selected="yes">
+			<foto>prova.jpg</foto>
+			<descrizione>Un bel capo</descrizione>
+			<prezzo>3.50</prezzo>
+		</capo>
+	</scelta>
+
+	<scelta type="giacche">
+		<capo selected="yes">
+			<foto>prova.jpg</foto>
+			<descrizione>Un bel capo</descrizione>
+			<prezzo>3.50</prezzo>
+		</capo>
+		<capo>
+			<foto>prova2.jpg</foto>
+			<descrizione>Un altro bel capo</descrizione>
+			<prezzo>30.50</prezzo>
+		</capo>
+	</scelta>
+
+</visita>

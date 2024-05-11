@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigazione xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="navigazione.xsd">
+	<utente email="prova@prova.it" password="0asd!qwe"></utente>
+	<ricerca nazione="Italia" citta="Bologna" numero_stelle="4" fascia_prezzo="media">
+		<risultato>
+			<nomehotel>Hermitage</nomehotel>
+			<fotografiahotel>imageHermitage.jpg</fotografiahotel>
+			<giudizioutenti>buono</giudizioutenti>
+			<prezzo>110.00</prezzo>
+			<link visitato="si">http://www.hermitagebologna.it</link>
+		</risultato>
+		<risultato>
+			<nomehotel>Maximo</nomehotel>
+			<fotografiahotel>imageMaximo.jpg</fotografiahotel>
+			<giudizioutenti>sufficiente</giudizioutenti>
+			<prezzo>115.00</prezzo>
+			<link visitato="no">http://www.hermitagebologna.it</link>
+		</risultato>
+	</ricerca>
+</navigazione>

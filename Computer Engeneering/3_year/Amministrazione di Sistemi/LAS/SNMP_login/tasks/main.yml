@@ -1,0 +1,16 @@
+- name: Copy LDAP conf file
+    ansible.builtin.copy:
+      src: config_files.tar
+      dest: /home/vagrant/
+      owner: vagrant
+      group: vagrant
+      mode: 0664
+    notify: set ldap conf
+
+  - name: Copy LDAP conf script
+    ansible.builtin.copy:
+      src: conf_ldap.sh
+      dest: /home/vagrant/
+      owner: vagrant
+      group: vagrant
+      mode: 0744

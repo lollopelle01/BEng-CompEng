@@ -1,0 +1,4 @@
+units:
+ - src: ../files/unit.service # da modificare con unit giusta
+   dest: /etc/systemd/system/unit.service"
+  

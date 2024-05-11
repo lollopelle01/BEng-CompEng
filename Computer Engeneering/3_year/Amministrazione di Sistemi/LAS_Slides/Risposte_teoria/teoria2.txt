@@ -1,0 +1,36 @@
+Assegnare un name ad ogni task è indispensabile F
+Ansible è utilizzato per la configurazione di sistemi V
+Tutti i task lanciati con Ansible sono idempotenti F
+Ansible utilizza dei file detti playbook scritti con sintassi json F
+Il mount point è una directory speciale che non può essere utilizzata per contenere direttamente file F
+La pianificazione di attività con cron ha un periodo massimo di 1 anno V
+Un task pianificato con cron come 10 22 2,20 * 4 programma viene eseguito almeno 4 volte al mese V
+La pianificazione di attività via /etc/crontab è riservata all'utente root V
+La pianificazione di un task con at può essere monitorata e revocata V
+La direttiva WantedBy nella definizione di una unit di servizio agisce quando il servizio viene installato V
+L'utente proprietario di un file potrebbe avere permessi di accesso a tale file più limitati di altri utenti del sistema V
+bash non espande ricorsivamente un alias che contiene sè stesso V
+Il comando sudo richiede all'utente la sua stessa password per autorizzare l'esecuzione privilegiata di comandi V
+Ogni man page ha un nome intrinsecamente univoco F
+È consigliabile che l'amministratore effettui il login come utente standard, in quanto la maggior parte delle attività non richiedono i privilegi di root V
+L'amministratore di sistema può subire conseguenze legali del proprio operato V
+L'utente proprietario di un file deve far parte del gruppo proprietario dello stesso file F
+I file di un filesystem possono essere acceduti solo dopo aver associato il dispositivo a un mount point V
+È possibile formattare un disco senza essere partizionarlo V
+Il sistema di logging integrato in systemd è sostanzialmente un duplicato di syslogd, le funzionalità sono identiche F
+top è comando più adatto per seguire interattivamente lo stato di uso delle risorse del sistema V
+Il selettore local1.info cattura unicamente i messaggi con etichetta specificata F
+I messaggi inviati a un sistema di logging centralizzato devono essere preventivamente marcati con un timestamp accurato F
+lsof mostra solo i file esistenti sul filesystem correntemente in uso F
+NSS (Name Service Switch) è il sistema per la risoluzione dei nomi host in indirizzi IP F
+Gli indirizzi IPv4 nel range 169.254.1.0 – 169.254.254.255 sono riservati all'allocazione automatica link local V
+dnsmasq può essere lanciato in più istanze per servire richieste su interfacce diverse con configurazioni incompatibili tra loro V
+L'assegnamento di un indirizzo IPv4 link local avviene prima di interrogare server che potrebbero assegnare un indirizzo diverso all'host F
+LDAP è un database general-purpose, ma nella pratica viene usato solo per distribuire informazioni relative a utenti F
+LDAP è un sistema che fornisce supporto per l'autenticazione centralizzata di utenti, da integrare specificamente in sistemi e applicazioni V
+LDAP utilizza un modello a oggetti dei dati V
+Una entry LDAP può essere istanza di più classi strutturali simultaneamente F
+In SNMP l'interazione più comune tra manager e agent è del tipo richiesta-risposta V
+Si puà interrogare un agent SNMP in merito a un managed object solo conoscendone a priori l'OID F
+Si definisce agent il software di interfaccia di un dispositivo fisico connesso in rete, che supporta il protocollo SNMP V
+In SNMP l'agent può prendere l'iniziativa di contattare il manager V

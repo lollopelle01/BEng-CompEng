@@ -1,0 +1,48 @@
+package servlets;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
+
+import beans.*;
+
+public class Servlet extends HttpServlet{
+
+	private static final long serialVersionUID = 1L;
+	Gson g;
+	Tabellone tabellone;
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public void init() throws ServletException {
+		// Inizializzazione database
+		tabellone = new Tabellone();
+		
+		// Inseriamo le parti del tabellone
+		tabellone.getDatabase().put(1, new ArrayList<Tennista>());
+		tabellone.getDatabase().put(2, new ArrayList<Tennista>());
+		tabellone.getDatabase().put(3, new ArrayList<Tennista>());
+		tabellone.getDatabase().put(4, new ArrayList<Tennista>());
+		
+		// Inseriamo i tennisti
+		// Troppo lungo...
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+}

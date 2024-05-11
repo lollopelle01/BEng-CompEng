@@ -1,0 +1,209 @@
+package esame.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class #GESTIONE_NOMECLASSE#
+{
+	private DataSource dataSource;
+
+	public #GESTIONE_NOMECLASSE# () throws PersistenceException
+	{
+		dataSource = new DataSource(DataSource.DB2);
+	}
+
+	// == STATEMENT SQL preconfigurati
+
+	//statement metodi CRUD
+
+	//INSERT
+	#INSERT#
+
+	//DELETE
+	#DELETE#
+
+	//UPDATE
+	#UPDATE#
+
+	//READ
+	#READ#
+
+	// implementazione metodi CRUD
+
+	// create table
+	private static String create =
+		#CREATE_TABLE#
+
+	//drop table
+	#DROPTABLE#
+
+	// init
+	public void dropAndCreateTable() throws PersistenceException {
+		dropTable();
+		createTable();
+	}
+
+	public void dropTable() throws PersistenceException {
+		Connection connection = this.dataSource.getConnection();
+		Statement statement = null;
+		try {
+			statement = connection.createStatement();
+			System.out.println(statement);
+			statement.executeUpdate(drop);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			// the table does not exist or is referenced by a FK
+			// that prevents the drop
+		} finally {
+			try {
+				if (statement != null)
+					statement.close();
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+	}
+
+	public void createTable() throws PersistenceException {
+		Connection connection = this.dataSource.getConnection();
+		Statement statement = null;
+		try {
+			statement = connection.createStatement();
+			System.out.println(statement);
+			statement.executeUpdate(create);
+		} catch (SQLException e) {
+			throw new PersistenceException(e.getMessage());
+			// the table might be referenced by a FK
+			// that prevents the drop
+		} finally {
+			try {
+				if (statement != null)
+					statement.close();
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+	}
+
+	public void insert( #NOMECLASSE# obj) throws PersistenceException
+	{
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try
+		{
+			connection = this.dataSource.getConnection();
+			statement = connection.prepareStatement(insert);
+			#INSERT_STATEMENTS#
+			System.out.println(statement);
+			statement.executeUpdate();
+		}
+		catch (SQLException e)
+		{
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			try {
+				if (statement != null)
+					statement.close();
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+	}
+
+	public void delete(long id) throws PersistenceException
+	{
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try
+		{
+			connection = this.dataSource.getConnection();
+			statement = connection.prepareStatement(delete);
+			statement.setLong(1, id);
+			System.out.println(statement);
+			statement.executeUpdate();
+		}
+		catch (SQLException e)
+		{
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			try {
+				if (statement != null)
+					statement.close();
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+	}
+
+	public void update( #NOMECLASSE# obj) throws PersistenceException
+	{
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try
+		{
+			connection = this.dataSource.getConnection();
+			statement = connection.prepareStatement(update);
+			#UPDATE_STATEMENTS#
+			System.out.println(statement);
+			statement.executeUpdate();
+		}
+		catch (SQLException e)
+		{
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			try {
+				if (statement != null)
+					statement.close();
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+	}
+
+	public #NOMECLASSE# read(long id) throws PersistenceException
+	{
+		#NOMECLASSE# res = null;
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try {
+			connection = this.dataSource.getConnection();
+			statement = connection.prepareStatement(read_by_id);
+			statement.setLong(1, id);
+			System.out.println(statement);
+			ResultSet results = statement.executeQuery();
+			while(results.next())
+			{
+				res = new #NOMECLASSE# ();
+				#READ_STATEMENTS#
+			}
+		}
+		catch (SQLException e)
+		{
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			try {
+				if (statement != null)
+					statement.close();
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+		return res;
+	}
+
+}

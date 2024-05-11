@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script type="text/javascript" src="scripts/utils.js"></script>
+		<script type="text/javascript" src="scripts/splitCounting.js"></script>
+		<title>Split Writing </title>
+	</head>
+	<body>
+		<div>
+		
+			Testo:<br>
+			<textarea id="myText" name="myText" rows="7" cols="50" maxlength="2000" required></textarea><br><br>
+			File Name: <input type="text" name="fileName" id="fileName"/><br>
+			<input type="button" value="send" onclick="myFunction();">
+		
+		</div>
+		
+		<div>
+			<p>Il risultato del conteggio &egrave;: </p><input type="text" id="result" readonly>
+		</div>
+		<div>
+			<input type="hidden" id="err" value="">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+/** NON È UN FILE C MA UNA COLLEZIONE DI ELEMENTI HTML **/
+
+/** FORM **********************************************************************************************************/
+// - - Tipologie di form - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - 
+<form action="/destinazione" method="GET">     // action="#" --> richiesta inviata alla pagina stessa
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+   <select id="country" name="country">         // nei parametri,  country=valore_option_selezionato
+    <option value="">Select a country</option>
+    <option value="usa">United States</option>
+    <option value="canada">Canada</option>
+    <option value="uk">United Kingdom</option>
+    <option value="germany">Germany</option>
+  </select>
+
+  <input type="submit" value="Send">
+</form>
+
+/** TABELLA **********************************************************************************************************/
+<table>
+    <thead>
+        <tr>
+            <th>Intestazione 1</th>
+            <th>Intestazione 2</th>
+            <th>Intestazione 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+            <td>Dato 3</td>
+        </tr>
+        <tr>
+            <td>Dato 4</td>
+            <td>Dato 5</td>
+            <td>Dato 6</td>
+        </tr>
+    </tbody>
+</table>
+
+/** INPUT **********************************************************************************************************/
+// - - Tipologie di input - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - 
+<input type="button">           <input type="checkbox">     <input type="color">    <input type="date">
+<input type="datetime-local">   <input type="email">        <input type="file">     <input type="hidden">
+<input type="image">            <input type="month">        <input type="number">   <input type="password">
+<input type="radio">            <input type="range">        <input type="submit">   <input type="tel">
+<input type="reset">            <input type="search">       <input type="url">      <input type="week">
+<input type="text">             <input type="time">         
+
+// - - Input utili - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - 
+<input type="" id="" style="display: none;"> oppure <input type="" id="" hidden> // input nascosto
+<input type="" id="" style="width: 100px; height: 100px;"> // input quadrato
+<input type="" id="" maxlength="50"> // input di al massimo 50 caratteri 
+
+/** BOTTONE **********************************************************************************************************/
+// - - Tipologie di bottone - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - 
+<button type="button">Nome bottone</button>   
+<button type="reset">Nome bottone</button>  
+<button type="submit">Nome bottone</button>
+
+/** NAVBAR **********************************************************************************************************/
+<nav>
+    <ul>
+    <li><a href="default.asp">Home</a></li>
+    <li><a href="news.asp">News</a></li>
+    <li><a href="contact.asp">Contact</a></li>
+    <li><a href="about.asp">About</a></li>
+    </ul>
+</nav>

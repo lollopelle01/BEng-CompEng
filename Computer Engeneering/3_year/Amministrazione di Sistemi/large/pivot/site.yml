@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - common
+
+- hosts: 
+    - agent
+  become: true
+  roles:
+    - agent
+
+- hosts: manager
+  become: true
+  roles:
+    -  manager

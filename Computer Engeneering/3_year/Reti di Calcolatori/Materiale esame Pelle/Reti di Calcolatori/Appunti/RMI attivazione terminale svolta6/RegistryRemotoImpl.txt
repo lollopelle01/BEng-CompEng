@@ -1,0 +1,122 @@
+Last login: Tue Dec 20 19:39:55 on ttys000
+pelle@Air-di-Lorenzo src % ava –Djava.security.policy=rmi.policy RegistryRemotoImpl
+zsh: command not found: ava
+pelle@Air-di-Lorenzo src % java –Djava.security.policy=rmi.policy RegistryRemotoImpl 20000
+Errore: impossibile trovare o caricare la classe principale –Djava.security.policy=rmi.policy
+Causato da: java.lang.ClassNotFoundException: –Djava.security.policy=rmi.policy
+pelle@Air-di-Lorenzo src % java –Djava.security.policy=rmi.policy RegistryRemotoImpl
+Errore: impossibile trovare o caricare la classe principale –Djava.security.policy=rmi.policy
+Causato da: java.lang.ClassNotFoundException: –Djava.security.policy=rmi.policy
+pelle@Air-di-Lorenzo src % java –D java.security.policy=rmi.policy RegistryRemotoImpl
+Errore: impossibile trovare o caricare la classe principale –D
+Causato da: java.lang.ClassNotFoundException: –D
+pelle@Air-di-Lorenzo src % java –Djava.security.policy=rmi.policy RegistryRemotoImpl 
+Errore: impossibile trovare o caricare la classe principale –Djava.security.policy=rmi.policy
+Causato da: java.lang.ClassNotFoundException: –Djava.security.policy=rmi.policy
+pelle@Air-di-Lorenzo src % ls
+ClientCongresso.class		RegistryRemotoClient.class	RegistryRemotoImpl_Skel.class	ServerCongresso.class		ServerCongressoImpl_Skel.class
+ClientCongresso.java		RegistryRemotoClient.java	RegistryRemotoImpl_Stub.class	ServerCongresso.java		ServerCongressoImpl_Stub.class
+Programma.class			RegistryRemotoImpl.class	RegistryRemotoServer.class	ServerCongressoImpl.class	rmi.policy
+Programma.java			RegistryRemotoImpl.java		RegistryRemotoServer.java	ServerCongressoImpl.java
+pelle@Air-di-Lorenzo src % grep rmi.policy
+^C
+pelle@Air-di-Lorenzo src % java –Djava.security.policy=rmi.policy RegistryRemotoImpl 20000
+Errore: impossibile trovare o caricare la classe principale –Djava.security.policy=rmi.policy
+Causato da: java.lang.ClassNotFoundException: –Djava.security.policy=rmi.policy
+pelle@Air-di-Lorenzo src % java RegistryRemotoImpl 20000  
+Server RMI "RegistryRemoto": access denied ("java.net.SocketPermission" "127.0.0.1:20000" "connect,resolve")
+java.security.AccessControlException: access denied ("java.net.SocketPermission" "127.0.0.1:20000" "connect,resolve")
+	at java.base/java.security.AccessControlContext.checkPermission(AccessControlContext.java:472)
+	at java.base/java.security.AccessController.checkPermission(AccessController.java:897)
+	at java.base/java.lang.SecurityManager.checkPermission(SecurityManager.java:322)
+	at java.base/java.lang.SecurityManager.checkConnect(SecurityManager.java:824)
+	at java.base/java.net.Socket.connect(Socket.java:604)
+	at java.base/java.net.Socket.connect(Socket.java:558)
+	at java.base/java.net.Socket.<init>(Socket.java:454)
+	at java.base/java.net.Socket.<init>(Socket.java:231)
+	at java.rmi/sun.rmi.transport.tcp.TCPDirectSocketFactory.createSocket(TCPDirectSocketFactory.java:40)
+	at java.rmi/sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:617)
+	at java.rmi/sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:209)
+	at java.rmi/sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:196)
+	at java.rmi/sun.rmi.server.UnicastRef.newCall(UnicastRef.java:343)
+	at java.rmi/sun.rmi.registry.RegistryImpl_Stub.rebind(RegistryImpl_Stub.java:150)
+	at java.rmi/java.rmi.Naming.rebind(Naming.java:177)
+	at RegistryRemotoImpl.main(RegistryRemotoImpl.java:157)
+pelle@Air-di-Lorenzo src % java –Djava.security.policy=rmi.policy RegistryRemotoImpl 20000
+Errore: impossibile trovare o caricare la classe principale –Djava.security.policy=rmi.policy
+Causato da: java.lang.ClassNotFoundException: –Djava.security.policy=rmi.policy
+pelle@Air-di-Lorenzo src % java –Djava.security.policy=rmi.policy RegistryRemotoImpl 20000
+Errore: impossibile trovare o caricare la classe principale –Djava.security.policy=rmi.policy
+Causato da: java.lang.ClassNotFoundException: –Djava.security.policy=rmi.policy
+pelle@Air-di-Lorenzo src % clear
+
+
+
+
+
+
+
+
+
+
+pelle@Air-di-Lorenzo src % java –Djava.security.policy=rmi.policy RegistryRemotoImpl 20000  
+Errore: impossibile trovare o caricare la classe principale –Djava.security.policy=rmi.policy
+Causato da: java.lang.ClassNotFoundException: –Djava.security.policy=rmi.policy
+pelle@Air-di-Lorenzo src % java -Djava.security.policy=rmi.policy RegistryRemotoImpl        
+Server RMI "RegistryRemoto": Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused (Connection refused)
+java.rmi.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused (Connection refused)
+	at java.rmi/sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:623)
+	at java.rmi/sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:209)
+	at java.rmi/sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:196)
+	at java.rmi/sun.rmi.server.UnicastRef.newCall(UnicastRef.java:343)
+	at java.rmi/sun.rmi.registry.RegistryImpl_Stub.rebind(RegistryImpl_Stub.java:150)
+	at java.rmi/java.rmi.Naming.rebind(Naming.java:177)
+	at RegistryRemotoImpl.main(RegistryRemotoImpl.java:157)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at java.base/java.net.Socket.connect(Socket.java:558)
+	at java.base/java.net.Socket.<init>(Socket.java:454)
+	at java.base/java.net.Socket.<init>(Socket.java:231)
+	at java.rmi/sun.rmi.transport.tcp.TCPDirectSocketFactory.createSocket(TCPDirectSocketFactory.java:40)
+	at java.rmi/sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:617)
+	... 6 more
+pelle@Air-di-Lorenzo src % java -Djava.security.policy=rmi.policy RegistryRemotoImpl 20000
+Server RMI: Servizio "RegistryRemoto" registrato
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

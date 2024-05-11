@@ -1,0 +1,8 @@
+Per ogni cinefilo minorenne, elenco distinto dei nomi delle sale in cui si sono tenute le proiezioni dei film a cui lo stesso ha partecipato:
+cinefilo1:
+Sala2
+Sala3
+Piazza Maggiore
+
+Numero di cinefili donna che hanno partecipato alle proiezioni tenutesi in sala Piazza Maggiore: 
+1

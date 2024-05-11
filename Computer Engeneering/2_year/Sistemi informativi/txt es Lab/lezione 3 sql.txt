@@ -1,0 +1,117 @@
+SET CURRENT SCHEMA db2inst1;
+
+--Q1) Il numero dei dipartimenti con almeno 7 dipendenti
+SELECT count(dip7)
+FROM (
+	SELECT d.DEPTNO AS dip7
+	FROM DEPARTMENT d JOIN EMPLOYEE e ON (d.DEPTNO=e.WORKDEPT)
+	GROUP BY d.DEPTNO
+	HAVING COUNT(d.DEPTNO)>=7
+);
+
+--Q2)I dati dei dipendenti che lavorano in un dipartimento con almeno 7 dipendenti
+SELECT e.*
+FROM EMPLOYEE e
+WHERE e.WORKDEPT IN (
+	SELECT d.DEPTNO AS dip7
+	FROM DEPARTMENT d JOIN EMPLOYEE e ON (d.DEPTNO=e.WORKDEPT)
+	GROUP BY d.DEPTNO
+	HAVING COUNT(d.DEPTNO)>=7
+);
+
+--Q3)I dati del dipartimento con il maggior numero di dipendenti
+SELECT d.*
+FROM DEPARTMENT d
+WHERE d.DEPTNO=(
+	SELECT d.DEPTNO AS DEP_WITH_MOST_EMP
+	FROM DEPARTMENT d JOIN EMPLOYEE e ON (d.DEPTNO=e.WORKDEPT)
+	GROUP BY d.DEPTNO
+	HAVING COUNT(e.EMPNO) >= ALL (
+		SELECT COUNT(e.EMPNO)
+		FROM EMPLOYEE e
+		GROUP BY e.WORKDEPT
+		)
+);
+
+--Q4) Il nome delle regioni e il totale delle vendite per ogni regione con un totale di vendite 
+--maggiore di 30, ordinando per totale vendite decrescente
+SELECT DISTINCT s.REGION, sum(s.SALES) AS totVendite
+FROM SALES s 
+WHERE s.region IN (
+	SELECT s2.REGION 
+	FROM SALES s2 
+	WHERE s.REGION=s2.REGION 
+	GROUP BY s2.REGION 
+	HAVING sum(s2.SALES)>30
+)
+GROUP BY s.REGION
+ORDER BY s.REGION DESC;
+
+--Q5) Lo stipendio medio degli impiegati che non sono manager di nessun dipartimento
+SELECT dec(avg(e.salary),8,2) AS stipMedio
+FROM EMPLOYEE e 
+WHERE e.SALARY IN (
+	SELECT e.salary
+	FROM EMPLOYEE e
+		EXCEPT 
+	SELECT e2.SALARY
+	FROM EMPLOYEE e2 JOIN DEPARTMENT d on(e2.EMPNO =d.MGRNO)
+	WHERE d.MGRNO IS NOT NULL
+);
+
+--Q6) I dipartimenti che non hanno impiegati il cui cognome inizia per ‘L’
+SELECT DISTINCT d.*
+FROM DEPARTMENT d
+WHERE d.DEPTNO IN (
+	SELECT d3.DEPTNO 
+	FROM DEPARTMENT d3 
+		EXCEPT
+	SELECT d2.DEPTNO 
+	FROM DEPARTMENT d2 JOIN EMPLOYEE e on(d2.DEPTNO=e.WORKDEPT)
+	WHERE e.LASTNAME LIKE 'L%'
+);
+
+--Q7) I dipartimenti e il rispettivo massimo stipendio per tutti i dipartimenti aventi un salario 
+--medio minore del salario medio calcolato considerando i dipendenti di tutti gli altri dipartimenti
+SELECT DISTINCT e.WORKDEPT , max(e.SALARY*1.0) AS salarioMax
+FROM EMPLOYEE e
+GROUP BY e.WORKDEPT 
+HAVING  avg(e.SALARY*1.0) <(
+	SELECT avg(e2.SALARY*1.0)
+	FROM EMPLOYEE e2 
+	WHERE e2.WORKDEPT != e.WORKDEPT 
+);
+
+--Q8) Per ogni dipartimento determinare lo stipendio medio per ogni lavoro per il quale il livello di educazione 
+--medio è maggiore di quello degli impiegati dello stesso dipartimento che fanno un lavoro differente
+SELECT DISTINCT e.WORKDEPT,e.JOB, AVG(e.SALARY*1.0) 
+FROM EMPLOYEE e
+GROUP BY e.JOB, e.WORKDEPT 
+HAVING AVG(e.EDLEVEL) > (
+	SELECT avg(e2.EDLEVEL)
+	FROM EMPLOYEE e2 
+	WHERE e.WORKDEPT = e2.WORKDEPT AND e.JOB != e2.JOB 
+);
+
+
+--Q9) Lo stipendio medio degli impiegati che non sono addetti alle vendite
+SELECT DEC(avg(e.SALARY),8,2) AS Stip_medio
+FROM EMPLOYEE e
+WHERE e.LASTNAME NOT IN(
+	SELECT DISTINCT s.SALES_PERSON 
+	FROM SALES s 
+);
+
+--Q10) Per ogni regione, i dati dell’impiegato che ha il maggior numero di vendite (SUM(SALES)) in quella regione
+SELECT DISTINCT s.REGION, e.*
+FROM SALES s JOIN EMPLOYEE e ON (s.SALES_PERSON=e.LASTNAME)
+WHERE s.REGION IN (
+	SELECT s3.REGION 
+	FROM SALES s3
+	GROUP BY s3.REGION, s3.SALES_PERSON 
+	HAVING SUM(s3.SALES)>=  (
+		SELECT sum(s2.SALES)
+		FROM SALES s2 
+		WHERE s2.REGION =s3.REGION AND s2.SALES_PERSON != s3.SALES_PERSON
+	)
+);
