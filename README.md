@@ -20,7 +20,7 @@ My repository with the material used during my barchelor and my master.
 
 2.3 [Matematica applicata](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/2_year/Matematica%20applicata)
 
-2.4 [Sistemi Operativi](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/2_year/Sistemi%20operativi)
+2.4 [Sistemi Operativi](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/2_year/Sistemi%20Operativi)
 
 2.5 [Sistemi Informativi](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/2_year/Sistemi%20informativi)
 
