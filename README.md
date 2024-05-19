@@ -11,6 +11,7 @@ My repository with the material used during my barchelor and my master.
 1.2. [Statistical and Mathematical Methods for AI](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/SMMAI)
 
 ### Computer Engeneering (ITA)
+#### Courses
 - [Fondamenti di Informatica 1](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/1_year/Info_1) 
 
 - [Fondamenti di Informatica 2](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/1_year/Info_2) 
@@ -38,3 +39,7 @@ My repository with the material used during my barchelor and my master.
 - [Sicurezza Informatica]()
 
 - [Progettazione di Applicazioni Web]()
+
+#### Thesis
+
+[WasmEdge]()
