@@ -3,7 +3,6 @@ My repository with the material used during my barchelor and my master.
 
 **The computer engeneering part is incomplete.**
 
-
 ## Table of contents
 ### Artificial Intelligence (ENG)
 1.1. [Machine Learning](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/ML) 
