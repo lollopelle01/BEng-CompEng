@@ -1,13 +1,15 @@
 # UniBo notes
 My repository with the material used during my barchelor and my master.
+The computer engeneering part is incomplete.
+
 
 ## Table of contents
-### Artificial Intelligence
+### Artificial Intelligence (ENG)
 1.1. [Machine Learning](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/ML) 
 
 1.2. [Statistical and Mathematical Methods for AI](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/SMMAI)
 
-### Computer Engeneering 
+### Computer Engeneering (ITA)
 1.1. [Fondamenti di Informatica 1](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/1_year/Info_1) 
 
 1.2. [Fondamenti di Informatica 2](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/1_year/Info_2) 
