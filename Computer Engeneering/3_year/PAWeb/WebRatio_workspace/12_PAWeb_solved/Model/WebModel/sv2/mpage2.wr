@@ -1,0 +1,31 @@
+<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-225" gr:y="800" id="sv2#mpage2" name="User Info">
+  <ContentUnits>
+    <GetUnit gr:x="0" gr:y="10" id="sv2#mpage2#gtu3" name="GetUsrCtx" contextParameters="UserCtxParam">
+      <Link id="sv2#mpage2#gtu3#ln32" name="Flow32" to="sv2#mpage2#dau6" type="transport" validate="true">
+        <LinkParameter id="sv2#mpage2#gtu3#ln32#par68" name="UserCtxParam.oid_KeyCondition7 [oid]" source="sv2#mpage2#gtu3.UserCtxParam" target="sv2#mpage2#dau6#su18#kcond7.userOID"/>
+      </Link>
+    </GetUnit>
+    <DataUnit gr:x="155" gr:y="0" id="sv2#mpage2#dau6" name="User Details" entity="User" displayAttributes="userName" linkOrder="sv2#mpage2#dau6#ln33 sv2#mpage2#dau6#ln47 sv2#mpage2#dau6#ln133">
+      <Selector id="sv2#mpage2#dau6#su18" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mpage2#dau6#su18#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#mpage2#dau6#ln33" name="Logout" to="sv2#miu7" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#mpage2#dau6#ln47" name="Manage Artists" to="sv2#area3" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#mpage2#dau6#ln133" name="Manage Albums" to="sv2#area10" automaticCoupling="true" type="normal" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:CustomLocation name="Top">
+    <layout:Grid containerType="cell">
+      <layout:Row>
+        <layout:Cell>
+          <layout:Unit unitId="sv2#mpage2#dau6">
+            <layout:Attribute attribute="userName"/>
+            <layout:Link link="sv2#mpage2#dau6#ln33"/>
+            <layout:Link link="sv2#mpage2#dau6#ln47"/>
+            <layout:Link link="sv2#mpage2#dau6#ln133"/>
+          </layout:Unit>
+        </layout:Cell>
+      </layout:Row>
+    </layout:Grid>
+  </layout:CustomLocation>
+</MasterPage>

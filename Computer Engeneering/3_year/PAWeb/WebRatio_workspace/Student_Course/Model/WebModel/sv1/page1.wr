@@ -1,0 +1,30 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="170" gr:y="255" id="sv1#page1" name="HomePage">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#page1#inu1" name="Courses" linkOrder="sv1#page1#inu1#ln1" entity="ent2" displayAttributes="ent2#att3">
+      <Link id="sv1#page1#inu1#ln1" name="see Students" to="sv1#page2#scu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#inu1#ln1#par1" name="id_RoleCondition1 [id]" source="data[].ent2#att2" target="sv1#page2#scu1#su2#rcond1.ent2#att2"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#inu1">
+          <layout:Link link="sv1#page1#inu1#ln1"/>
+          <layout:Attribute attribute="ent2#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

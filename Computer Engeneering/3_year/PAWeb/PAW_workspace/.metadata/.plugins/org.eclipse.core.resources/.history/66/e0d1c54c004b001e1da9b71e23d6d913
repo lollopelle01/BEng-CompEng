@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- SCALETTA SCRITTURA SCHEMA -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Definzione sottotipo1 -->
+	<xs:complexType name="sottotipo1">
+		...
+	</xs:complexType>
+
+    <xs:complexType name="video">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definizione per istanza finale -->
+	<xs:complexType name="interrogazione">
+		<xs:sequence>
+			<xs:element name="video" type="video"/>
+			<xs:element name="keyword" type="xs:string" minOccurs="0"/>
+			<xs:element name="input" type="input" />
+			<xs:element name="risultato" type="risultato" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Istanza finale -->
+	<xs:element name="interrogazione" type="interrogazione"/>
+</xs:schema>

@@ -1,0 +1,24 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm19" name="Add Medium" gr:x="370" gr:y="50">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm19#icu13" gr:x="35" gr:y="265">
+      <InputCollectorParameter id="mov2#opm19#icu13#icp28" name="id_tipoSupporto"/>
+      <InputCollectorParameter id="mov2#opm19#icu13#icp29" name="prezzo"/>
+      <InputCollectorParameter id="mov2#opm19#icu13#icp30" name="id_album"/>
+      <OKLink id="mov2#opm19#icu13#oln59" name="OKFlow50" to="mov2#opm19#cru9">
+        <LinkParameter id="mov2#opm19#icu13#oln59#par165" name="album_Album.oid(SupportoToAlbum)" source="mov2#opm19#icu13#icp30" target="mov2#opm19#cru9.rel3#role5.ent1#att1"/>
+        <LinkParameter id="mov2#opm19#icu13#oln59#par167" name="tipo_TipoSupporto.oid(SupportoToTipoSupporto)" source="mov2#opm19#icu13#icp28" target="mov2#opm19#cru9.rel4#role7.ent5#att11"/>
+        <LinkParameter id="mov2#opm19#icu13#oln59#par244" name="prezzo_prezzo" source="mov2#opm19#icu13#icp29" target="mov2#opm19#cru9.ent4#att12"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov2#opm19#okcu11" name="OK Port" gr:x="530" gr:y="215"/>
+    <KOCollectorUnit id="mov2#opm19#kocu12" name="KO Port" gr:x="530" gr:y="330">
+      <OutputCollectorParameter id="mov2#opm19#kocu12#ocp14" name="Error message"/>
+    </KOCollectorUnit>
+    <CreateUnit id="mov2#opm19#cru9" name="Create Medium" gr:x="340" gr:y="280" entity="ent4">
+      <KOLink id="mov2#opm19#cru9#kln27" name="KOFlow14" to="mov2#opm19#kocu12">
+        <LinkParameter id="mov2#opm19#cru9#kln27#par168" name="Impossibile crare l'album_Error message" target="mov2#opm19#kocu12#ocp14" sourceValue="cannot create the medium"/>
+      </KOLink>
+      <OKLink id="mov2#opm19#cru9#oln60" name="OKFlow49" to="mov2#opm19#okcu11" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</OperationModule>

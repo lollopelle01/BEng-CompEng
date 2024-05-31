@@ -1,0 +1,83 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="160" gr:y="195" id="sv1#page1" name="HomePage">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="10" id="sv1#page1#inu1" name="Stadio List" entity="ent1" displayAttributes="ent1#att3" linkOrder="sv1#page1#inu1#ln1">
+      <Link id="sv1#page1#inu1#ln1" name="see partite" to="sv1#page1#inu3" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#inu1#ln1#par1" name="id_RoleCondition1 [id]" source="data[].ent1#att1" target="sv1#page1#inu3#su1#rcond1.ent1#att1"/>
+      </Link>
+    </IndexUnit>
+    <IndexUnit id="sv1#page1#inu3" name="Partita List" gr:x="200" gr:y="0" entity="ent2" displayAttributes="ent2#att2" linkOrder="sv1#page1#inu3#ln2">
+      <Selector id="sv1#page1#inu3#su1" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#page1#inu3#su1#rcond1" name="RoleCondition1" role="rel1#role1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#page1#inu3#ln2" name="Flow2" to="sv1#page1#dau1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#inu3#ln2#par2" name="id_KeyCondition1 [id]" source="data[].ent2#att2" target="sv1#page1#dau1#su2#kcond1.ent2#att2"/>
+      </Link>
+    </IndexUnit>
+    <DataUnit gr:x="190" gr:y="170" id="sv1#page1#dau1" name="Dettagli partita" entity="ent2" linkOrder="sv1#page1#dau1#ln3">
+      <Selector id="sv1#page1#dau1#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#page1#dau1#su2#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#page1#dau1#ln3" name="elimina" to="sv1#miu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#dau1#ln3#par3" name="id_id" source="data.ent2#att2" target="sv1#miu1.mov1#opm1#icu1#icp1"/>
+      </Link>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#inu1">
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Link link="sv1#page1#inu1#ln1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#inu3">
+          <layout:Attribute attribute="ent2#att2"/>
+          <layout:Link link="sv1#page1#inu3#ln2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#dau1">
+          <layout:Link link="sv1#page1#dau1#ln3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,30 @@
+package it.unibo.paw.dao;
+
+
+import java.util.List;
+
+public interface PartiteDAO {
+
+	// --- CRUD -------------
+
+	public void create(PartitaDAO student);
+
+	public PartitaDTO read(int code);
+
+	public boolean update(PartitaDTO student);
+
+	public boolean delete(int code);
+
+	
+	// ----------------------------------
+	// Metodi specifici
+	// ...
+
+	// ----------------------------------
+	// Gestione tabelle
+	
+	public boolean createTable();
+
+	public boolean dropTable();
+
+}

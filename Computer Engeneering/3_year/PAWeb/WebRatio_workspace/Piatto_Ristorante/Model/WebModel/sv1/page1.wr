@@ -1,0 +1,59 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="165" gr:y="280" id="sv1#page1" name="HomePage">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="15" id="sv1#page1#enu1" name="Form" linkOrder="sv1#page1#enu1#ln1">
+      <Field id="sv1#page1#enu1#fld2" name="Citta" type="string" modifiable="true"/>
+      <Link id="sv1#page1#enu1#ln1" name="cerca Ristoranti" to="sv1#page1#inu1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu1#ln1#par2" name="Citta_citta" source="sv1#page1#enu1#fld2" target="sv1#page1#inu1#su2#acond2"/>
+      </Link>
+    </EntryUnit>
+    <IndexUnit gr:x="135" gr:y="0" id="sv1#page1#inu1" name="Ristorante List" entity="ent2" displayAttributes="ent2#att4" linkOrder="sv1#page1#inu1#ln2">
+      <SortAttribute attribute="ent2#att4" order="ascending"/>
+      <Selector id="sv1#page1#inu1#su2" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#page1#inu1#su2#acond2" name="citta" predicate="eq" booleanOperator="or" implied="false" attributes="ent2#att5"/>
+      </Selector>
+      <Link id="sv1#page1#inu1#ln2" name="see Dettagli" to="sv1#page2#dau1" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#inu1#ln2#par3" name="id_KeyCondition1 [id]" source="data[].ent2#att2" target="sv1#page2#dau1#su3#kcond1.ent2#att2"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu1">
+          <layout:Link link="sv1#page1#enu1#ln1"/>
+          <layout:Field field="sv1#page1#enu1#fld2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#inu1">
+          <layout:Attribute attribute="ent2#att4"/>
+          <layout:Link link="sv1#page1#inu1#ln2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- SCALETTA SCRITTURA SCHEMA -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="prezzo">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="fotografia">
+		<xs:restriction base="xs:string">
+			<xs:pattern value=".+\.jpeg"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+		<xs:simpleType name="giudizio">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="eccellente"/>
+			<xs:enumeration value="buono"/>
+			<xs:enumeration value="medio"/>
+			<xs:enumeration value="sufficiente"/>
+			<xs:enumeration value="mediocre"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="link">
+		<xs:sequence>		
+			<xs:element name="URI" type="xs:anyURI"/>
+			<xs:element name="cliccato" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<!-- RISULTATO -->
+	<xs:complexType name="risultato">
+		<xs:sequence>		
+			<xs:element name="nome_hotel" type="xs:string"/>
+			<xs:element name="fotografia_hotel" type="fotografia"/>
+			<xs:element name="giudizio_utenti" type="giudizio"/>
+			<xs:element name="prezzo" type="prezzo"/>
+			<xs:element name="link" type="link"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="email">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9a-zA-Z.]+@[a-zA-Z]+\.[a-z]+" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="password">
+		<xs:restriction base="xs:string">
+		 	<xs:length value="8" />
+	        <xs:pattern value=".*[0-9]+.*[?!*$]+.*" />
+	        <xs:pattern value=".*[?!*$]+.*[0-9]+.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="num_stelle">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="fascia">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bassa"/>
+			<xs:enumeration value="media"/>
+			<xs:enumeration value="alta"/>
+			<xs:enumeration value="lusso"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- RICHIESTA -->
+	<!-- Definizione per istanza finale -->
+	<xs:complexType name="ricerca">
+		<xs:sequence>
+			<xs:element name="email" type="email"/>
+			<xs:element name="password" type="password"/>
+			
+			<xs:element name="nazione" type="xs:string"/>
+			<xs:element name="citta" type="xs:string"/>
+			<xs:element name="num_stelle" type="num_stelle"/>
+			<xs:element name="fascia" type="fascia" minOccurs="0"/>
+			
+			<xs:element name="risultato" type="risultato" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Istanza finale -->
+	<xs:element name="ricerca" type="ricerca"/>
+</xs:schema>

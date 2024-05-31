@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<albums xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="./foto.xsd">
+	<album>
+	    <tipo>DB</tipo>
+	    <autore>
+	        <nome>Marco</nome>
+	        <cognome>Rossi</cognome>
+	    </autore>
+	    <titolo>Viaggio in Italia</titolo>
+	    <data_inizio>2023-06-15</data_inizio>
+	    <data_fine>2023-06-30</data_fine>
+	    <fotografia>
+	        <data_scatto>2023-06-18</data_scatto>
+	        <nome_file>italy1.jpg</nome_file>
+	        <tag>Vacanza</tag>
+	        <tag>Paesaggi</tag>
+	        <posizione>
+	            <nome_luogo>Bologna</nome_luogo>
+	            <latitudine>44</latitudine>
+	            <longitudine>11</longitudine>
+	        </posizione>
+	    </fotografia>
+	    <fotografia>
+	        <data_scatto>2023-06-22</data_scatto>
+	        <nome_file>italy2.jpg</nome_file>
+	        <tag>Monumenti</tag>
+	        <posizione>
+	            <nome_luogo>Roma</nome_luogo>
+	            <latitudine>41.9028</latitudine>
+	            <longitudine>12.4964</longitudine>
+	        </posizione>
+	    </fotografia>
+    </album>
+
+    <album>
+        <tipo>DB</tipo>
+        <autore>
+            <nome>Laura</nome>
+            <cognome>Bianchi</cognome>
+        </autore>
+        <titolo>Calendario 2023</titolo>
+        <data_inizio>2023-01-01</data_inizio>
+        <data_fine>2023-12-31</data_fine>
+        <fotografia>
+            <data_scatto>2023-03-10</data_scatto>
+            <nome_file>calendar1.jpg</nome_file>
+            <tag>Natura</tag>
+            <tag>Stagioni</tag>
+            <posizione>
+                <nome_luogo>Parco Nazionale</nome_luogo>
+                <latitudine>42.4344</latitudine>
+                <longitudine>12.8622</longitudine>
+            </posizione>
+        </fotografia>
+        <fotografia>
+            <data_scatto>2023-08-18</data_scatto>
+            <nome_file>calendar2.jpg</nome_file>
+            <tag>Animali</tag>
+            <posizione>
+                <nome_luogo>Bologna</nome_luogo>
+                <latitudine>45.6667</latitudine>
+                <longitudine>9.1678</longitudine>
+            </posizione>
+        </fotografia>
+    </album>
+</albums>

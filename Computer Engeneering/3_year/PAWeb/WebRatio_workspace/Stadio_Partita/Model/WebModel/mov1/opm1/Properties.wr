@@ -1,0 +1,23 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="160" gr:y="120" id="mov1#opm1" name="Elimina partita">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm1#icu1" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov1#opm1#icu1#icp1" name="id"/>
+      <OKLink id="mov1#opm1#icu1#oln1" name="OKFlow1" to="mov1#opm1#dlu1">
+        <LinkParameter id="mov1#opm1#icu1#oln1#par4" name="id_KeyCondition2 [id]" source="mov1#opm1#icu1#icp1" target="mov1#opm1#dlu1#su3#kcond2.ent2#att2"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <DeleteUnit gr:x="365" gr:y="65" id="mov1#opm1#dlu1" name="elimina partita" entity="ent2">
+      <Selector id="mov1#opm1#dlu1#su3" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm1#dlu1#su3#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm1#dlu1#oln2" name="OKFlow2" to="mov1#opm1#okcu1" automaticCoupling="true"/>
+      <KOLink id="mov1#opm1#dlu1#kln1" name="KOFlow1" to="mov1#opm1#kocu1">
+        <LinkParameter id="mov1#opm1#dlu1#kln1#par5" name="Errore nell'eliminazione della partita_ErrorMessage" sourceValue="Errore nell'eliminazione della partita" target="mov1#opm1#kocu1#ocp1"/>
+      </KOLink>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="655" gr:y="75" id="mov1#opm1#okcu1" name="OK Port1"/>
+    <KOCollectorUnit gr:x="655" gr:y="235" id="mov1#opm1#kocu1" name="KO Port1">
+      <OutputCollectorParameter id="mov1#opm1#kocu1#ocp1" name="ErrorMessage"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

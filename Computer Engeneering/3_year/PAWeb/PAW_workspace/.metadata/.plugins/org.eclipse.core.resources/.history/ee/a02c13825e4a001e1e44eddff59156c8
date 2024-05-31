@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="biblioteca.xsd">
+	<musicista>
+		<nome>Nome 1</nome>
+		<cognome>Cognome 1</cognome>
+		<genere>M</genere>
+		<album>
+			<titoloAlbum>Album 1</titoloAlbum>
+			<anno>2001</anno>
+			<brano>
+				<titoloBrano>Brano 1</titoloBrano>
+				<lunghezza>03:15</lunghezza>
+			</brano>
+			<brano>
+				<titoloBrano>Brano 2</titoloBrano>
+				<lunghezza>06:15</lunghezza>
+			</brano>
+			<brano>
+				<titoloBrano>Brano 3</titoloBrano>
+				<lunghezza>10:15</lunghezza>
+			</brano>
+		</album>
+	</musicista>
+	
+	<musicista>
+		<nome>Nome 2</nome>
+		<cognome>Cognome 2</cognome>
+		<genere>F</genere>
+		<album>
+			<titoloAlbum>Album 2</titoloAlbum>
+			<anno>2002</anno>
+			<brano>
+				<titoloBrano>Brano 4</titoloBrano>
+				<lunghezza>03:15</lunghezza>
+			</brano>
+			<brano>
+				<titoloBrano>Brano 5</titoloBrano>
+				<lunghezza>2:15</lunghezza>
+			</brano>
+			<brano>
+				<titoloBrano>Brano 6</titoloBrano>
+				<lunghezza>5:15</lunghezza>
+			</brano>
+		</album>
+	</musicista>
+</biblioteca>

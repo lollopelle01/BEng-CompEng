@@ -1,0 +1,277 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area11#page21" name="Medium and Song Management" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <DataUnit id="sv2#area11#page21#dau9" name="Album Details" linkOrder="sv2#area11#page21#dau9#ln120 sv2#area11#page21#dau9#ln122 sv2#area11#page21#dau9#ln121" gr:x="505" gr:y="270" entity="ent1" displayAttributes="ent1#att2 ent1#att3">
+      <Selector id="sv2#area11#page21#dau9#su63" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area11#page21#dau9#su63#kcond41" name="KeyCondition26" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area11#page21#dau9#ln120" name="Back to Albums" to="sv2#area10#page20" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#area11#page21#dau9#ln121" name="Manage media" to="sv2#area11#page21#alt4#page22#seu25" type="normal" validate="true">
+        <LinkParameter id="sv2#area11#page21#dau9#ln121#par227" name="oid_RoleConditionAlbumToSupporto [oid]" source="data.ent1#att1" target="sv2#area11#page21#alt4#page22#seu25#su65#rcond22.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area11#page21#dau9#ln122" name="Manage songs" to="sv2#area11#page21#alt4#page23#seu27" type="automatic" validate="true">
+        <LinkParameter id="sv2#area11#page21#dau9#ln122#par228" name="oid_RoleConditionAlbumToBrano [oid]" source="data.ent1#att1" target="sv2#area11#page21#alt4#page23#seu27#su67#rcond23.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area11#page21#dau9#ln123" name="Flow80" to="sv2#area11#miu22" type="transport" validate="true">
+        <LinkParameter id="sv2#area11#page21#dau9#ln123#par256" name="oid_id_album" source="data.ent1#att1" target="sv2#area11#miu22.mov2#opm19#icu13#icp30"/>
+      </Link>
+      <Link id="sv2#area11#page21#dau9#ln124" name="Flow144" to="sv2#area11#miu23" type="transport" validate="true">
+        <LinkParameter id="sv2#area11#page21#dau9#ln124#par258" name="oid_id_album" source="data.ent1#att1" target="sv2#area11#miu23.mov2#opm17#icu11#icp26"/>
+      </Link>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area11#page21#dau9">
+          <layout:Link link="sv2#area11#page21#dau9#ln120"/>
+          <layout:Link link="sv2#area11#page21#dau9#ln122"/>
+          <layout:Link link="sv2#area11#page21#dau9#ln121"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv2#area11#page21#alt4#page22">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell rowspan="2" colspan="6">
+                <layout:Unit unitId="sv2#area11#page21#alt4#page22#inu17">
+                  <layout:Attribute attribute="rel4#role7.ent5#att13"/>
+                  <layout:Attribute attribute="ent4#att12"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell colspan="6">
+                <layout:Unit unitId="sv2#area11#page21#alt4#page22#enu14">
+                  <layout:Link link="sv2#area11#page21#alt4#page22#enu14#ln127"/>
+                  <layout:Field field="sv2#area11#page21#alt4#page22#enu14#fld31"/>
+                  <layout:Field field="sv2#area11#page21#alt4#page22#enu14#sfld3"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell colspan="6"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv2#area11#page21#alt4#page23">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell rowspan="2" colspan="6">
+                <layout:Unit unitId="sv2#area11#page21#alt4#page23#inu18">
+                  <layout:Link link="sv2#area11#page21#alt4#page23#inu18#ln128"/>
+                  <layout:Link link="sv2#area11#page21#alt4#page23#inu18#ln129"/>
+                  <layout:Attribute attribute="ent2#att5"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell colspan="6">
+                <layout:Unit unitId="sv2#area11#page21#alt4#page23#enu15">
+                  <layout:Field field="sv2#area11#page21#alt4#page23#enu15#fld33"/>
+                  <layout:Field field="sv2#area11#page21#alt4#page23#enu15#fld32"/>
+                  <layout:Link link="sv2#area11#page21#alt4#page23#enu15#ln132"/>
+                  <layout:Link link="sv2#area11#page21#alt4#page23#enu15#ln131"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell colspan="6"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Alternative id="sv2#area11#page21#alt4" name="Alternative" defaultPage="sv2#area11#page21#alt4#page23" gr:x="0" gr:y="0">
+    <Page id="sv2#area11#page21#alt4#page22" name="Media Management" gr:x="0" gr:y="0">
+      <ContentUnits>
+        <IndexUnit id="sv2#area11#page21#alt4#page22#inu17" name="Medium List" gr:x="10" gr:y="110" entity="ent4" displayAttributes="rel4#role7.ent5#att13 ent4#att12">
+          <Selector id="sv2#area11#page21#alt4#page22#inu17#su64" defaultPolicy="fill" booleanOperator="and">
+            <KeyCondition id="sv2#area11#page21#alt4#page22#inu17#su64#kcond42" name="KeyCondition28" predicate="in" implied="false"/>
+          </Selector>
+          <SortAttribute attribute="rel4#role7.ent5#att13" order="ascending"/>
+          <SortAttribute attribute="ent4#att12" order="ascending"/>
+        </IndexUnit>
+        <SelectorUnit id="sv2#area11#page21#alt4#page22#seu25" name="Associated Media" gr:x="155" gr:y="110" entity="ent4">
+          <Selector id="sv2#area11#page21#alt4#page22#seu25#su65" defaultPolicy="fill" booleanOperator="and">
+            <RelationshipRoleCondition id="sv2#area11#page21#alt4#page22#seu25#su65#rcond22" name="RoleConditionAlbumToSupporto" predicate="in" implied="false" role="rel3#role6"/>
+          </Selector>
+          <Link id="sv2#area11#page21#alt4#page22#seu25#ln125" name="Flow63" to="sv2#area11#page21#alt4#page22#inu17" type="transport" validate="true">
+            <LinkParameter id="sv2#area11#page21#alt4#page22#seu25#ln125#par231" name="oid_KeyCondition28 [oid]" source="ent4#att10Array" target="sv2#area11#page21#alt4#page22#inu17#su64#kcond42.ent4#att10"/>
+          </Link>
+        </SelectorUnit>
+        <SelectorUnit id="sv2#area11#page21#alt4#page22#seu26" name="All TipoSupporto" gr:x="0" gr:y="0" entity="ent5">
+          <Link id="sv2#area11#page21#alt4#page22#seu26#ln126" name="Flow75" to="sv2#area11#page21#alt4#page22#enu14" type="transport" validate="true">
+            <LinkParameter id="sv2#area11#page21#alt4#page22#seu26#ln126#par232" name="nome_tipo [label]" source="ent5#att13Array" target="sv2#area11#page21#alt4#page22#enu14#sfld3_label"/>
+            <LinkParameter id="sv2#area11#page21#alt4#page22#seu26#ln126#par233" name="oid_tipo [output]" source="ent5#att11Array" target="sv2#area11#page21#alt4#page22#enu14#sfld3_output"/>
+          </Link>
+        </SelectorUnit>
+        <EntryUnit id="sv2#area11#page21#alt4#page22#enu14" name="Medium Form" linkOrder="sv2#area11#page21#alt4#page22#enu14#ln127" gr:x="180" gr:y="10">
+          <SelectionField id="sv2#area11#page21#alt4#page22#enu14#sfld3" name="tipo" type="integer"/>
+          <Field id="sv2#area11#page21#alt4#page22#enu14#fld31" name="prezzo" type="float" modifiable="true" preloaded="false"/>
+          <Link id="sv2#area11#page21#alt4#page22#enu14#ln127" name="OK" to="sv2#area11#miu22" type="normal" validate="true">
+            <LinkParameter id="sv2#area11#page21#alt4#page22#enu14#ln127#par255" name="prezzo_prezzo" source="sv2#area11#page21#alt4#page22#enu14#fld31" target="sv2#area11#miu22.mov2#opm19#icu13#icp29"/>
+            <LinkParameter id="sv2#area11#page21#alt4#page22#enu14#ln127#par257" name="tipo_id_tipoSupporto" source="sv2#area11#page21#alt4#page22#enu14#sfld3" target="sv2#area11#miu22.mov2#opm19#icu13#icp28"/>
+          </Link>
+        </EntryUnit>
+      </ContentUnits>
+    </Page>
+    <Page id="sv2#area11#page21#alt4#page23" name="Songs Management" gr:x="10" gr:y="305">
+      <ContentUnits>
+        <IndexUnit id="sv2#area11#page21#alt4#page23#inu18" name="Song List" linkOrder="sv2#area11#page21#alt4#page23#inu18#ln128 sv2#area11#page21#alt4#page23#inu18#ln129" gr:x="20" gr:y="150" entity="ent2" displayAttributes="ent2#att5">
+          <Selector id="sv2#area11#page21#alt4#page23#inu18#su66" defaultPolicy="fill" booleanOperator="and">
+            <KeyCondition id="sv2#area11#page21#alt4#page23#inu18#su66#kcond43" name="KeyCondition67" predicate="in" implied="false"/>
+          </Selector>
+          <Link id="sv2#area11#page21#alt4#page23#inu18#ln128" name="edit" to="sv2#area11#page21#alt4#page23#enu15" type="normal" validate="true">
+            <LinkParameter id="sv2#area11#page21#alt4#page23#inu18#ln128#par236" name="durata_durata" source="data[].ent2#att6" target="sv2#area11#page21#alt4#page23#enu15#fld32_slot"/>
+            <LinkParameter id="sv2#area11#page21#alt4#page23#inu18#ln128#par237" name="titolo_titolo" source="data[].ent2#att5" target="sv2#area11#page21#alt4#page23#enu15#fld33_slot"/>
+            <LinkParameter id="sv2#area11#page21#alt4#page23#inu18#ln128#par238" name="oid_id" source="data[].ent2#att4" target="sv2#area11#page21#alt4#page23#enu15#fld34_slot"/>
+          </Link>
+          <Link id="sv2#area11#page21#alt4#page23#inu18#ln129" name="delete" to="sv2#area11#miu24" type="normal" validate="true">
+            <LinkParameter id="sv2#area11#page21#alt4#page23#inu18#ln129#par262" name="oid_id" source="data[].ent2#att4" target="sv2#area11#miu24.mov2#opm18#icu12#icp27"/>
+          </Link>
+        </IndexUnit>
+        <SelectorUnit id="sv2#area11#page21#alt4#page23#seu27" name="Associated Songs" gr:x="0" gr:y="0" entity="ent2">
+          <Selector id="sv2#area11#page21#alt4#page23#seu27#su67" defaultPolicy="fill" booleanOperator="and">
+            <RelationshipRoleCondition id="sv2#area11#page21#alt4#page23#seu27#su67#rcond23" name="RoleConditionAlbumToBrano" predicate="in" implied="false" role="rel1#role2"/>
+          </Selector>
+          <Link id="sv2#area11#page21#alt4#page23#seu27#ln130" name="Flow123" to="sv2#area11#page21#alt4#page23#inu18" type="transport" validate="true">
+            <LinkParameter id="sv2#area11#page21#alt4#page23#seu27#ln130#par240" name="oid_KeyCondition67 [oid]" source="ent2#att4Array" target="sv2#area11#page21#alt4#page23#inu18#su66#kcond43.ent2#att4"/>
+          </Link>
+        </SelectorUnit>
+        <EntryUnit id="sv2#area11#page21#alt4#page23#enu15" name="Song Form" linkOrder="sv2#area11#page21#alt4#page23#enu15#ln132 sv2#area11#page21#alt4#page23#enu15#ln131" gr:x="215" gr:y="45" fieldOrder="sv2#area11#page21#alt4#page23#enu15#fld33 sv2#area11#page21#alt4#page23#enu15#fld32">
+          <Field id="sv2#area11#page21#alt4#page23#enu15#fld32" name="durata" type="decimal" preloaded="true" modifiable="true"/>
+          <Field id="sv2#area11#page21#alt4#page23#enu15#fld33" name="titolo" type="string" preloaded="true" modifiable="true"/>
+          <Field id="sv2#area11#page21#alt4#page23#enu15#fld34" name="id" type="integer" modifiable="false" hidden="true" preloaded="true"/>
+          <Link id="sv2#area11#page21#alt4#page23#enu15#ln131" name="Cancel" to="sv2#area11#page21#alt4#page23" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-1,-132,104,-172;-112,-132,-7,-172"/>
+          <Link id="sv2#area11#page21#alt4#page23#enu15#ln132" name="OK" to="sv2#area11#miu23" type="normal" validate="true">
+            <LinkParameter id="sv2#area11#page21#alt4#page23#enu15#ln132#par259" name="durata_durata" source="sv2#area11#page21#alt4#page23#enu15#fld32" target="sv2#area11#miu23.mov2#opm17#icu11#icp25"/>
+            <LinkParameter id="sv2#area11#page21#alt4#page23#enu15#ln132#par260" name="id_id" source="sv2#area11#page21#alt4#page23#enu15#fld34" target="sv2#area11#miu23.mov2#opm17#icu11#icp24"/>
+            <LinkParameter id="sv2#area11#page21#alt4#page23#enu15#ln132#par261" name="titolo_titolo" source="sv2#area11#page21#alt4#page23#enu15#fld33" target="sv2#area11#miu23.mov2#opm17#icu11#icp23"/>
+          </Link>
+        </EntryUnit>
+      </ContentUnits>
+    </Page>
+  </Alternative>
+</Page>

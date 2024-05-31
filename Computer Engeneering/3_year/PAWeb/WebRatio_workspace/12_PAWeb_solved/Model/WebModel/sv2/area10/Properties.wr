@@ -1,0 +1,16 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2#area10" name="Albums" defaultPage="sv2#area10#page20" landmark="false" gr:x="415" gr:y="670">
+  <OperationUnits>
+    <ModuleInstanceUnit id="sv2#area10#miu20" gr:x="465" gr:y="40" action="true" moduleId="mov2#opm16">
+      <OKLink id="sv2#area10#miu20#oln68" name="OKFlow32" to="sv2#area10#page20" automaticCoupling="true" gr:bendpoints="-9,66,341,2"/>
+      <KOLink id="sv2#area10#miu20#kln28" name="KOFlow28" to="sv2#page9#mssu5">
+        <LinkParameter id="sv2#area10#miu20#kln28#par245" name="Error message_Shown Messages" source="mov2#opm16#kocu9#ocp11" target="sv2#page9#mssu5.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv2#area10#miu21" gr:x="480" gr:y="310" action="true" moduleId="mov2#opm15">
+      <OKLink id="sv2#area10#miu21#oln69" name="OKFlow40" to="sv2#area10#page20" automaticCoupling="true"/>
+      <KOLink id="sv2#area10#miu21#kln29" name="KOFlow29" to="sv2#page9#mssu5">
+        <LinkParameter id="sv2#area10#miu21#kln29#par246" name="Error message_Shown Messages" source="mov2#opm15#kocu8#ocp10" target="sv2#page9#mssu5.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

@@ -1,0 +1,64 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="90" id="sv1#area2#page1" name="Add to Cart">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="85" id="sv1#area2#page1#dau1" name="Product Details" entity="ent4" displayAttributes="rel3#role5.ent1#att2 rel4#role7.ent5#att13 ent4#att12">
+      <Selector id="sv1#area2#page1#dau1#su1" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area2#page1#dau1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area2#page1#dau1#ln22" name="Flow22" to="sv1#area2#miu4" type="transport" validate="true">
+        <LinkParameter id="sv1#area2#page1#dau1#ln22#par44" name="oid_id_supporto" source="data.ent4#att10" target="sv1#area2#miu4.mov1#opm4#icu4#icp6"/>
+        <LinkParameter id="sv1#area2#page1#dau1#ln22#par45" name="prezzo_prezzo_unitario" source="data.ent4#att12" target="sv1#area2#miu4.mov1#opm4#icu4#icp7"/>
+        <LinkParameter id="sv1#area2#page1#dau1#ln22#par46" name="SupportoToTipoSupporto.nome_tipo_supporto" source="data.rel4#role7$ent5#att13" target="sv1#area2#miu4.mov1#opm4#icu4#icp9"/>
+        <LinkParameter id="sv1#area2#page1#dau1#ln22#par47" name="SupportoToAlbum.titolo_titolo_album" source="data.rel3#role5$ent1#att2" target="sv1#area2#miu4.mov1#opm4#icu4#icp10"/>
+      </Link>
+    </DataUnit>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area2#page1#enu2" name="Quantity Form" linkOrder="sv1#area2#page1#enu2#ln21">
+      <Field id="sv1#area2#page1#enu2#fld2" name="quantity" type="integer" modifiable="true">
+        <Slot id="sv1#area2#page1#enu2#fld2#slot1" name="DefaultValue" label="true" output="true" value="1"/>
+      </Field>
+      <Link id="sv1#area2#page1#enu2#ln21" name="Add to cart" to="sv1#area2#miu4" type="normal" validate="true">
+        <LinkParameter id="sv1#area2#page1#enu2#ln21#par43" name="quantity_quantit&#224;" source="sv1#area2#page1#enu2#fld2" target="sv1#area2#miu4.mov1#opm4#icu4#icp8"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area2#page1#dau1">
+          <layout:Attribute attribute="rel3#role5.ent1#att2"/>
+          <layout:Attribute attribute="rel4#role7.ent5#att13"/>
+          <layout:Attribute attribute="ent4#att12"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area2#page1#enu2">
+          <layout:Field field="sv1#area2#page1#enu2#fld2"/>
+          <layout:Link link="sv1#area2#page1#enu2#ln21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,19 @@
+package it.unibo.paw.model;
+
+import java.io.Serializable;
+
+public class ProdottiOfferti implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	
+	private int codiceProdotto;
+	private String descrizione;
+	private String marca;
+	private Float prezzo;
+	
+	private int idSupermercato;
+}

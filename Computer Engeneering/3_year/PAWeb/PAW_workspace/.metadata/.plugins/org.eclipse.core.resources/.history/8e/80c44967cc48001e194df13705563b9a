@@ -1,0 +1,29 @@
+package it.unibo.paw.dao;
+
+import java.io.Serializable;
+import java.util.*;
+import java.util.Date;
+
+public class Squadra_PallacanestroDTO implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	
+	// ---------------------------
+	// Attributi del bean da scrivere
+	private int id;
+
+	private String nome;
+	private String torneo;
+	private String allenatore;
+	
+	private Set<GiocatoreDTO> giocatori;
+	
+	// --- constructor ----------
+	// Da generare
+	
+	
+	// --- getters and setters --------------
+	// Da generare
+
+}

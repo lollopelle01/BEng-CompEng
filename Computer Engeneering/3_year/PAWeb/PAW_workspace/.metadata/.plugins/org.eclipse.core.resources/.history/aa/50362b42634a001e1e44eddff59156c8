@@ -1,0 +1,9 @@
+package it.unibo.paw.model;
+
+public class Supermercato {
+	private int codiceSuper;
+	private String nome;
+	private int ratingGradimento;
+	
+	private Set<prodottiOfferti> prodottiOfferti;
+}

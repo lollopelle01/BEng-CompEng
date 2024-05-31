@@ -1,0 +1,84 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="185" gr:y="265" id="sv1#page1" name="Login">
+  <ContentUnits>
+    <GetUnit gr:x="0" gr:y="5" id="sv1#page1#gtu1" name="GetUsrCtx" contextParameters="UserCtxParam">
+      <Link id="sv1#page1#gtu1#ln1" name="Flow1" to="sv1#page1#dau1" type="transport" validate="true">
+        <LinkParameter id="sv1#page1#gtu1#ln1#par1" name="UserCtxParam.oid_KeyCondition1 [oid]" source="sv1#page1#gtu1.UserCtxParam" target="sv1#page1#dau1#su1#kcond1.userOID"/>
+      </Link>
+    </GetUnit>
+    <DataUnit gr:x="180" gr:y="0" id="sv1#page1#dau1" name="UserDetails" entity="User" displayAttributes="userName password">
+      <Selector id="sv1#page1#dau1#su1" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#page1#dau1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#page1#dau1#ln2" name="Flow2" to="sv1#miu1" type="transport" validate="true">
+        <LinkParameter id="sv1#page1#dau1#ln2#par5" name="password_Password" source="data.password" target="sv1#miu1.mov2#opm1#icu1#icp2"/>
+        <LinkParameter id="sv1#page1#dau1#ln2#par6" name="userName_Username" source="data.userName" target="sv1#miu1.mov2#opm1#icu1#icp1"/>
+      </Link>
+    </DataUnit>
+    <IndexUnit gr:x="20" gr:y="135" id="sv1#page1#inu1" name="PersonaList" entity="ent1" displayAttributes="ent1#att2 ent1#att3"/>
+    <EntryUnit gr:x="185" gr:y="135" id="sv1#page1#enu1" name="FormLogin" linkOrder="sv1#page1#enu1#ln3">
+      <Field id="sv1#page1#enu1#fld1" name="Username" type="string" modifiable="true"/>
+      <Field id="sv1#page1#enu1#fld2" name="Password" type="password" modifiable="true"/>
+      <Link id="sv1#page1#enu1#ln3" name="Flow3" to="sv1#miu2" type="normal" validate="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#dau1">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#inu1">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu1">
+          <layout:Field field="sv1#page1#enu1#fld1"/>
+          <layout:Field field="sv1#page1#enu1#fld2"/>
+          <layout:Link link="sv1#page1#enu1#ln3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

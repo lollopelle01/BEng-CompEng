@@ -1,0 +1,62 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="830" gr:y="0" id="sv1#area2#page8" name="User Orders">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area2#page8#inu2" name="Order List" entity="ent11" linkOrder="sv1#area2#page8#inu2#ln31" displayAttributes="rel10#role15.ent9#att26">
+      <Selector id="sv1#area2#page8#inu2#su16" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area2#page8#inu2#su16#rcond4" name="RoleConditionUserToTransazioneUtente" predicate="in" implied="false" role="rel11#role18"/>
+      </Selector>
+      <Link id="sv1#area2#page8#inu2#ln31" name="See details" to="sv1#area2#page8#inu3" type="normal" validate="true">
+        <LinkParameter id="sv1#area2#page8#inu2#ln31#par67" name="id_RoleConditionOrdineToLineaOrdine [id]" source="data[].ent11#att27" target="sv1#area2#page8#inu3#su17#rcond9.ent9#att25"/>
+      </Link>
+      <SortAttribute attribute="rel10#role15.ent9#att26" order="ascending"/>
+    </IndexUnit>
+    <IndexUnit gr:x="230" gr:y="0" id="sv1#area2#page8#inu3" name="OrderLine List" entity="ent8" displayAttributes="rel7#role13.rel3#role5.ent1#att2 rel7#role13.rel4#role7.ent5#att13 ent8#att24 rel7#role13.ent4#att12">
+      <Selector id="sv1#area2#page8#inu3#su17" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area2#page8#inu3#su17#rcond9" name="RoleConditionOrdineToLineaOrdine" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+      <SortAttribute attribute="rel7#role13.rel3#role5.ent1#att2" order="ascending"/>
+      <SortAttribute attribute="rel7#role13.rel4#role7.ent5#att13" order="ascending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area2#page8#inu2">
+          <layout:Link link="sv1#area2#page8#inu2#ln31"/>
+          <layout:Attribute attribute="rel10#role15.ent9#att26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6" rowspan="2">
+        <layout:Unit unitId="sv1#area2#page8#inu3">
+          <layout:Attribute attribute="rel7#role13.rel3#role5.ent1#att2"/>
+          <layout:Attribute attribute="rel7#role13.rel4#role7.ent5#att13"/>
+          <layout:Attribute attribute="ent8#att24"/>
+          <layout:Attribute attribute="rel7#role13.ent4#att12"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

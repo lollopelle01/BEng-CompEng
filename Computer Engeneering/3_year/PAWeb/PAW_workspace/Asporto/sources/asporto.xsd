@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- SCALETTA SCRITTURA SCHEMA -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="piatto">
+		<xs:sequence>
+			<xs:element name="nome" type="xs:string"/>
+			<xs:element name="prezzo" type="xs:float"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="piatti">
+		<xs:sequence>
+			<xs:element name="piatto" type="piatto" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="telefono">
+		<xs:sequence>
+			<xs:element name="prefisso" type="xs:string"/>
+			<xs:element name="numero" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- Definzione indirizzo completo -->
+	<xs:complexType name="indirizzo">
+		<xs:sequence>
+			<xs:element name="via" type="xs:string" minOccurs="1"/>
+			<xs:element name="numCivico" type="xs:integer" minOccurs="1"/>
+			<xs:element name="CAP" type="xs:integer" minOccurs="1"/>
+			<xs:element name="telefono" type="telefono" minOccurs="1"/>
+			<xs:element name="link" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definzione ristorante -->
+    <xs:complexType name="ristorante">
+		<xs:sequence>
+			<xs:element name="nome" type="xs:string"/>
+			<xs:element name="localita" type="xs:string"/>
+			<xs:element name="indirizzo" type="indirizzo"/>
+			
+			<!-- 5 CATEGORIE -->
+			<xs:element name="antipasti" type="piatti"/>
+			<xs:element name="primi" type="piatti"/>
+			<xs:element name="secondi" type="piatti"/>
+			<xs:element name="contorni" type="piatti"/>
+			<xs:element name="dessert" type="piatti"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definizione per lista dei ristoranti -->
+	<xs:complexType name="ristoranti">
+		<xs:sequence>
+			<xs:element name="ristorante" type="ristorante" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Istanza finale -->
+	<xs:element name="migliori_ristoranti" type="ristoranti"/>
+</xs:schema>
