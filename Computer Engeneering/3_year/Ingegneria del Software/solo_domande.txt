@@ -1,0 +1,68 @@
+== ARGOMENTI =================================
+
+1. Design cattivo
+
+-- Principi ------------------------------------------
+2. Single Responsability Principle (SRP) 
+3. Dependecy Inversion Principle (DIP)
+4. Interface Segregation Principle (ISP)
+5. Open/Closed Principle (OCP)
+6. Liskov Substitution Principle (LSP)
+7. Reuse/Release Equivalency Principle (REP)
+8. Common Closure Principle (CCP)
+9. Common Reuse Principle (CRP)
+10. Acyclic Dependecies Principle (ADP)
+11. Stable Dependecies Principle (SDP)
+12. Stable Abstractions Principle (SAP)
+
+13. Cosa sono e come sono classificati i design pattern
+
+-- Pattern ---------------------------------------------
+14. Pattern Singleton (di creazione)
+15. Pattern Observer (comportamentale)
+16. Pattern MVC e MVP (architetturale)
+17. Pattern Flyweight (strutturale)
+18. Pattern Strategy (comportamentale)
+19. Pattern Adapter (strutturale)
+20. Pattern Decorator (strutturale)
+21. Pattern Composite (strutturale)
+22. Pattern State (comportamentale)
+23. Pattern Visitor (comportamentale)
+
+-- Sistemi di Controllo delle Versioni e Sviluppo -------
+24. Modello Lock-Modify-Unlock
+25. Modello Copy-Modify-Merge
+26. Modello a cascata
+27. Modelli evolutivi XP
+28. Modello incrementale-iterativo
+29. Rational Unified Process
+
+30. Cosa sono i requisiti? Tipologie?
+
+31. Sistemi critici ed esempi di attacchi
+
+32. Ciclo di vita della valutazione del rischio
+
+33. Categorie requisiti di sicurezza
+
+34. Linee guida di progettazione della sicurezza
+
+35. Linee guida progettazione per il deployment
+
+36. Testare la sicurezza, black box – white box
+
+37. Capacità di sopravvivenza del sistema
+
+38. Polimorfismo secondo Cardelli-Wegner
+
+-- Pacchetto .NET --------------------------------------
+39. Compilazione ed esecuzione del codice in .NET
+40. Garbage collector in C#
+41. Passaggio dei parametri in C#
+42. Delegato in C#
+43. Evento in C#
+44. Metaprogrammazione e riflessione in C#
+
+45. Ciclo di vita oggetto il linguaggio OO
+
+46. Interfaccia vs Classe astratta

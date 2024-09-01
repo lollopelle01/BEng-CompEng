@@ -1,0 +1,5 @@
+# Lancio suricata
+suricata -c /etc/suricata/suricata.yaml -r esame_27_giugno.pcapng
+
+# Catturo output ed estraggo le flag
+OUT=$(cat eve.json | jq 'select(.event_type="alert")' | egrep '(SEC{|}SEC)'  | sed 's/\\n//g' | cut -d'"' -f4 | sort | uniq) ; echo "La flag è $(echo $OUT | grep PRIMA)$(echo $OUT | grep SECONDA)"

