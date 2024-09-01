@@ -1,0 +1,46 @@
+
+{//P0
+	pid1 = 0, pid2 = 0, pid3 = 0, n = 1;
+	{//P1
+		pid1* = 0, pid2 = 0, pid3 = 0, n = 1;
+		{//P4
+			pid1* = 0, pid2 = 0, pid3* = 0, n = 1;
+			stampa: P"pid_P4": PAPERINO
+			0;
+		}
+		pid1* = 0, pid2 = 0, pid3 > 0, n = 1;
+		stampa: P"pid_P1": PAPERINO
+		0;
+	}
+	pid1 > 0, pid2 = 0, pid3 = 0, n = 1;
+	{//P2
+		pid1 > 0, pid2* = 0, pid3 = 0, n = 1;
+		{//P5
+			pid1 > 0, pid2* = 0, pid3* = 0, n = 1;
+			stampa: P"pid_P5": PAPERINO
+			0;
+		}
+		pid1 > 0, pid2* = 0, pid3 > 0, n = 1;
+		stampa: P"pid_P2": PAPERINO
+		0;
+	}
+	pid1 > 0, pid2 > 0, pid3 = 0, n = 1;
+	{//P3
+		pid1 > 0, pid2 > 0, pid3* = 0, n = 1;
+		stampa: P"pid_P3": PAPERINO
+		0;
+	}
+	pid1 > 0, pid2 > 0, pid3 > 0, n = 1;
+	n = 0;
+	stampa: P"pid_P0": PIPPO, 0
+	stampa: P"pid_P0": PLUTO
+}
+
+OUTPUT:
+P"pid_P0": PIPPO, 0
+P"pid_P0": PLUTO
+P"pid_P3": PAPERINO
+P"pid_P2": PAPERINO
+P"pid_P1": PAPERINO
+P"pid_P4": PAPERINO
+P"pid_P5": PAPERINO

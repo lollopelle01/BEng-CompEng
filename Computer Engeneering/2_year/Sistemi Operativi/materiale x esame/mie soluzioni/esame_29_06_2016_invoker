@@ -1,0 +1,21 @@
+  #!/bin/bash
+
+if [ $# -ne 4 ]; then echo Sintassi!; exit; fi
+
+if [ ! -d $1 ]; then echo "$4 non è un direttorio"; exit; fi
+if [ ! -d $4 ]; then echo "$4 non è un direttorio"; exit; fi
+
+file_output="$4"/output;
+
+if [[ $3 = *[!0-9]* ]]; then echo "$3 non è un intero positivo"; exit; fi
+
+if [[ $1 = /* ]]
+    then dir_name=`dirname $0`; fi
+if [[ $1 = */* ]]
+    then dir_name=`pwd`/`dirname $0`; fi
+    
+echo "" > $file_output #creo il file di output
+
+recursive_command="$dir_name"/"esame_29_06_2016"; #definisco comando ricorsivo generico
+
+"$recursive_command" "$1" "$2" "$3" "$4"  #innesco la ricorsione
