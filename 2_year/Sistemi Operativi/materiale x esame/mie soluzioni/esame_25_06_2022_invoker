@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [[ $# -ne 4 ]]; then echo Sintassi!; exit; fi
+
+if [[ ! -d $1 ]]; then echo $1 deve essere una cartella; exit; fi
+
+ext=$3
+if [[ $ext != .* ]] || [[ ${#ext} != 4 ]]; then echo Formato $stringa errato; exit; fi
+
+if [[ ! -f $4 ]]; then echo $4 deve essere un file esistente!; exit; fi
+
+
+if [[ $0 = /* ]] #path assoluto
+    then comando_ricorsivo=`dirname $0`/esame_25_06_2022
+elif [[ $0 = */* ]] #path relativo
+    then comando_ricorsivo=`pwd`/`dirname $0`/esame_25_06_2022
+elif [[ $0 = * ]] 
+    then comando_ricorsivo=esame_25_06_2022
+fi
+echo "comando = $comando_ricorsivo"
+echo "Effettuo ricorsione su $1"
+"$comando_ricorsivo" "$1" "$2" "$3" "$4"
+    

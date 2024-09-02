@@ -1,0 +1,26 @@
+
+{//P0
+	PID1>0;
+	X=0;
+	PID2=0;
+	stampa: P"pid_padre": GRECIA 0\n
+	0
+	
+}
+
+{//P1	
+	PID1=0;
+	X=1;
+	PID1=1;
+	
+	{//P2
+		PID2=0;
+		stampa: P"pid_figlio_P2": GRECIA 1\n
+	}
+	
+	PID2>0;
+	stampa: P"pid_figlio_P1": GRECIA 1\n
+	
+}
+
+//OUTPUT

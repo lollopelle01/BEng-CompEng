@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cd "$1"
+
+for file in *
+do
+    if [[ -f "$file" ]]
+        then 
+            comando_conta=`grep -o $2 "$file" | wc -l`;
+            if [[ $comando_conta -gt $3 ]] && [[ "$file" = "$1"* ]]; then cp "$file" $4; fi
+            echo "$file  $comando_conta" >> "$4/output"
+    elif [[ -d $file ]]
+        then
+            echo "Ricorsione nella directory `pwd`/$file"
+            "$0" "$file" "$2" "$3" "$4"
+    fi
+done
