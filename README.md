@@ -28,7 +28,7 @@ Some courses couldn't be uploaded because of the excessive load and some aren't 
 ## Projects
 
 * [Risiko](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Ingegneria%20del%20Software/risiko)
-* [CAT](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Controlli%20Automatici/Progetto)
+* [Rotore](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Controlli%20Automatici/Progetto)
 
 ## Thesis
 
