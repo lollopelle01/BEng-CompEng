@@ -2,8 +2,6 @@
 
 My repository with the material used during my barchelor and my master.
 
-**The computer engeneering part is incomplete.**
-
 ## Table of contents
 
 ### Artificial Intelligence
