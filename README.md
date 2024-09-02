@@ -6,13 +6,13 @@ My repository with the material used during my barchelor and my master.
 
 ## Table of contents
 
-### Artificial Intelligence (ENG)
+### Artificial Intelligence
 
 1.1. [Machine Learning](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/ML)
 
 1.2. [Statistical and Mathematical Methods for AI](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/SMMAI)
 
-### Computer Engeneering (ITA)
+### Computer Engeneering
 
 #### Courses
 
@@ -21,17 +21,26 @@ My repository with the material used during my barchelor and my master.
 - [Reti Logiche](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/1_year/Reti%20Logiche)
 - [Calcolatori Elettronici](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Calcolatori Elettronici)
 - [Economia Aziendale](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Economia%20Aziendale)
-- [Elettrotecnica](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/2_year/Elettrotecnica)
-- [Matematica applicata](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/2_year/Matematica%20applicata)
-- [Sistemi Operativi](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/2_year/Sistemi%20Operativi)
-- [Sistemi Informativi](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/2_year/Sistemi%20informativi)
-- [Tecnologie Web]()
-- [Reti di calcolatori]()
-- [Controlli automatici]()
-- [Amministraziobe di Sistemi]()
-- [Sicurezza Informatica]()
-- [Progettazione di Applicazioni Web]()
+- [Fisica](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Fisica)
+- [Elettrotecnica](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Elettrotecnica)
+- [Matematica applicata](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Matematica%20applicata)
+- [Sistemi Operativi](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Sistemi%20Operativi)
+- [Sistemi Informativi](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Sistemi%20informativi)
+- [Telecomunicazioni](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Telecomunicazioni)
+- [Tecnologie Web](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Tecnologie%20Web)
+- [Reti di calcolatori](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Reti%20di%20Calcolatori)
+- [Controlli automatici](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Controlli%20Automatici)
+- [Amministrazione di Sistemi](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Amministrazione%20di%20Sistemi)
+- [Sicurezza Informatica](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Sicurezza%20Informatica)
+- [Progettazione di Applicazioni Web](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/PAWeb)
+- [Elettronica](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Elettronica)
+- [Ingegneria del Software](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Ingegneria%20del%20Software)
 
 #### Thesis
 
 [WasmEdge](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/TESI)
+
+#### Projects
+
+* [Risiko](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Ingegneria%20del%20Software/risiko)
+* [CAT](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Controlli%20Automatici/Progetto)
