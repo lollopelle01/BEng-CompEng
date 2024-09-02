@@ -8,9 +8,15 @@ My repository with the material used during my barchelor and my master.
 
 ### Artificial Intelligence
 
+#### Courses
+
 1.1. [Machine Learning](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/ML)
 
 1.2. [Statistical and Mathematical Methods for AI](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/SMMAI)
+
+#### Thesis
+
+#### Projects
 
 ### Computer Engeneering
 
@@ -19,7 +25,7 @@ My repository with the material used during my barchelor and my master.
 - [Fondamenti di Informatica 1](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/1_year/Info_1)
 - [Fondamenti di Informatica 2](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/1_year/Info_2)
 - [Reti Logiche](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/1_year/Reti%20Logiche)
-- [Calcolatori Elettronici](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Calcolatori Elettronici)
+- [Calcolatori Elettronici](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Calcolatori%20Elettronici)
 - [Economia Aziendale](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Economia%20Aziendale)
 - [Fisica](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Fisica)
 - [Elettrotecnica](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/2_year/Elettrotecnica)
