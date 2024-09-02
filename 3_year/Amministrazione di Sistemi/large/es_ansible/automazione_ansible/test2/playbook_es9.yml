@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+  
+      - name: Copy script
+        ansible.builtin.copy:
+          src: /home/LABS/s0000971455/large/es_ansible/automazione_ansible/test2/home_finta/copy.sh
+          dest: /home/vagrant/copy.sh
+          mode: '0755'
+
+      - name: Copy config file 
+        ansible.builtin.copy:
+          src: /home/LABS/s0000971455/large/es_ansible/automazione_ansible/test2/home_finta/save.list
+          dest: /home/vagrant/save.list
+          mode: '0644'
+

@@ -1,0 +1,35 @@
+---
+- name: Configurazione /etc/apt/apt.conf.d/proxy.conf
+  ansible.builtin.lineinfile:
+    path: '/etc/apt/apt.conf.d/proxy.conf'
+    create: true
+    owner: root
+    group: root
+    mode: '0644'
+    state: present
+    line: "{{ item }}"
+  loop:
+    -  'Acquire::http::Proxy "http://192.168.122.249:8080/";'
+    -  'Acquire::https::Proxy "http://192.168.122.249:8080/";'
+
+
+- name: Configurazione ~/.bashrc
+  ansible.builtin.lineinfile:
+    path: '/home/vagrant/.bashrc'
+    state: present
+    line: "{{ item }}"
+  loop:
+      -  'export HTTP_PROXY="http://192.168.122.249:8080"'
+      -  'export HTTPS_PROXY="http://192.168.122.249:8080"'
+
+
+- name: Update all packages
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Change allow-hotplug with auto
+  ansible.builtin.replace:
+    path: '/etc/network/interfaces'
+    regexp: '^allow\-hotplug'
+    replace: 'auto'
+    validate: /usr/sbin/ifup --no-act -i %s eth0

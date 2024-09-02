@@ -1,0 +1,48 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  # Configurazione proxy
+  - name: Configurazione /etc/apt/apt.conf.d/proxy.conf
+    ansible.builtin.copy:
+      src: proxy.conf
+      dest: /etc/apt/apt.conf.d/proxy.conf
+
+  - name: Configurazione ~/.bashrc -- 1
+    ansible.builtin.lineinfile:
+      path: '/home/vagrant/.bashrc'
+      state: present
+      line: 'export HTTP_PROXY="http://192.168.122.249:8080"'
+
+  - name: Configurazione ~/.bashrc -- 2
+    ansible.builtin.lineinfile:
+      path: '/home/vagrant/.bashrc'
+      state: present
+      line: 'export HTTPS_PROXY="http://192.168.122.249:8080"'
+  
+  - name: Aggiorniamo apt
+    ansible.builtin.apt:
+      update_cache: yes
+
+  # Task esercizi
+  - name: Install dnsmasq
+    ansible.builtin.package:
+      name: dnsmasq
+      state: present
+  
+  - name: Copy dnsmasq.conf
+    ansible.builtin.copy:
+      src: dnsmasq.conf
+      dest: /etc/dnsmasq.conf
+    notify: Restart dnsmasq
+
+  handlers:
+    - name: Restart dnsmasq
+      ansible.builtin.service:
+        name: dnsmasq
+        state: restarted
+    
+    - name: Reload sysctl
+      ansible.builtin.command: 
+        cmd: /usr/sbin/sysctl -p

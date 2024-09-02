@@ -1,0 +1,30 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - common
+
+- hosts: Client
+  become: true
+  roles:
+    - client
+    - snmp-server
+
+- hosts: Router1
+  become: true
+  roles:
+    - router1
+    - rsyslog_Server
+    - Chron_job_Server1
+    - snmp-client
+
+- hosts: Router2
+  become: true
+  roles:
+    - router2
+    - rsyslog_Router
+
+- hosts: Server
+  become: true
+  roles:
+    - server

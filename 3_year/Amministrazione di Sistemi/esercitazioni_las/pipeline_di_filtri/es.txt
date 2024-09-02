@@ -1,0 +1,17 @@
+Contare quanti file esistono con una certa estensione, definita come la stringa posta dopo l'ultimo carattere "punto" presente nel nome del file, per tutte le estensioni trovate nei file presenti nel direttorio corrente e nei sottodirettori. Limitare l'output alle sole 5 estensioni più numerosec. 
+
+Per controllare correttamente il codice inseriamo come in esempio i file: 
+./es.txt
+./my.example.c
+./src/hw.c
+./src/hw.h
+
+Poi effettuiamo il vero controllo lanciandolo nella directory '/'
+
+Comando:
+sudo ls -R / | egrep '^[^\.].*\..+$' | rev | cut -d. -f1 -s | rev | sort | uniq -c | sort -rn | head -5
+
+egrep '^[^\.].*\..+$'	--> seleziono solo parole che non iniziano con il punto, che poi hanno 0 o più caratteri( '.' compreso, qualsiasi carattered), un punto e poi almeno un carattere
+cut -d. -f1 -s		--> estraggo il contenuto prima del '.' e se non esiste il punto non lo consideriamo ( -s )
+
+	

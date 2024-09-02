@@ -1,0 +1,21 @@
+dn: ou=People,dc=labammsis
+objectClass: organizationalunit
+ou: People
+description: system users
+
+dn: uid=pre,ou=People,dc=labammsis
+objectClass: top
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+givenName: pre
+cn: pre
+sn: pre
+mail: pre@unibo.it
+uid: pre
+uidNumber: 10001
+gidNumber: 10000
+homeDirectory: /home/pre
+loginShell: /bin/helper.sh
+gecos: pre
+userPassword: {crypt}x

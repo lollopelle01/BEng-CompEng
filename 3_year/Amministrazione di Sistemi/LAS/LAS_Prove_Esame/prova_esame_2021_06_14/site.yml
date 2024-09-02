@@ -1,0 +1,47 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - common
+
+- hosts: Client
+  become: true
+  roles:
+    - client
+
+- hosts: Router
+  become: true
+  roles:
+    - router
+    - destinatario
+    - destinatario_root
+    - rsyslog_Router
+    - snmp-server
+
+- hosts: Server1
+  become: true
+  # vars:
+  #   ansible_become_timeout: 60
+  roles:
+    - server
+    - mittente
+    - mittente_root
+    - snmp-client
+    # - LDAP_setup_client # --> configurazione manuale se necessario
+    - LDAP_setup_server
+    - rsyslog_Server
+    - Chron_job_Server1
+
+- hosts: Server2
+  become: true
+  # vars:
+  #   ansible_become_timeout: 60
+  roles:
+    - server
+    - mittente
+    - mittente_root
+    - snmp-client
+    # - LDAP_setup_client #--> configurazione manuale se necessaria
+    - LDAP_setup_server
+    - rsyslog_Server
+    - Chron_job_Server2

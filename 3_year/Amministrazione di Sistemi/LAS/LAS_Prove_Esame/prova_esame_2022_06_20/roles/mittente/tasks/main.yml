@@ -1,0 +1,10 @@
+- name: "Copia chiave privata"
+  become: false
+  ansible.builtin.copy:
+    src: id_rsa_ansible
+    dest: /home/vagrant/.ssh/id_rsa_ansible
+    mode: '0600'
+    owner: vagrant
+    group: vagrant
+  notify: Restart SSH
+
