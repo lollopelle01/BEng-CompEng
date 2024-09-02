@@ -1,0 +1,79 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    background-color: black;
+}
+
+header {
+    background-color: #222222;
+    color: whitesmoke;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 20px;
+    height: 100px;
+}
+
+main {
+    padding: 10px;
+    background-color: black;
+    position: absolute;
+    top: 100px;
+    bottom: 50px;
+    right: 0;
+    left: 0;
+    overflow-y: scroll;
+}
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(126, 147, 155, 0.336); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 25%;
+    padding-left: 50%;
+    
+}
+
+.fname {
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    width: 400px;
+}
+
+.start-container {
+    background-color: #222222;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    width: fit-content;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+textarea {
+    resize: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border-color: whitesmoke;
+    border-style: solid;
+    border-width: 1px;
+    color: whitesmoke;
+}

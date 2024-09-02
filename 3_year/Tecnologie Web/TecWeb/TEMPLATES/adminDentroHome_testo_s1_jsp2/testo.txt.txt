@@ -1,0 +1,18 @@
+Si realizzi una applicazione Web per l’elaborazione casuale server-side di un testo, basandosi
+principalmente sulle tecnologie Java Servlet e JSP.
+L’applicazione Web deve permettere a utenti non autenticati di inserire un testo di non più di
+5000 caratteri, esclusivamente alfabetici. All’inserimento del carattere speciale “€” o
+all’esaurimento dello spazio a disposizione di 5000 caratteri, il testo deve essere inviato
+automaticamente, senza alcun intervento esplicito dell’utente, al servitore per una
+elaborazione in pipeline del seguente tipo: una servlet S1 dovrà scegliere casualmente un
+carattere alfabetico ed eliminarne tutte le occorrenze dal testo; il risultato dell’elaborazione di
+S1 dovrà essere inviato a una JSP J2 che dovrà avere il medesimo comportamento e in più
+calcolare la lunghezza totale del testo risultante. Il testo modificato più il conteggio dovranno
+essere restituiti al cliente in formato JSON.
+In ogni momento di esecuzione dell’applicazione, previa autenticazione, un amministratore
+deve avere la possibilità di visualizzare:
+- La lista delle sessioni che sono state attive negli ultimi 30 giorni;
+- La lista delle sessioni correntemente attive;
+- Il numero di richieste di elaborazione testo sottomesse in ogni sessione.
+Inoltre, deve essere possibile per l’amministratore forzare la terminazione, il più possibile
+immediata, di una qualunque richiesta di elaborazione corrente.

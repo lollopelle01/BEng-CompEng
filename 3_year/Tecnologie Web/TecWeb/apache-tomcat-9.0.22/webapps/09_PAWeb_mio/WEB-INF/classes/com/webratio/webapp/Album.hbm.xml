@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping schema="A0971455" auto-import="true" default-cascade="none" default-access="property" default-lazy="true">
+  <class schema="A0971455" name="com.webratio.webapp.Album" table="`ALBUM`" dynamic-update="true" dynamic-insert="true" mutable="true" polymorphism="implicit" select-before-update="false" optimistic-lock="version">
+    <id name="aid" column="`ID`" type="java.lang.Integer">
+      <generator class="com.webratio.rtx.hibernate.MaxPlusOneIncrementGenerator"/>
+    </id>
+    <property name="titolo" column="`TITOLO`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="anno" column="`ANNO`" type="java.lang.Integer" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <set name="albumToBrano" inverse="true" mutable="true" sort="unsorted" optimistic-lock="true" embed-xml="true">
+      <key on-delete="noaction">
+        <column name="`ALBUM_ID`"/>
+      </key>
+      <one-to-many class="com.webratio.webapp.Brano" not-found="exception" embed-xml="true"/>
+    </set>
+  </class>
+  <!-- mapping for relationship 'AlbumToBrano[role4]' -->
+  <class schema="A0971455" entity-name="com.webratio.webapp.Rel_Album_to_albumToBrano" table="`BRANO`" dynamic-update="true" dynamic-insert="true" mutable="true" polymorphism="implicit" select-before-update="false" optimistic-lock="version">
+    <id name="target_bid" column="`ID`" type="java.lang.Integer"/>
+    <property name="source_aid" column="`ALBUM_ID`" type="java.lang.Integer" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+  </class>
+</hibernate-mapping>

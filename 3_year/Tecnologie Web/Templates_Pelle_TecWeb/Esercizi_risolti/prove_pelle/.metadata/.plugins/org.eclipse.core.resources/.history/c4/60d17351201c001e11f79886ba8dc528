@@ -1,0 +1,75 @@
+package servlets;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
+
+public class Servlet extends HttpServlet{
+	private static final long serialVersionUID = -3403693893991634090L;
+	Random random;
+	Gson gson;
+    BufferedReader br;
+    List<HttpSession> sessioni;
+
+	@Override
+	public void init() throws ServletException {
+		this.random = new Random(System.currentTimeMillis());
+		this.gson = new Gson();
+		super.init();
+		sessioni = new ArrayList<HttpSession>();
+		
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+    }
+
+    @Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+    	if(req.getSession().isNew()) {
+    		sessioni.add(req.getSession());
+    	}
+    	
+    	if(sessioni.size()>= 3) {
+    		for(HttpSession s : sessioni) {s.setMaxInactiveInterval(300);}
+    	}
+    	
+    	System.out.println(sessioni.size());
+    	
+    	        
+        // Faccio long-polling
+        try {
+			wait(120);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+
+        // Invio notizie
+        String content=null;
+        try {
+            content = new String(Files.readAllBytes(Path.of("/Users/pelle/Desktop/TecWeb/apache-tomcat-9.0.22/webapps/Corriere/database.txt")));
+            
+            System.out.println("Contenuto del file:");
+            System.out.println(content);
+        } catch (IOException e) {
+            System.out.println("Si è verificato un errore durante la lettura del file: " + e.getMessage());
+        }
+        resp.getWriter().write(gson.toJson(content));
+        resp.getWriter().close();
+
+    }
+}

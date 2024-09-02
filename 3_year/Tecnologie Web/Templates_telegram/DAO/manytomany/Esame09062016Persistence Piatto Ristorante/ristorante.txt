@@ -1,0 +1,7 @@
+Lista primi dei ristoranti di Bologna:
+ristorante1
+  piatto1
+ristorante2
+  piatto1
+Numero ristoranti tra 4 e 5 nel rating che offrono seppie con piselli tra i secondi: 
+1

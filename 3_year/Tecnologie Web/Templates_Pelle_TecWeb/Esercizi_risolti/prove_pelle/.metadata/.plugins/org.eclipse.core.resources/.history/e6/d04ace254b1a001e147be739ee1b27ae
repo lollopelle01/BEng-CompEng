@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Start</title>
+		<script src="./scripts/start.js" defer></script>
+	</head>
+	<body>
+		
+		<p>Inserisci tra 1000 e 2000 caratteri:</p>
+		<input id="text_area" type="text" width="400px" height="200px"/>
+	
+	</body>
+</html>

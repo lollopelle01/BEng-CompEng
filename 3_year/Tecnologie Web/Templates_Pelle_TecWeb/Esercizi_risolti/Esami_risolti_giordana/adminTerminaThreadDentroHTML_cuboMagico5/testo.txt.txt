@@ -1,0 +1,21 @@
+Si realizzi una applicazione Web per determinare se una matrice 5 * 5 rappresenta un
+quadrato magico. Si definisce “quadrato magico” una qualunque matrice quadrata di numeri
+naturali in cui sono rispettate le seguenti proprietà: non ci possono essere elementi ripetuti; la
+somma di ogni riga è uguale alla somma di ogni colonna ed è uguale alla somma di ciascuna
+delle due diagonali. L’applicazione Web deve essere basata principalmente su tecnologie
+Javascript, AJAX e servlet.
+In particolare, l’applicazione Web deve permettere a utenti non autenticati di inserire i 9
+elementi della matrice considerata, controllando che siano effettivamente numeri naturali e non
+siano ripetuti. Solo dopo avere terminato l’inserimento di tutti gli elementi validi, l’applicazione
+deve invocare automaticamente l’esecuzione server-side dell’operazione concorrente di
+determinazione del quadrato magico: in modo completamente concorrente, una servlet S1
+dovrà controllare che le somme di ogni riga siano uguali; una JSP J2 dovrà controllare che le
+somme di ogni colonna siano uguali; infine una servlet S3 dovrà controllare che le somme delle
+due diagonali siano uguali. Ogni componente server-side dovrà restituire in modo autonomo e
+in formato XML un valore “vero”/”falso” a seconda del risultato di tale controllo e, nel caso
+di “vero”, anche il risultato della somma.
+Solo dopo avere ricevuto tutti e tre i risultati, il cliente dovrà visualizzare il risultato
+complessivo, ovvero se gli elementi inseriti appartengono a un quadrato magico oppure no.
+Infine, si realizzi una estensione dell’applicazione descritta sopra che permetta a un
+amministratore di visualizzare il numero totale di richieste servite nel giorno corrente e di
+selezionare una qualsiasi richiesta di servizio in corso per poterla interrompere.

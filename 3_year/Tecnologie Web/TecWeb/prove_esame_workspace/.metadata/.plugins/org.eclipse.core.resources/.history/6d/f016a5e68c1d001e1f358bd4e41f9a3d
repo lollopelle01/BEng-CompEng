@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/jquery-1.12.3.min.js"></script>
+    <title>HOME</title>
+</head>
+<body>
+
+    <script>
+        function myFunction(){
+            var testo = $("#nome_articolo").val();
+            
+            if(testo[testo.length] == '%'){$("#myButton").click();}
+        }
+    </script>
+
+    <h1>ARTICOLO SCIENTIFICO</h1>
+
+    <div id="msgs"> <%= request.getSession().getAttribute("msg")%> </div>
+    
+    <form action="service" method="get" target="testo">
+        <p>Inserisci il nome dell'articolo</p><br/>
+        <input type="text" id="nome_articolo" name="nome_articolo" maxlength="64" onkeyup="myFunction()"/>
+        <button id="myButton" style="display: none;">
+    </form>
+
+    <br/>
+
+    <form action="service" method="post">
+        <p>Testo dell'articolo:</p><br/>
+        <textarea id="testo" name="testo"></textarea>  
+        <button id="permesso">Richiedi permesso di scrittura</button>
+        <% if((boolean)request.getSession().getAttribute("permesso")==true) {%>
+            <button id="invia_modifica"></button>
+        <%}%>
+    </form>
+
+
+</body>
+</html>

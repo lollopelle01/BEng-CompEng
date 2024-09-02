@@ -1,0 +1,3 @@
+Studenti che hanno partecipato a più di 2 gite in Agosto spendendo meno di € 150:
+Cancellazione di tutte le gite con destinazione “Roma”, unitamente alle tuple di partecipazione degli studenti ad esse collegate:
+2 gite eliminate

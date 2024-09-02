@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	    <meta charset="UTF-8" />
+	    <title>Calcolatrice scientifica con 3 display e toggle</title>
+	    <link rel="StyleSheet" href="styles/style.css" type="text/css" media="all" />
+		
+		<script src="./libs/react.js"></script>
+		<script src="./libs/react_dom.js"></script>
+		<script src="./libs/babel.js"></script>    
+		<script type="text/javascript" src="./scripts/utils.js"></script>       
+	</head>
+
+    <body>
+		 <!-- Placeholder -->
+		 <div id="root"></div>
+		 
+		 <!-- React components -->
+		 <script src="./react-components/ConfigurazioneCampoMinato.js" type="text/babel"></script>
+	 	 <script src="./react-components/GiocoCampoMinato.js" type="text/babel"></script>
+	 	 <script src="./react-components/ConteggioCampoMinato.js" type="text/babel"></script>
+		 <script src="./react-components/AppCampoMinato.js" type="text/babel"></script>
+    		 
+   		 <script type="text/babel">
+    		 	ReactDOM.render(
+  					<React.StrictMode>
+    					<AppCampoMinato/>
+  					</React.StrictMode>,
+  					document.getElementById('root')
+			 	);
+		 </script>
+			 
+	</body>
+</html>

@@ -1,0 +1,54 @@
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-color: grey;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #2e2e2e;
+    font-size: x-large;
+    padding-left: 20px;
+    color: whitesmoke;
+    z-index: 1;
+    text-align: center;
+}
+
+main {
+    background-color: black;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border-style: solid;
+    border-width: 5px;
+    height: 40px;
+    width: 40px;
+    border-color: #2e2e2e;
+}
+
+input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: none;
+}
+
+#ajax {
+    color: whitesmoke;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form</title>
+</head>
+<body>
+<div id="container">
+	<div id="header">Esame TecWeb T<hr/><br/></div>
+		<div id="body">
+			<fieldset><legend>form</legend>
+			<!--
+			Questo per fare submit con redirect
+				<form name="ajaxform" action="receivingservlet" onsubmit="return validateAjaxForm(this)">
+			Oppure questo per fare submit da soli (dentro validateAjaxForm)-->
+			<form name="ajaxform" action="" >
+				<label for="nomecognome">NomeCognome</label>
+				<input type="text" name="nomecognome" placeholder="nomecognome" required onkeyup="formOnKeyUp(this.parentElement)">
+				<br />
+				<label for="titolo">Titolo</label>
+				<input type="text" name="string" placeholder="titolo" required>
+				<br />
+				<label for="editore">Editore</label>
+				<input type="text" name="editore" placeholder="editore" required>
+				<br />
+				<label for="file">File</label>
+				<input type="file" id="file" name="file" size="10"/>
+				<br />
+				<label for="prezzo">Prezzo</label>
+				<input type="number" step="any" min="0" name="prezzo" placeholder="1" required>
+				<br />
+
+				<label for="currency">Valuta</label>
+				<select name="currency" multiple>
+					<option value="euro" selected>euro</option>
+					<option value="dollar">$</option>
+				</select>
+				<br />
+
+				<input type="radio" name="gender" value="male" onclick="checkSesso(this)"> Male<br>
+				<input type="radio" name="gender" value="female" onclick="checkSesso(this)"> Female<br>
+				<input type="radio" name="gender" value="other" onclick="checkSesso(this)"> Other <br>
+
+				<input type="checkbox" name="vehicle" value="Bike" onclick="checkboxChanged(this.checked)">I have a bike<br>
+				<input type="checkbox" name="vehicle" value="Car" onclick="checkboxChanged(this.checked)">I have a car
+
+				<label for="testo">Testo</label>
+				<textarea name="testo" disabled rows="10" cols="10">Testo di prova</textarea>
+				<br />
+				<!--
+				Questo per fare submit con redirect
+					<input type="submit" name="action" value="Submit">
+					<input type="reset" name="action" value="Reset">
+				Oppure questo per fare submit da soli (dentro validateAjaxForm)-->
+				<input type="submit" value="OK">
+			</form>
+			</fieldset>
+			<ul id="response"></ul>
+		</div>
+		<div id="footer">
+			Federico Stella - 0000718825<br />
+		</div>
+	</div>
+</body>
+</html>

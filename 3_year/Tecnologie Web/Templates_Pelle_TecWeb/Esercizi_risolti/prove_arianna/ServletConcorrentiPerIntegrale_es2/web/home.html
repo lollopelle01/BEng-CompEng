@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Calcolo integrale</title>
+		
+		<script type="text/javascript" src="scripts/utils.js"></script>
+		<script type="text/javascript" src="scripts/Integra.js"></script>
+		
+	</head>
+	
+	<body onload="sessionCounter();">
+		<div>
+			Specifica gli estremi di integrazione per la funzione y=2x :<br>
+			x: <input type="text" size="3" name="x" id="x" ><br>
+			y: <input type="text" size="3" name="y" id="y" ><br>
+			<input type="button" value="integra" onclick="myIntegral();" ><br>
+		</div>
+		
+		<div>
+			Risultato dell'integrale: <input type="text" size=4 id="final" readonly>
+		</div>
+			
+	</body>
+	
+</html>

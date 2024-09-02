@@ -1,0 +1,14 @@
+.numeroSchedina {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.visualizza-schedina {
+    text-align: center;
+    margin: 50px 50px 50px 50px;
+    padding: 20px;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+}

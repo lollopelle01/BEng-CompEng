@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="studenti.xsd">
+	<student cognomenome="bello di papa">
+		<sesso>M</sesso>
+		<cap>12345</cap>
+		<universita>bo</universita>
+		<lavoratore>descrizione del lavoro</lavoratore>
+	</student>
+	<student cognomenome="bella di mamma">
+		<sesso>F</sesso>
+		<cap>67898</cap>
+		<universita>to</universita>
+	</student>
+	<student cognomenome="bello di zio">
+		<sesso>M</sesso>
+		<cap>18745</cap>
+		<universita>na</universita>
+	</student>
+</students>

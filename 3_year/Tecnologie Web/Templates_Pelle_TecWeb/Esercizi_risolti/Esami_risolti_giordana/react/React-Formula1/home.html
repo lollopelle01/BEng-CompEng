@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Homepage</title>
+        <link rel="StyleSheet" href="styles/style.css" type="text/css" media="all" />
+        <script src="./libs/react.production.min.js"></script>
+		<script src="./libs/react-dom.production.min.js"></script>
+		<script src="./libs/babel.min.js"> </script>      
+        <script src="./libs/jquery-1.12.3.min.js"></script>         
+
+	</head>
+
+        <body>
+			<header>
+				<h1></h1>
+			</header>
+		 <!-- Placeholder -->
+		 <div id="root" class="main"></div>
+		 
+		 <!-- React components -->
+    		<script src="./react-components/App.js" type="text/babel" defer></script>
+    		<script src="./react-components/Percorso.js" type="text/babel" defer></script>
+			<script src="./react-components/Pista.js" type="text/babel" defer></script>
+			<script src="./react-components/Casella.js" type="text/babel" defer></script>
+			<script src="./react-components/Classifica.js" type="text/babel" defer></script>
+    		<script type="text/babel">
+    		 	ReactDOM.render(
+  					<React.StrictMode>
+    					<App/>
+  					</React.StrictMode>,
+  					document.getElementById('root')
+			 	);
+			</script>
+	</body>
+</html>

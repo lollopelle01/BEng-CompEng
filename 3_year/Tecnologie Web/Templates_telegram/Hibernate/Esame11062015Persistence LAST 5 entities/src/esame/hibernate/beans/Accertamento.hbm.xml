@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="esame.hibernate.beans.Accertamento" table="accertamento">
+		<id name="id" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="codice" column="codice" unique="true"/>
+		<property name="esito" column="esito"/>
+		<!-- name=attributo java, class=classe dell'altra tabella, column=colonna della mia tabella" -->
+		<many-to-one name="richiestamedica" class="esame.hibernate.beans.RichiestaMedica" column="richiestamedica" not-null="true"/>
+		<many-to-one name="tipoaccertamento" class="esame.hibernate.beans.TipoAccertamento" column="tipoaccertamento" not-null="true"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:10:39:22 +0100] "POST /02_TecWeb_Dynamic_Project/ServletTesto HTTP/1.1" 200 134
+0:0:0:0:0:0:0:1 - - [06/Nov/2022:10:39:23 +0100] "GET /02_TecWeb_Dynamic_Project/ServletTesto HTTP/1.1" 200 277

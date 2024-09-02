@@ -1,0 +1,15 @@
+Si realizzi una applicazione Web per il calcolo parallelo degli anagrammi di una parola di
+al max 8 caratteri. L’applicazione Web deve essere basata principalmente su tecnologie
+Javascript, AJAX e servlet.
+In particolare, l’applicazione Web deve permettere a utenti non autenticati di inserire una parola
+di al max 8 caratteri, controllando che i caratteri inseriti siano tutti alfabetici minuscoli,
+terminata dal carattere speciale “$”. All’inserimento di $, l’applicazione deve invocare
+automaticamente l’esecuzione parallela server-side del calcolo dei possibili anagrammi da parte
+di 2 istanze concorrenti di servlet, S1 e S2. S1 dovrà calcolare 10 possibili anagrammi che
+cominciano per vocale, generati in modo casuale riordinando i caratteri della stringa di input;
+similmente, S2 calcolerà 10 possibili anagrammi che cominciano per consonante. Terminato il
+calcolo del decimo anagramma, ciascuna delle servlet dovrà inviare immediatamente le 10
+stringhe al cliente, dove l’utente potrà segnalare se una delle stringhe inviate da S1 o da S2 è di
+senso compiuto in lingua italiana; la servlet corrispondente risulterà la vincitrice del gioco.
+Una volta che l’utente ha indicato la servlet vincitrice, l’esecuzione dell’altra servlet
+concorrente non è più necessaria e ne deve essere forzata la terminazione il prima possibile. 
