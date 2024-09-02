@@ -1,0 +1,101 @@
+########################
+## ESEMPI DI IPTABLES ## --> da sistemare, biosgna offreire più contesto e più esempi
+########################
+
+# Regole ordinate 
+iptables -vnL <catena>
+
+# Pulizia catena
+iptables -F <catena>
+
+###############################################################################################
+# Volendo proteggere i gateway consentendo solo questo traffico indispensabile ed evitando che 
+# siano raggiungibili in qualsiasi altro modo da remoto, possiamo usare: 
+
+# R1:
+iptables -A INPUT -p udp -s 10.12.12.20 --sport 1194 --dport 1194 -j ACCEPT
+iptables -A OUTPUT -p udp -d 10.12.12.20 --sport 1194 --dport 1194 -j ACCEPT
+
+# R2:
+iptables -A INPUT -p udp -s 10.12.12.10 --sport 1194 --dport 1194 -j ACCEPT
+iptables -A OUTPUT -p udp -d 10.12.12.10 --sport 1194 --dport 1194 -j ACCEPT
+
+# entrambi:
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+
+###############################################################################################
+# Scopo dei Router/SecurityGateway è inoltrare il traffico tra la rete 192.168.10.0/24 
+# e la rete 192.168.20.0/24
+
+iptables -A FORWARD -s 192.168.10.0/24 -d 192.168.20.0/24 -j ACCEPT
+iptables -A FORWARD -s 192.168.20.0/24 -d 192.168.10.0/24 -j ACCEPT
+iptables -P FORWARD DROP
+
+###############################################################################################
+# Supponiamo che il servizio ssh debba essere erogato unicamente da H20, 
+# a cui si può connettere solo H10.
+iptables -I FORWARD -p tcp --dport 22 -j DROP
+iptables -I FORWARD -p tcp --sport 22 -j DROP
+iptables -I FORWARD -p tcp -s 192.168.10.10 -d 192.168.20.20 --dport 22 -j ACCEPT
+iptables -I FORWARD -p tcp -s 192.168.20.20 -d 192.168.10.10 --sport 22 -m state --state ESTABLISHED -j ACCEPT
+
+###############################################################################################
+# Log dei pacchetti non accettati
+iptables -A INPUT -j LOG --log-prefix " input_end "
+iptables -A OUTPUT -j LOG --log-prefix " output_end "
+iptables -A FORWARD -j LOG --log-prefix " forward_end "
+# PS: regole da impostare prima della default rule di DROP
+
+###############################################################################################
+# Facciamo in modo che R1 "finga" di accettare connessioni ssh da H10, ridirigendole su H20:
+iptables -t nat -I PREROUTING -p tcp -s 192.168.10.10 -d 192.168.10.254 --dport 22 -j DNAT --to-destination 192.168.20.20
+
+###############################################################################################
+# Creazione catene custom --------------------------------------------------------------------
+iptables -N rules_from_LAN20
+iptables -N rules_to_LAN20
+iptables -I FORWARD -s 192.168.20.0/24 -j rules_from_LAN20
+iptables -I FORWARD -d 192.168.20.0/24 -j rules_to_LAN20
+
+# le macchine di LAN20 sono server ssh, http e https
+for i in 22 80 443 ; do
+    iptables -A rules_to_LAN20 -p tcp --dport $i -j ACCEPT
+    iptables -A rules_from_LAN20 -p tcp --sport $i -m state --state ESTABLISHED  -j ACCEPT
+done 
+
+# le macchine di LAN20 sono client dns e ntp
+for i in 53 123 ; do
+    iptables -A rules_from_LAN20 -p udp --dport $i -j ACCEPT
+    iptables -A rules_to_LAN20 -p udp --sport $i -m state --state ESTABLISHED  -j ACCEPT
+done 
+
+iptables -A rules_from_LAN20 -j LOG --log-prefix " outgoing packet not catched "
+iptables -A rules_to_LAN20 -j LOG --log-prefix " incoming packet not catched "
+
+# Rimozione catene custom ---------------------------------------------------------------------
+iptables -F rules_from_LAN20
+iptables -F rules_to_LAN20
+iptables -D FORWARD -s 192.168.20.0/24 -j rules_from_LAN20
+iptables -D FORWARD -d 192.168.20.0/24 -j rules_to_LAN20
+iptables -X rules_from_LAN20
+iptables -X rules_to_LAN20
+
+###############################################################################################
+# Qualsiasi host lato "Client" possa leggere email via IMAP sicuro (TCP/993) 
+# da quasiasi host di "internet"
+iptables -A FORWARD -s 10.1.1.0/24 -p tcp -i eth1 -o eth3 --dport 993 -j ACCEPT
+iptables -A FORWARD -d 10.1.1.0/24 -p tcp -i eth3 -o eth1--sport 993 -m state --state ESTABLISHED -j ACCEPT
+
+# PS: se il NAT su R non è attivo devo applicare le seguenti regole
+iptables -t nat -A POSTROUTING -s 10.1.1.0/24 -o eth3 -j SNAT --to-source 137.204.57.254
+
+###############################################################################################
+## ESEMPI ##
+iptables -A FORWARD -i ppp0 -d 87.15.12.0/24 -p tcp --dport 80 -j ACCEPT
+iptables -P INPUT DROP
+iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o ppp0 -j SNAT --to-source 87.4.8.21
+iptables -t nat -A PREROUTING -i ppp0 -d 87.4.8.21 -p tcp --dport 2222 -j DNAT --to-destination 192.168.0.1:22
+iptables -D FORWARD 1
+iptables -I INPUT 13 -p icmp ! --icmp-type echo-reply -j DROP
+iptables -A OUTPUT -p tcp --tcp-flags SYN,ACK,FIN FIN

@@ -1,0 +1,104 @@
+APPUNTI x ESAME
+
+Online Tools
+Domain Dossier: 	https://centralops.net/co/
+Recon: 			https://dnsdumpster.com
+Whois:			https://whois.domaintools.com
+Reverse Lookup: 	https://reverseip.domaintools.com  (IP —> domain in IP)
+Shodan.io:		https://www.shodan.io/host/INDIRIZZO_IP
+MD5 Center		https://md5.gromweb.com/?md5=<hash>
+
+WordList - repository online 
+• https://github.com/danielmiessler/SecLists
+• https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
+
+Bash Tools
+• DNS Enumeration
+	dnsrecon
+
+	dnsmap
+
+	nslookup
+
+	nmap
+		nmap -sn IP/MASK —> scan rete
+		namp -A IP —> scan porte e servizi
+
+• ARP/DHCP Poisoning
+	arp
+		arp -n
+		arp -d HOST
+
+	ettercap
+		ettercap -T -M arp /IP1// /IP2//
+		ettercap -T -M dhcp:10.9.0.20-60/255.255.255.0/8.8.8.8
+
+• DOS
+	iperf
+		iperf -s
+		iperf -c IP 
+
+	hping3
+		hping3 -c <num_pack> -d <taglia_pack> -S -w <tcp_win_taglia> -p <port> --flood --rand-source IP
+
+• Subdomain Enumeration
+	amass
+• Password Recovery
+	john
+	cupp -i
+	hashcat
+	cewl -d 1 -m 5 <sito_web>
+• Misconfiguration
+	1) visudo /etc/sudoers ; user_test ALL=(root) NOPASSWD: <comando_eseguire_senza_pw>
+	2) SUID settato su <comando_eseguire_senza_pw>
+
+• Protezione comunicazione
+	openssl
+		openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -in file_testo.txt -out cifrato.bin —> cifrare file
+		openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -d in file_testo.txt -out cifrato.bin —> decifrare file
+		openssl genrsa -out chiave.pem 2048 —> generazione chiave privata
+		openssl rsa -in chiave.pem -text -noout —> info chiave privata
+		openssl rsa -in chiave.pem -aes-256-cbc -out enc_chiave.pem —> crittare un file (?)
+		openssl rsa -in chiave.pem -pubout -out pub_chiave.pem —> estrazione chiave pubblica
+		openssl rsautl -encrypt -in testo.txt -inkey chiave.pem -out cifrato_rsa.bin —> crittare file (?)
+		openssl rsautl -decrypt -in cifrato_rsa.bin -inkey chiave.pem -out nuova.txt —> decifrare file (?)
+		…
+		# Bisogna capire 1) se c’è, 2) cosa significano veramente
+	
+	gpg
+		gpg --gen-key
+		gpg --import vostrachiavepubblica.pub
+		gpg --output public.pgp --armor --export identita@email
+		gpg --encrypt --armor --sign r identita@mail file_da_crittare
+		gpg --decrypt file_da_crittare
+		gpg --sign-key identita@mail
+
+• Firewall
+	iptables
+		
+	suiricata
+		
+
+PERCORSO DEI PACCHETTI
+…
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+# Capire cosa farne delle VPN
+
+# ricotdati di fare xss se non esce il 15 !!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# STUDIATI BOF (Diverso rispetto a slide)
+
+
+

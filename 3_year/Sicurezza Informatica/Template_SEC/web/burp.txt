@@ -1,0 +1,10 @@
+1) Apro burp
+2) Vado su Target -> Open Browser -> si apre pagina web
+3) Inserisco url esame su pagina
+4) Inserisco parametri come da consegna
+5) Vado su Proxy
+6) Tasto dx su richiesta desiderata -> Sendo to Repeater
+7) Vado su Repeater -> Request Query Parameters
+8) Modifico parametri -> Send
+9) Clicco su Render -> visione output
+
