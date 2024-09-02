@@ -1,0 +1,126 @@
+package lorenzo_pellegrino_0000971455;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketTimeoutException;
+
+public class pellegrino_lorenzo_0000971455_Thread extends Thread{ 
+	private ServerSocket socket;
+	
+	public pellegrino_lorenzo_0000971455_Thread(ServerSocket s) {
+		this.socket = s;
+	}
+	
+	
+	
+	
+	private int servizio; // (0, 1) = (conta_file, trasferisci_file)
+	
+	//conta_file
+	private char carattere;
+	private int occorrenze;
+	
+	//trasferisci_file
+	private String direttorio=null;
+	
+	//Server
+	private Socket threadSocket=null;
+	
+	//codice
+	public void run() {
+		// strutture dati per connessione
+		Socket clientSocket = null;
+		DataInputStream inSock = null;
+		DataOutputStream outSock = null;
+		
+		// strutture dati per elaborazione dati
+		File folder=null;
+		int count_linee, count_occ, i;
+		long lunghezza_file;
+		String line = null, fileName;
+		
+		// Connessione con client
+		System.out.println("\nAspetto il client...");
+		try {
+			clientSocket = this.socket.accept();
+			clientSocket.setSoTimeout(30000); //timeout altrimenti server sequenziale si sospende
+			System.out.println("Connessione accettata: " + clientSocket + "\n");
+			inSock = new DataInputStream(clientSocket.getInputStream());
+			outSock = new DataOutputStream(clientSocket.getOutputStream());
+		}
+		catch (SocketTimeoutException te) {
+			System.err.println("Non ho ricevuto nulla dal client per 30 sec., interrompo la comunicazione e accetto nuove richieste.");
+		}
+		catch (Exception e) {
+			System.err.println("Problemi nella accettazione della connessione: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		// lettura servizio
+		String servizio = null;
+		try {servizio=inSock.readUTF();}
+		catch(Exception e) { System.out.println("Errore nella lettura del servizio");}
+		
+		if(servizio.compareTo("conta_file")==0) {
+			try {
+				folder = new File(".");
+				BufferedReader br = null;
+				count_linee=0;
+				for(File entry : folder.listFiles()) {
+					if(entry.getAbsolutePath().endsWith(".txt")) { //considero solo file.txt
+						br = new BufferedReader(new FileReader(entry));
+						while((line=br.readLine())!=null) {
+							count_occ=0;
+							for(i=0; i<line.length(); i++) {
+								if(line.charAt(i)==this.carattere) {
+									count_occ++;
+								}
+							}
+							if(count_occ >= this.occorrenze) {
+								count_linee++;
+							}
+						}
+					}
+				}
+				
+				//invio risultato
+				outSock = new DataOutputStream(this.threadSocket.getOutputStream());
+				outSock.writeInt(count_linee);
+				this.threadSocket.shutdownOutput();
+			}catch(Exception e) {
+				System.out.println("Errore durante conta_file: ");
+				e.printStackTrace();
+				//this.threadSocket.close();
+			}
+		}
+		else { //trasferisci_file
+			
+		}
+		
+		//ELABORAZIONE DATI
+		if(this.servizio == 0) { //conta_file
+			
+		}
+		
+		if(this.servizio == 1) { //trasferisci_file
+			try {
+				folder = new File(this.direttorio);
+				for(File entry : folder.listFiles()) {
+					if(!entry.getAbsolutePath().endsWith(".txt")) { //considero solo file binari
+						fileName = entry.getName();
+						lunghezza_file = entry.length();
+					}
+				}
+			}catch(Exception e) {
+				System.out.println("Errore durante trasferisci_file: ");
+				e.printStackTrace();
+			}
+		}
+	}
+}

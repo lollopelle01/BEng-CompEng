@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;es_2_proposta.RowswapServer&apos; to &apos;RowSwapServer&apos;&#x0A;- Original project: &apos;es_2_proposta&apos;&#x0A;- Original element: &apos;es_2_proposta.RowswapServer&apos;&#x0A;- Renamed element: &apos;es_2_proposta.RowSwapServer&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;RowswapServer&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;es_2_proposta{RowswapServer.java[RowswapServer" matchStrategy="1" name="RowSwapServer" qualified="false" references="true" similarDeclarations="false" stamp="1666464317994" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,11 @@
+package lorenzo_pellegrino_0000971455;
+
+import java.io.IOException;
+
+public class pellegrino_lorenzo_0000971455_Server2A extends Thread{ //conta_file
+	
+	
+	public void run() {
+		if(servizio.strcmp)
+	}
+}

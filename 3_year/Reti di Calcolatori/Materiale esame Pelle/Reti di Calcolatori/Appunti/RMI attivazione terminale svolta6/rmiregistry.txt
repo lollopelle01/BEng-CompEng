@@ -1,0 +1,61 @@
+Last login: Tue Dec 20 19:37:30 on ttys001
+pelle@Air-di-Lorenzo ~ % cd /Users/pelle/Desktop/UniBo/3°\ anno/1°\ semestre/Reti\ di\ Calcolatori/workspace_reti_calcolatori/es_6_svolta/src 
+pelle@Air-di-Lorenzo src % rmv *.class
+zsh: command not found: rmv
+pelle@Air-di-Lorenzo src % rm *.class 
+pelle@Air-di-Lorenzo src % ls
+ClientCongresso.java		RegistryRemotoClient.java	RegistryRemotoServer.java	ServerCongressoImpl.java
+Programma.java			RegistryRemotoImpl.java		ServerCongresso.java		rmi.policy
+pelle@Air-di-Lorenzo src % javac *
+error: Class names, 'rmi.policy', are only accepted if annotation processing is explicitly requested
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 error
+pelle@Air-di-Lorenzo src % javac *.java
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+pelle@Air-di-Lorenzo src % rmic -vcompat ServerCongressoImpl       
+Warning: generation and use of skeletons and static stubs for JRMP	
+is deprecated. Skeletons are unnecessary, and static stubs have	
+been superseded by dynamically generated stubs. Users are	
+encouraged to migrate away from using rmic to generate skeletons and static	
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+pelle@Air-di-Lorenzo src % rmic -vcompat RegistryRemotoImpl        
+Warning: generation and use of skeletons and static stubs for JRMP	
+is deprecated. Skeletons are unnecessary, and static stubs have	
+been superseded by dynamically generated stubs. Users are	
+encouraged to migrate away from using rmic to generate skeletons and static	
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+pelle@Air-di-Lorenzo src % rmiregistry 20000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

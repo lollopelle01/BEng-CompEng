@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/Users/pelle/Desktop/UniBo/3° anno/1° semestre/Reti di Calcolatori/workspace_reti_calcolatori/.metadata/.plugins/org.eclipse.jdt.core
+1078589602.index
+2888586291.index

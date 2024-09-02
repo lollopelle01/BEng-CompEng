@@ -1,0 +1,58 @@
+Last login: Wed Dec 21 19:44:21 on ttys006
+pelle@Air-di-Lorenzo ~ % java -version
+openjdk version "11.0.16.1" 2022-08-12
+OpenJDK Runtime Environment Homebrew (build 11.0.16.1+0)
+OpenJDK 64-Bit Server VM Homebrew (build 11.0.16.1+0, mixed mode)
+pelle@Air-di-Lorenzo ~ % cd /Users/pelle/Desktop/UniBo/3°\ anno/1°\ semestre/Reti\ di\ Calcolatori/C/es_7_svolta/es_2_echo 
+pelle@Air-di-Lorenzo es_2_echo % rpcgen echo.x
+pelle@Air-di-Lorenzo es_2_echo % gcc echo_client.c echo_clnt.c -o remote_echo
+echo_client.c:34:5: warning: '/*' within block comment [-Wcomment]
+    /* ciclo di accettazione di richieste da utente ------- */
+    ^
+echo_client.c:39:12: warning: 'gets' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of gets(3), it is highly recommended that you use fgets(3) instead. [-Wdeprecated-declarations]
+    while (gets(msg)) {
+           ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:170:1: note: 'gets' has been explicitly marked deprecated here
+__deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of gets(3), it is highly recommended that you use fgets(3) instead.")
+^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:215:48: note: expanded from macro '__deprecated_msg'
+        #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+                                                      ^
+2 warnings generated.
+echo_clnt.c:21:28: warning: incompatible function pointer types passing 'int (XDR *, char **)' (aka 'int (struct __rpc_xdr *, char **)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, ECHO, xdr_wrapstring, argp, xdr_wrapstring, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                  ^~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:38: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                            ^~~~~
+echo_clnt.c:21:50: warning: incompatible function pointer types passing 'int (XDR *, char **)' (aka 'int (struct __rpc_xdr *, char **)') to parameter of type 'xdrproc_t' (aka 'int (*)(struct __rpc_xdr *, void *, unsigned int)') [-Wincompatible-function-pointer-types]
+        if (clnt_call(clnt, ECHO, xdr_wrapstring, argp, xdr_wrapstring, &clnt_res, TIMEOUT) != RPC_SUCCESS)
+                                                        ^~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/rpc/clnt.h:197:52: note: expanded from macro 'clnt_call'
+        ((*(rh)->cl_ops->cl_call)(rh, proc, xargs, argsp, xres, resp, secs))
+                                                          ^~~~
+2 warnings generated.
+pelle@Air-di-Lorenzo es_2_echo % gcc echo_proc.c echo_svc.c -o echo_server
+echo_svc.c:133:48: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        if (getsockname(0, (struct sockaddr *)&saddr, &asize) == 0) {
+                                                      ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:730:78: note: passing argument to parameter here
+int     getsockname(int, struct sockaddr * __restrict, socklen_t * __restrict)
+                                                                             ^
+echo_svc.c:139:26: warning: passing 'int *' to parameter of type 'socklen_t *' (aka 'unsigned int *') converts between pointers to integer types with different sign [-Wpointer-sign]
+                                (char *)&_rpcfdtype, &ssize) == -1)
+                                                     ^~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/socket.h:732:76: note: passing argument to parameter here
+int     getsockopt(int, int, int, void * __restrict, socklen_t * __restrict);
+                                                                           ^
+2 warnings generated.
+pelle@Air-di-Lorenzo es_2_echo % 
+
+
+
+
+
+
+
+
+
