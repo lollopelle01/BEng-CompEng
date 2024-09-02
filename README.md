@@ -1,5 +1,7 @@
 # UniBo notes and material
-Repository with all the material i used along my bachelor in Computer Engeneering at UniBO.
+Repository with all the material i used along my bachelor in Computer Engeneering at UniBO. 
+
+Some courses couldn't be uploaded because of the excessive load and some aren't complete $\Rightarrow$ **Do not trust them too much**
 
 ## Courses
 
