@@ -1,0 +1,64 @@
+Es.1
+#include <stdio.h>
+#include "list.h"
+
+int lenght(list P){
+	int N=0;
+	while(!empty(P)){
+		N++;
+		P=tail(P);
+	}
+	return N;
+}
+
+int countList(int N, list P){
+	if(P==emptylist())
+		return 0;
+	if(head(P)==N)
+		return 1+countList(N, tail(P));
+	else
+		return countList(N, tail(P));
+}
+
+int main(){
+	int c, L;
+	list p=cons(1, cons(5, cons(2, cons(5, cons(3, emptylist())))));
+	L=lenght(p);
+	c=countList(L, p);
+	
+	printf("%d", c);
+	return 0;
+	
+}
+
+Es.2
+S->N->nS->nSCS->nBCS->ntCS->ntoS->ntoSCS->ntoBCS->ntofCS->ntofeS->ntofeN->ntofenS->ntofenB->ntofent
+
+Es.3
+l'output prodotto é:
+abdad
+2
+4
+
+Il main definisce la stringa s1="abbaa" e gli interi res e j=4 e poi invoca la funzione f:
+la funzione f prende in ingresso s1 e j, poi usa un ciclo while che prende in ingresso j e se è maggiore di 0 allora fa partire il ciclo: se l'elemento di s1 nella z esima posizione è uguale all'elemento nella z-1 esima posizione allora lo sostituisce con il carattere d dopo aver incrementato x (che era stato inizializzato a 0), in ogni caso poi decrementa z. alla fine restituisce x.
+infine poi il main stampa s1, res e j.
+
+Es.4
+programma corretto:
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+      double * var;
+      var = (double *) malloc(sizeof(double));
+      if(var == NULL) {
+            printf("\n allocazione fallita !");
+	exit(0);
+	}
+      printf("inserisci un valore decimale");
+      scanf("%lf",var);
+      printf("il doppio del valore inserito e\' : %lf", 2 * (*var ));
+	free(var);
+	return 0; 
+}
+

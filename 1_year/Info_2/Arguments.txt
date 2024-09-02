@@ -1,0 +1,13 @@
+--module-path="/Users/pelle/Desktop/javafx-sdk-16-2 /lib"
+--add-modules=javafx.controls
+
+
+
+
+--module-path="/Users/pelle/Desktop/javafx-sdk-16-2 /lib" --add-modules=javafx.controls
+
+
+
+
+
+PellegrinoLorenzo-0000971455

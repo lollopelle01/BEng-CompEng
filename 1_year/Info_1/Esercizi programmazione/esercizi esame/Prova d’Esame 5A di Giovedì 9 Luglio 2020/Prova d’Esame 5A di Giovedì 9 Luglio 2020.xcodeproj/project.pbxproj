@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66858EC125C602F10038CFDC /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 66858EC025C602F10038CFDC /* main.c */; };
+		66858ED025C603230038CFDC /* element.c in Sources */ = {isa = PBXBuildFile; fileRef = 66858ECA25C603230038CFDC /* element.c */; };
+		66858ED225C603230038CFDC /* lettura.c in Sources */ = {isa = PBXBuildFile; fileRef = 66858ECC25C603230038CFDC /* lettura.c */; };
+		66858ED325C603230038CFDC /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 66858ECE25C603230038CFDC /* list.c */; };
+		66858ED725C603DE0038CFDC /* bar.c in Sources */ = {isa = PBXBuildFile; fileRef = 66858ED625C603DE0038CFDC /* bar.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66858EBB25C602F10038CFDC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		66858EBD25C602F10038CFDC /* Prova d’Esame 5A di Giovedì 9 Luglio 2020 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Prova d’Esame 5A di Giovedì 9 Luglio 2020"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66858EC025C602F10038CFDC /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		66858EC825C603230038CFDC /* element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = element.h; path = "../../../../librerie esame informatica/element.h"; sourceTree = "<group>"; };
+		66858EC925C603230038CFDC /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = list.h; path = "../../../../librerie esame informatica/list.h"; sourceTree = "<group>"; };
+		66858ECA25C603230038CFDC /* element.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = element.c; path = "../../../../librerie esame informatica/element.c"; sourceTree = "<group>"; };
+		66858ECC25C603230038CFDC /* lettura.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lettura.c; path = "../../../../librerie esame informatica/lettura.c"; sourceTree = "<group>"; };
+		66858ECD25C603230038CFDC /* lettura.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lettura.h; path = "../../../../librerie esame informatica/lettura.h"; sourceTree = "<group>"; };
+		66858ECE25C603230038CFDC /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = list.c; path = "../../../../librerie esame informatica/list.c"; sourceTree = "<group>"; };
+		66858ED525C603DE0038CFDC /* bar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bar.h; sourceTree = "<group>"; };
+		66858ED625C603DE0038CFDC /* bar.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bar.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66858EBA25C602F10038CFDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66858EB425C602F10038CFDC = {
+			isa = PBXGroup;
+			children = (
+				66858EBF25C602F10038CFDC /* Prova d’Esame 5A di Giovedì 9 Luglio 2020 */,
+				66858EBE25C602F10038CFDC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		66858EBE25C602F10038CFDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66858EBD25C602F10038CFDC /* Prova d’Esame 5A di Giovedì 9 Luglio 2020 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66858EBF25C602F10038CFDC /* Prova d’Esame 5A di Giovedì 9 Luglio 2020 */ = {
+			isa = PBXGroup;
+			children = (
+				66858EC025C602F10038CFDC /* main.c */,
+				66858ED625C603DE0038CFDC /* bar.c */,
+				66858ED525C603DE0038CFDC /* bar.h */,
+				66858EC825C603230038CFDC /* element.h */,
+				66858ECC25C603230038CFDC /* lettura.c */,
+				66858ECD25C603230038CFDC /* lettura.h */,
+				66858ECE25C603230038CFDC /* list.c */,
+				66858EC925C603230038CFDC /* list.h */,
+				66858ECA25C603230038CFDC /* element.c */,
+			);
+			path = "Prova d’Esame 5A di Giovedì 9 Luglio 2020";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66858EBC25C602F10038CFDC /* Prova d’Esame 5A di Giovedì 9 Luglio 2020 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66858EC425C602F10038CFDC /* Build configuration list for PBXNativeTarget "Prova d’Esame 5A di Giovedì 9 Luglio 2020" */;
+			buildPhases = (
+				66858EB925C602F10038CFDC /* Sources */,
+				66858EBA25C602F10038CFDC /* Frameworks */,
+				66858EBB25C602F10038CFDC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Prova d’Esame 5A di Giovedì 9 Luglio 2020";
+			productName = "Prova d’Esame 5A di Giovedì 9 Luglio 2020";
+			productReference = 66858EBD25C602F10038CFDC /* Prova d’Esame 5A di Giovedì 9 Luglio 2020 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66858EB525C602F10038CFDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					66858EBC25C602F10038CFDC = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 66858EB825C602F10038CFDC /* Build configuration list for PBXProject "Prova d’Esame 5A di Giovedì 9 Luglio 2020" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66858EB425C602F10038CFDC;
+			productRefGroup = 66858EBE25C602F10038CFDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66858EBC25C602F10038CFDC /* Prova d’Esame 5A di Giovedì 9 Luglio 2020 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66858EB925C602F10038CFDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66858ED325C603230038CFDC /* list.c in Sources */,
+				66858ED025C603230038CFDC /* element.c in Sources */,
+				66858ED725C603DE0038CFDC /* bar.c in Sources */,
+				66858EC125C602F10038CFDC /* main.c in Sources */,
+				66858ED225C603230038CFDC /* lettura.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		66858EC225C602F10038CFDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		66858EC325C602F10038CFDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		66858EC525C602F10038CFDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66858EC625C602F10038CFDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66858EB825C602F10038CFDC /* Build configuration list for PBXProject "Prova d’Esame 5A di Giovedì 9 Luglio 2020" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66858EC225C602F10038CFDC /* Debug */,
+				66858EC325C602F10038CFDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66858EC425C602F10038CFDC /* Build configuration list for PBXNativeTarget "Prova d’Esame 5A di Giovedì 9 Luglio 2020" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66858EC525C602F10038CFDC /* Debug */,
+				66858EC625C602F10038CFDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66858EB525C602F10038CFDC /* Project object */;
+}
