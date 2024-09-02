@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<giocattoli xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="pony.xsd">
+  
+  <giocattolo>
+    <id>GD001</id>
+    <categoria>
+      <GD>
+        <titolo>Mio Gioco Digitale</titolo>
+        <autore>Autore Digitale</autore>
+        <casa_produttrice>Digital Corp.</casa_produttrice>
+        <anno_produzione>2023</anno_produzione>
+        <fascia_eta>4-6</fascia_eta>
+        <lingua>Italiano</lingua>
+        <durata>30 min</durata>
+      </GD>
+    </categoria>
+  </giocattolo>
+  
+  <giocattolo>
+    <id>GT001</id>
+    <categoria>
+      <GT>
+        <nome>Puzzle Colorato</nome>
+        <autore>Puzzle Master</autore>
+        <marca>Puzzle Co.</marca>
+        <fascia_eta>6-10</fascia_eta>
+        <lingua>Inglese</lingua>
+        <modalita>GI</modalita>
+      </GT>
+    </categoria>
+  </giocattolo>
+  
+  <giocattolo>
+    <id>GD002</id>
+    <categoria>
+      <GD>
+        <titolo>Giochi nel Futuro</titolo>
+        <autore>Sci-Fi Gamer</autore>
+        <casa_produttrice>Future Games Inc.</casa_produttrice>
+        <anno_produzione>2030</anno_produzione>
+        <fascia_eta>12-18</fascia_eta>
+        <lingua>Inglese</lingua>
+        <durata>120 min</durata>
+      </GD>
+    </categoria>
+  </giocattolo>
+  
+  <giocattolo>
+    <id>GT002</id>
+    <categoria>
+      <GT>
+        <nome>Cavallo a Dondolo</nome>
+        <autore>Tradizione Toys</autore>
+        <marca>Classic Co.</marca>
+        <fascia_eta>6-8</fascia_eta>
+        <lingua>Italiano</lingua>
+        <modalita>GI</modalita>
+      </GT>
+    </categoria>
+  </giocattolo>
+  
+  <giocattolo>
+    <id>GD003</id>
+    <categoria>
+      <GD>
+        <titolo>Avventure Spaziali</titolo>
+        <autore>Galaxy Gamer</autore>
+        <casa_produttrice>Space Games Ltd.</casa_produttrice>
+        <anno_produzione>2025</anno_produzione>
+        <fascia_eta>8-12</fascia_eta>
+        <lingua>Inglese</lingua>
+        <durata>60 min</durata>
+      </GD>
+    </categoria>
+  </giocattolo>
+  
+</giocattoli>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="biblioteca.xsd">
+	<musicista>
+		<nome>Nome 1</nome>
+		<cognome>Cognome 1</cognome>
+		<genere>M</genere>
+		<album>
+			<titoloAlbum>Album 1</titoloAlbum>
+			<anno>2001</anno>
+			<brano>
+				<titoloBrano>Brano 1</titoloBrano>
+				<lunghezza>03:15</lunghezza>
+			</brano>
+		</album>
+	</musicista>
+</biblioteca>

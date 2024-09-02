@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- SCALETTA SCRITTURA SCHEMA -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Definzione sottotipo1 -->
+	<xs:complexType name="sottotipo1">
+		...
+	</xs:complexType>
+
+	<!-- Definzione sottotipo2 -->
+    <xs:complexType name="musicista">
+		<xs:sequence>
+			<xs:element name="nome" type="xs:string"/>
+			<xs:element name="cognome" type="xs:string"/>
+			<xs:element name="nomeArte" type="xs:string" minOccurs="0"/>
+			<xs:element name="genere" type="xs:string"/>
+			<xs:element name="album" type="album"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Definizione per istanza finale -->
+	<xs:complexType name="biblioteca">
+		<xs:sequence>
+			<xs:element name="musicista" type="musicista" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Istanza finale -->
+	<xs:element name="biblioteca" type="biblioteca"/>
+</xs:schema>

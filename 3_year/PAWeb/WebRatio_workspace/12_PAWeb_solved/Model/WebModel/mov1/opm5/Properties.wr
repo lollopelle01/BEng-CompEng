@@ -1,0 +1,23 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="455" gr:y="175" id="mov1#opm5" name="Remove CartItem">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm5#icu5" gr:x="30" gr:y="270">
+      <InputCollectorParameter id="mov1#opm5#icu5#icp11" name="id_CartItem"/>
+      <OKLink id="mov1#opm5#icu5#oln14" name="OKFlow14" to="mov1#opm5#dlu1">
+        <LinkParameter id="mov1#opm5#icu5#oln14#par51" name="id_CartItem_KeyCondition6 [oid]" source="mov1#opm5#icu5#icp11" target="mov1#opm5#dlu1#su6#kcond6.pkg2#ent7#att16"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="610" gr:y="225" id="mov1#opm5#okcu3" name="OK Port"/>
+    <KOCollectorUnit gr:x="610" gr:y="315" id="mov1#opm5#kocu4" name="KO Port">
+      <OutputCollectorParameter id="mov1#opm5#kocu4#ocp6" name="Error message"/>
+    </KOCollectorUnit>
+    <DeleteUnit gr:x="380" gr:y="260" id="mov1#opm5#dlu1" name="Delete CartItem" entity="pkg2#ent7">
+      <Selector id="mov1#opm5#dlu1#su6" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm5#dlu1#su6#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov1#opm5#dlu1#kln9" name="KOFlow9" to="mov1#opm5#kocu4">
+        <LinkParameter id="mov1#opm5#dlu1#kln9#par50" name="Unable to remove the CartItem_Error message" sourceValue="Unable to remove the CartItem" target="mov1#opm5#kocu4#ocp6"/>
+      </KOLink>
+      <OKLink id="mov1#opm5#dlu1#oln13" name="OKFlow13" to="mov1#opm5#okcu3" automaticCoupling="true"/>
+    </DeleteUnit>
+  </OperationUnits>
+</OperationModule>

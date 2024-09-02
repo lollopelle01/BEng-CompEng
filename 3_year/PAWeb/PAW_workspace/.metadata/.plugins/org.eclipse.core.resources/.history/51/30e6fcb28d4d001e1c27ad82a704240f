@@ -1,0 +1,33 @@
+package it.unibo.paw.dao;
+
+import java.io.Serializable;
+import java.util.*;
+import java.sql.Date;
+
+public class PartitaDTO implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	
+	// ---------------------------
+	// Attributi del bean da scrivere
+	private int id;
+
+	private String codicePartita;
+	private String categoria;
+	private String girone;
+	private String nomeSquadraCasa;
+	private String nomeSquadraOspite;
+	private Date data;
+
+	private int idStadio;
+	
+	// --- constructor ----------
+	public PartitaDTO() {
+		super();
+	}
+	
+	// --- getters and setters --------------
+	// Da generare
+
+}

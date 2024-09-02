@@ -1,0 +1,29 @@
+[26 apr 2021 17:18:11] DEBUG Executing SQL script
+[26 apr 2021 17:18:11] INFO ================================================================================
+[26 apr 2021 17:18:11] INFO onError= 'stop'
+[26 apr 2021 17:18:11] INFO autoCommit= 'false'
+[26 apr 2021 17:18:11] INFO username= '00858818'
+[26 apr 2021 17:18:11] INFO outputPath= 'C:\WebRatio\WebRatio Enterprise Platform 7.2.18.x64bit\workspace\11_PAWeb\.Temp~\UpdateSQL.xml'
+[26 apr 2021 17:18:11] INFO outputLogPath= 'C:\WebRatio\WebRatio Enterprise Platform 7.2.18.x64bit\workspace\11_PAWeb\.Temp~\UpdateSQL.xml.log'
+[26 apr 2021 17:18:11] INFO encoding= ''
+[26 apr 2021 17:18:11] INFO driverClass= 'com.ibm.db2.jcc.DB2Driver'
+[26 apr 2021 17:18:11] INFO sqlScript= 'C:\WebRatio\WebRatio Enterprise Platform 7.2.18.x64bit\workspace\11_PAWeb\.Temp~\UpdateSQL.sql'
+[26 apr 2021 17:18:11] INFO eventSocketPort= '59143'
+[26 apr 2021 17:18:11] INFO statementSeparator= ';'
+[26 apr 2021 17:18:11] INFO derby.system.home= 'C:\WebRatio\WebRatio Enterprise Platform 7.2.18.x64bit\workspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[26 apr 2021 17:18:11] INFO password= 's0000858818.1995'
+[26 apr 2021 17:18:11] INFO url= 'jdbc:db2://diva.deis.unibo.it:50000/TW_STUD'
+[26 apr 2021 17:18:11] INFO ================================================================================
+[26 apr 2021 17:18:11] INFO Connecting to the Database...
+[26 apr 2021 17:18:12] INFO Database connection estabilished
+[26 apr 2021 17:18:12] INFO transaction isolation: 2
+[26 apr 2021 17:18:12] DEBUG ================================================================================
+[26 apr 2021 17:18:12] DEBUG Executing SQL script file: C:\WebRatio\WebRatio Enterprise Platform 7.2.18.x64bit\workspace\11_PAWeb\.Temp~\UpdateSQL.sql
+[26 apr 2021 17:18:12] DEBUG Executing statement:  drop view "00858818"."LINEAORDINE_PREZZO_PARZIALE_VI"
+[26 apr 2021 17:18:13] DEBUG Executing statement:  create view "00858818"."LINEAORDINE_PREZZO_PARZIALE_VI" as select AL1."ID" as "ID", AL1."QUANTITA" * AL2."PREZZO" as "DER_ATTR" from  "00858818"."LINEA_ORDINE" AL1 left outer join "00858818"."SUPPORTO" AL2 on AL1."SUPPORTO_ID"=AL2."ID"
+[26 apr 2021 17:18:14] DEBUG Executing statement:    drop view "00858818"."ORDINE_TOTALE_VIEW"
+[26 apr 2021 17:18:14] DEBUG Executing statement:  create view "00858818"."ORDINE_TOTALE_VIEW" as select AL1."ID" as "ID", sum(AL3."DER_ATTR") as "DER_ATTR" from  "00858818"."ORDINE" AL1 left outer join "00858818"."LINEA_ORDINE" AL2 on AL1."ID"=AL2."ID_ORDINE" left outer join "00858818"."LINEAORDINE_PREZZO_PARZIALE_VI" AL3 on AL2."ID"=AL3."ID" group by AL1."ID"
+[26 apr 2021 17:18:14] DEBUG ================================================================================
+[26 apr 2021 17:18:14] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[26 apr 2021 17:18:14] INFO Database connection closed
+[26 apr 2021 17:18:14] DEBUG Total time: 2500 milliseconds

@@ -1,0 +1,9 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="230" gr:y="150" id="mov1#opm1" name="creaAuto">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm1#icu1" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov1#opm1#icu1#icp4" name="idPersona"/>
+      <InputCollectorParameter id="mov1#opm1#icu1#icp3" name="idAuto"/>
+      <InputCollectorParameter id="mov1#opm1#icu1#icp2" name="targa"/>
+    </InputCollectorUnit>
+  </OperationUnits>
+</OperationModule>

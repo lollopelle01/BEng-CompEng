@@ -1,0 +1,21 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm10#opg5" name="Transaction new Album" transaction="true" gr:x="585" gr:y="-45">
+  <OperationUnits>
+    <CreateUnit id="mov2#opm10#opg5#cru4" name="Create Artist" gr:x="25" gr:y="175" entity="ent3">
+      <OKLink id="mov2#opm10#opg5#cru4#oln32" name="OKFlow23" to="mov2#opm10#opg5#cnu1">
+        <LinkParameter id="mov2#opm10#opg5#cru4#oln32#par93" name="oid_KeyCondition12 [oid] [Artista] [Source]" source="ent3#att7Array" target="mov2#opm10#opg5#cnu1#su29#kcond17.ent3#att7"/>
+      </OKLink>
+    </CreateUnit>
+    <ConnectUnit id="mov2#opm10#opg5#cnu1" name="ConnectArtistiAlbum" gr:x="0" gr:y="0" relationship="rel2#role4">
+      <SourceSelector id="mov2#opm10#opg5#cnu1#su29" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm10#opg5#cnu1#su29#kcond17" name="KeyCondition12" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov2#opm10#opg5#cnu1#su30" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm10#opg5#cnu1#su30#kcond18" name="KeyCondition16" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov2#opm10#opg5#cnu1#oln33" name="OKFlow28" to="mov2#opm10#okcu6" automaticCoupling="true"/>
+    </ConnectUnit>
+  </OperationUnits>
+  <KOLink id="mov2#opm10#opg5#kln15" name="KOFlow14" to="mov2#opm10#kocu7">
+    <LinkParameter id="mov2#opm10#opg5#kln15#par94" name="Impossibile crare l'album_Error message" target="mov2#opm10#kocu7#ocp9" sourceValue="cannot create the artist"/>
+  </KOLink>
+</OperationGroup>

@@ -1,0 +1,3 @@
+Gli hotel (tra i risultati) su cui l'utente ha cliccato sono:
+Hotel 2
+Hotel 3

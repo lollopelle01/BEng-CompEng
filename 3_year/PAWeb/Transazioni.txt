@@ -1,0 +1,9 @@
+Transazioni:
+
+- JDBC
+ gestione delle transazioni (inizio, conferma o annullamento) viene effettuata manualmente
+
+- DAO
+ gestisce la transazione in modo che il chiamante non debba preoccuparsi della gestione esplicita delle transazioni. 
+
+- HIBERNATE

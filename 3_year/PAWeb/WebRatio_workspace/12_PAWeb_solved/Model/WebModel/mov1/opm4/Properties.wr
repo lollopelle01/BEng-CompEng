@@ -1,0 +1,23 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="455" gr:y="105" id="mov1#opm4" name="Add Product to Cart">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm4#icu4" gr:x="15" gr:y="255" linkOrder="mov1#opm4#icu4#ln20">
+      <InputCollectorParameter id="mov1#opm4#icu4#icp10" name="titolo_album"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp9" name="tipo_supporto"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp8" name="quantit&#224;"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp7" name="prezzo_unitario"/>
+      <InputCollectorParameter id="mov1#opm4#icu4#icp6" name="id_supporto"/>
+      <OKLink id="mov1#opm4#icu4#oln7" name="OKFlow7" to="mov1#opm4#opg1#seu2" automaticCoupling="true"/>
+      <Link id="mov1#opm4#icu4#ln20" name="Flow20" to="mov1#opm4#opg1#cru3" type="transport" validate="true" gr:bendpoints="78,-167,-492,-167;569,-166,-1,-166">
+        <LinkParameter id="mov1#opm4#icu4#ln20#par38" name="id_supporto_id_supporto" source="mov1#opm4#icu4#icp6" target="mov1#opm4#opg1#cru3.pkg2#ent7#att22"/>
+        <LinkParameter id="mov1#opm4#icu4#ln20#par39" name="prezzo_unitario_prezzo_unitario" source="mov1#opm4#icu4#icp7" target="mov1#opm4#opg1#cru3.pkg2#ent7#att20"/>
+        <LinkParameter id="mov1#opm4#icu4#ln20#par40" name="quantit&#224;_quantita" source="mov1#opm4#icu4#icp8" target="mov1#opm4#opg1#cru3.pkg2#ent7#att19"/>
+        <LinkParameter id="mov1#opm4#icu4#ln20#par41" name="tipo_supporto_tipo_supporto" source="mov1#opm4#icu4#icp9" target="mov1#opm4#opg1#cru3.pkg2#ent7#att21"/>
+        <LinkParameter id="mov1#opm4#icu4#ln20#par42" name="titolo_album_titolo_album" source="mov1#opm4#icu4#icp10" target="mov1#opm4#opg1#cru3.pkg2#ent7#att17"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="820" gr:y="285" id="mov1#opm4#okcu1" name="OK Port"/>
+    <KOCollectorUnit gr:x="820" gr:y="360" id="mov1#opm4#kocu3" name="KO Port">
+      <OutputCollectorParameter id="mov1#opm4#kocu3#ocp5" name="Error message"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

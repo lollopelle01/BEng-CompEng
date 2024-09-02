@@ -1,0 +1,4 @@
+E' presente nel Supermercato 1 il prodotto (Descrizione 1 , Marca 1 )?
+si
+E' presente nel Supermercato 2 il prodotto (Descrizione 1 , Marca 1 )?
+no

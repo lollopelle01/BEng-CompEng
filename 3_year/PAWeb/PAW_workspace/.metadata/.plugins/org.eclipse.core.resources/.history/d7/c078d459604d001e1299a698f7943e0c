@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="it.unibo.paw.hibernate.nome_bean" table="nome_tabella">
+		<!-- Mappiamo l'ID -->
+		<id name="nome_id_java" column="nome_id_colonna"/>
+		
+		<!-- Mappiamo le proprietà -->
+		<property name="codiceAcc" column="codiceAcc" />
+		
+		<!-- Mappiamo le relazioni (sclegli tra opzioni) : -->
+		<!-- OPZIONE 1: M-1 -->
+		<many-to-one name="nome_bean_istanza" class="it.unibo.paw.hibernate.nome_bean" fetch="select">
+			<column name="valore_perno" not-null="true" />
+		</many-to-one>
+
+		<!-- OPZIONE 2: 1-M -->
+		<set name="nome_bean_istanza" table="nome_tabella" inverse="true" lazy="true" fetch="select">
+			<key column="nome_col_id" not-null="false"/>
+			<one-to-many class="it.unibo.paw.hibernate.nome_bean"/>
+		</set>
+
+		<!-- OPZIONE 3: N-M -->
+		<set name="nome_bean_istanza" table="nome_tabella" lazy="true" fetch="select" cascade="all">
+			<key column="idTipoAccertamentoM" not-null="false"/>
+			<many-to-many column="idOspedaleM" class="it.unibo.paw.hibernate.Ospedale"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

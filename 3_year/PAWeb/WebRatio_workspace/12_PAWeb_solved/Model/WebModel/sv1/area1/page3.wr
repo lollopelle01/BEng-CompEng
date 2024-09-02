@@ -1,0 +1,118 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area1#page3" name="Home" gr:x="0" gr:y="250">
+  <ContentUnits>
+    <IndexUnit id="sv1#area1#page3#inu5" name="Album List" linkOrder="sv1#area1#page3#inu5#ln9" gr:x="195" gr:y="0" entity="ent1" displayAttributes="ent1#att2">
+      <Selector id="sv1#area1#page3#inu5#su7" defaultPolicy="fill" booleanOperator="or">
+        <KeyCondition id="sv1#area1#page3#inu5#su7#kcond4" name="KeyConditionAlbum" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area1#page3#inu5#ln9" name="See details" to="sv1#area1#page2#dau3" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page3#inu5#ln9#par7" name="oid_KeyCondition1 [oid]" source="data[].ent1#att1" target="sv1#area1#page2#dau3#su5#kcond3.ent1#att1"/>
+      </Link>
+      <SortAttribute attribute="ent1#att2" order="ascending"/>
+      <SortAttribute attribute="ent1#att3" order="descending"/>
+    </IndexUnit>
+    <IndexUnit id="sv1#area1#page3#inu6" name="Artist List" gr:x="0" gr:y="5" entity="ent3" displayAttributes="ent3#att8" linkOrder="sv1#area1#page3#inu6#ln10">
+      <SortAttribute attribute="ent3#att8" order="ascending"/>
+      <Link id="sv1#area1#page3#inu6#ln10" name="See albums" to="sv1#area1#page3#scu1" type="automatic" validate="true">
+        <LinkParameter id="sv1#area1#page3#inu6#ln10#par9" name="oid_RoleConditionArtistaToAlbum [oid]" source="data[].ent3#att7" target="sv1#area1#page3#scu1#su8#rcond5.ent3#att7"/>
+        <LinkParameter id="sv1#area1#page3#inu6#ln10#par14" name="_AttConditionTitoloAlbum" blank="true" target="sv1#area1#page3#scu1#su8#acond1"/>
+      </Link>
+    </IndexUnit>
+    <ScrollerUnit gr:x="145" gr:y="155" id="sv1#area1#page3#scu1" name="Album Scroller" useCountQuery="false" entity="ent1" blockFactor="2">
+      <Selector id="sv1#area1#page3#scu1#su8" defaultPolicy="fill" booleanOperator="or">
+        <RelationshipRoleCondition id="sv1#area1#page3#scu1#su8#rcond5" name="RoleConditionArtistaToAlbum" predicate="in" implied="false" role="rel2#role4"/>
+        <AttributesCondition id="sv1#area1#page3#scu1#su8#acond1" name="AttConditionTitoloAlbum" predicate="contains" booleanOperator="or" implied="true" attributes="ent1#att2" ignoreCase="true"/>
+      </Selector>
+      <Link id="sv1#area1#page3#scu1#ln11" name="Flow11" to="sv1#area1#page3#inu5" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page3#scu1#ln11#par10" name="oid_KeyConditionAlbum [oid]" source="ent1#att1Array" target="sv1#area1#page3#inu5#su7#kcond4.ent1#att1"/>
+      </Link>
+    </ScrollerUnit>
+    <EntryUnit gr:x="0" gr:y="180" id="sv1#area1#page3#enu1" name="SearchForm" linkOrder="sv1#area1#page3#enu1#ln13">
+      <Field id="sv1#area1#page3#enu1#fld1" name="titolo" type="string" modifiable="true"/>
+      <Link id="sv1#area1#page3#enu1#ln13" name="Search" to="sv1#area1#page3#scu1" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page3#enu1#ln13#par12" name="titolo_AttConditionTitoloAlbum" source="sv1#area1#page3#enu1#fld1" target="sv1#area1#page3#scu1#su8#acond1"/>
+        <LinkParameter id="sv1#area1#page3#enu1#ln13#par13" name="-1_RoleConditionArtistaToAlbum [oid]" sourceValue="-1" target="sv1#area1#page3#scu1#su8#rcond5.ent3#att7"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area1#page3#enu1">
+          <layout:Field field="sv1#area1#page3#enu1#fld1"/>
+          <layout:Link link="sv1#area1#page3#enu1#ln13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell rowspan="2" colspan="6">
+        <layout:Unit unitId="sv1#area1#page3#inu6">
+          <layout:Attribute attribute="ent3#att8"/>
+          <layout:Link link="sv1#area1#page3#inu6#ln10"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area1#page3#inu5">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Link link="sv1#area1#page3#inu5#ln9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area1#page3#scu1">
+          <layout:Link link="sv1#area1#page3#scu1First"/>
+          <layout:Link link="sv1#area1#page3#scu1Previous"/>
+          <layout:Link link="sv1#area1#page3#scu1Block"/>
+          <layout:Link link="sv1#area1#page3#scu1Next"/>
+          <layout:Link link="sv1#area1#page3#scu1Last"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

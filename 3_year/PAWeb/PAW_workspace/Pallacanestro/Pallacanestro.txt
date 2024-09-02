@@ -1,0 +1,16 @@
+Ad ogni giocatore i suoi allenatori:
+
+Per quanto riguarda G3:
+	- Andrea
+	- Lorenzo
+Per quanto riguarda G2:
+	- Alessandro
+	- Andrea
+	- Lorenzo
+Per quanto riguarda G4:
+	- Andrea
+Per quanto riguarda G1:
+	- Andrea
+	- Lorenzo
+	- Alessandro
+	- Poerpaolo

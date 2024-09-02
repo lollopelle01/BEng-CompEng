@@ -1,0 +1,31 @@
+package it.unibo.paw.dao;
+
+
+import java.util.List;
+
+public interface CittaDAO {
+
+	// --- CRUD -------------
+
+	public void create(CittaDTO student);
+
+	public CittaDTO read(int code);
+
+	public boolean update(CittaDTO student);
+
+	public boolean delete(int code);
+
+	
+	// ----------------------------------
+	// Metodi specifici
+	public Set<CittaDTO> getCittaByNazione(String nazione);
+	public Set<MaratonaDTO> getMaratoneByCitta(int idCitta);
+
+	// ----------------------------------
+	// Gestione tabelle
+	
+	public boolean createTable();
+
+	public boolean dropTable();
+
+}

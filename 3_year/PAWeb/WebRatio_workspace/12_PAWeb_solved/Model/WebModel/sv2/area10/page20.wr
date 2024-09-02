@@ -1,0 +1,127 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area10#page20" name="Album Management" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <SelectorUnit id="sv2#area10#page20#seu23" name="All Artists" gr:x="10" gr:y="0" entity="ent3">
+      <Link id="sv2#area10#page20#seu23#ln111" name="Flow37" to="sv2#area10#page20#enu13" type="transport" validate="true">
+        <LinkParameter id="sv2#area10#page20#seu23#ln111#par213" name="nome_artista [label]" source="ent3#att8Array" target="sv2#area10#page20#enu13#msfld5_label"/>
+        <LinkParameter id="sv2#area10#page20#seu23#ln111#par214" name="oid_artista [output]" source="ent3#att7Array" target="sv2#area10#page20#enu13#msfld5_output"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv2#area10#page20#enu13" name="Album Form" linkOrder="sv2#area10#page20#enu13#ln114 sv2#area10#page20#enu13#ln112" gr:showAllParts="false" gr:x="170" gr:y="10" fieldOrder="sv2#area10#page20#enu13#fld28 sv2#area10#page20#enu13#fld29 sv2#area10#page20#enu13#msfld5">
+      <Field id="sv2#area10#page20#enu13#fld28" name="titolo" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv2#area10#page20#enu13#fld29" name="anno" type="integer" modifiable="true" preloaded="true"/>
+      <MultiSelectionField id="sv2#area10#page20#enu13#msfld5" name="artisti" type="integer"/>
+      <Field id="sv2#area10#page20#enu13#fld30" name="id" type="integer" modifiable="false" hidden="true" preloaded="true"/>
+      <Link id="sv2#area10#page20#enu13#ln112" name="Cancel" to="sv2#area10" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-1,-128,-106,-248;92,-128,-13,-248"/>
+      <Link id="sv2#area10#page20#enu13#ln113" name="Flow101" to="sv2#area10#page20#seu24" type="transport" validate="true" gr:bendpoints="-57,73,98,-72">
+        <LinkParameter id="sv2#area10#page20#enu13#ln113#par215" name="id_RoleConditionAlbumToArtista [oid]" source="sv2#area10#page20#enu13#fld30" target="sv2#area10#page20#seu24#su62#rcond21.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area10#page20#enu13#ln114" name="OK" to="sv2#area10#miu20" type="normal" validate="true">
+        <LinkParameter id="sv2#area10#page20#enu13#ln114#par250" name="anno_anno" source="sv2#area10#page20#enu13#fld29" target="sv2#area10#miu20.mov2#opm16#icu10#icp20"/>
+        <LinkParameter id="sv2#area10#page20#enu13#ln114#par251" name="artisti_artist_ids" source="sv2#area10#page20#enu13#msfld5" target="sv2#area10#miu20.mov2#opm16#icu10#icp19"/>
+        <LinkParameter id="sv2#area10#page20#enu13#ln114#par252" name="id_id" source="sv2#area10#page20#enu13#fld30" target="sv2#area10#miu20.mov2#opm16#icu10#icp22"/>
+        <LinkParameter id="sv2#area10#page20#enu13#ln114#par253" name="titolo_titolo" source="sv2#area10#page20#enu13#fld28" target="sv2#area10#miu20.mov2#opm16#icu10#icp21"/>
+      </Link>
+    </EntryUnit>
+    <IndexUnit id="sv2#area10#page20#inu16" name="Album List" linkOrder="sv2#area10#page20#inu16#ln115 sv2#area10#page20#inu16#ln116 sv2#area10#page20#inu16#ln117" gr:x="175" gr:y="260" entity="ent1" displayAttributes="ent1#att2 ent1#att3">
+      <Link id="sv2#area10#page20#inu16#ln115" name="edit" to="sv2#area10#page20#enu13" type="normal" validate="true">
+        <LinkParameter id="sv2#area10#page20#inu16#ln115#par220" name="anno_anno" source="data[].ent1#att3" target="sv2#area10#page20#enu13#fld29_slot"/>
+        <LinkParameter id="sv2#area10#page20#inu16#ln115#par221" name="titolo_titolo" source="data[].ent1#att2" target="sv2#area10#page20#enu13#fld28_slot"/>
+        <LinkParameter id="sv2#area10#page20#inu16#ln115#par222" name="oid_id" source="data[].ent1#att1" target="sv2#area10#page20#enu13#fld30_slot"/>
+      </Link>
+      <Selector id="sv2#area10#page20#inu16#su61" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area10#page20#inu16#su61#kcond40" name="KeyCondition35" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area10#page20#inu16#ln116" name="Media and Songs" to="sv2#area11#page21#dau9" type="normal" validate="true">
+        <LinkParameter id="sv2#area10#page20#inu16#ln116#par223" name="oid_KeyCondition26 [oid]" source="data[].ent1#att1" target="sv2#area11#page21#dau9#su63#kcond41.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area10#page20#inu16#ln117" name="delete" to="sv2#area10#miu21" type="normal" validate="true">
+        <LinkParameter id="sv2#area10#page20#inu16#ln117#par254" name="oid_id" source="data[].ent1#att1" target="sv2#area10#miu21.mov2#opm15#icu9#icp18"/>
+      </Link>
+      <SortAttribute attribute="ent1#att2" order="ascending"/>
+      <SortAttribute attribute="ent1#att3" order="ascending"/>
+    </IndexUnit>
+    <SelectorUnit id="sv2#area10#page20#seu24" name="Associated Artists" gr:x="0" gr:y="135" entity="ent3">
+      <Selector id="sv2#area10#page20#seu24#su62" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area10#page20#seu24#su62#rcond21" name="RoleConditionAlbumToArtista" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+      <Link id="sv2#area10#page20#seu24#ln118" name="Flow40" to="sv2#area10#page20#enu13" type="transport" validate="true" gr:bendpoints="70,-96,-86,48">
+        <LinkParameter id="sv2#area10#page20#seu24#ln118#par225" name="oid_artista - Preselection" source="ent3#att7Array" target="sv2#area10#page20#enu13#msfld5_presel"/>
+      </Link>
+    </SelectorUnit>
+    <ScrollerUnit id="sv2#area10#page20#scu7" name="Album Scroller" gr:x="15" gr:y="270" useCountQuery="false" entity="ent1" blockFactor="5">
+      <Link id="sv2#area10#page20#scu7#ln119" name="Flow82" to="sv2#area10#page20#inu16" type="transport" validate="true">
+        <LinkParameter id="sv2#area10#page20#scu7#ln119#par226" name="oid_KeyCondition35 [oid]" source="ent1#att1Array" target="sv2#area10#page20#inu16#su61#kcond40.ent1#att1"/>
+      </Link>
+      <SortAttribute attribute="ent1#att2" order="ascending"/>
+      <SortAttribute attribute="ent1#att3" order="ascending"/>
+    </ScrollerUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#area10#page20#inu16">
+          <layout:Link link="sv2#area10#page20#inu16#ln115"/>
+          <layout:Link link="sv2#area10#page20#inu16#ln116"/>
+          <layout:Link link="sv2#area10#page20#inu16#ln117"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell rowspan="2" colspan="6">
+        <layout:Unit unitId="sv2#area10#page20#enu13">
+          <layout:Field field="sv2#area10#page20#enu13#fld28"/>
+          <layout:Field field="sv2#area10#page20#enu13#fld29"/>
+          <layout:Field field="sv2#area10#page20#enu13#msfld5"/>
+          <layout:Link link="sv2#area10#page20#enu13#ln114"/>
+          <layout:Link link="sv2#area10#page20#enu13#ln112"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#area10#page20#scu7">
+          <layout:Link link="sv2#area10#page20#scu7First"/>
+          <layout:Link link="sv2#area10#page20#scu7Previous"/>
+          <layout:Link link="sv2#area10#page20#scu7Block"/>
+          <layout:Link link="sv2#area10#page20#scu7Next"/>
+          <layout:Link link="sv2#area10#page20#scu7Last"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

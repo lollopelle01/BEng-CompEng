@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interrogazioni xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="./video.xsd">
+	
+	<interrogazione>
+		<video>
+			<id>ID 1</id>
+		</video>
+		<keyword>tramonto</keyword>
+		<input>
+			<tipologia>per contenuto</tipologia>
+			<cardinalita>3</cardinalita>
+		</input>
+		<risultato>
+			<video>
+				<id>ID 2</id>
+			</video>
+			<video>
+				<id>ID 3</id>
+			</video>
+			<video>
+				<id>ID 4</id>
+			</video>
+		</risultato>
+	</interrogazione>
+	
+	<interrogazione>
+		<video>
+			<id>ID 0542</id>
+		</video>
+		<keyword>tramonto</keyword>
+		<input>
+			<tipologia>per contenuto + semantica</tipologia>
+			<cardinalita>2</cardinalita>
+		</input>
+		<risultato>
+			<video>
+				<id>ID 5</id>
+				<tag>ciao</tag>
+			</video>
+			<video>
+				<id>ID 6</id>
+			</video>
+		</risultato>
+	</interrogazione>
+	
+	<interrogazione>
+		<video>
+			<id>ID 0542</id>
+		</video>
+		<input>
+			<tipologia>per contenuto + semantica</tipologia>
+			<cardinalita>3</cardinalita>
+		</input>
+		<risultato>
+			<video>
+				<id>ID 7</id>
+			</video>
+			<video>
+				<id>ID 8</id>
+			</video>
+			<video>
+				<id>ID 9</id>
+			</video>
+		</risultato>
+	</interrogazione>
+	
+</interrogazioni>

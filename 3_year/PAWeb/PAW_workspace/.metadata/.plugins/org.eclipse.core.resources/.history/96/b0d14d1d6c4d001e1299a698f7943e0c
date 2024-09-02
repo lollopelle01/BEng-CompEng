@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="it.unibo.paw.hibernate.Oggetto_Digitale" table="Oggetto">
+		<!-- Mappiamo l'ID -->
+		<id name="id" column="idOggetto"/>
+		
+		<!-- Mappiamo le proprietà -->
+		<property name="codiceOggetto" column="codiceOggetto" />
+		<property name="nome" column="nome" />
+		<property name="formato" column="formato" />
+		<property name="dataDigitalizzazione" column="dataDigitalizzazione" />
+
+		<!-- OPZIONE 1: M-1 -->
+		<many-to-one name="materiale" class="it.unibo.paw.hibernate.Materiale_Fisico" fetch="select">
+			<column name="idMateriale" not-null="true" />
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

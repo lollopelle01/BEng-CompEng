@@ -1,0 +1,5 @@
+Stadio s1:
+Categoria:Pallavolo	NumPartite:1
+Categoria:Calcio	NumPartite:2
+Stadio s2:
+Categoria:Calcio	NumPartite:1

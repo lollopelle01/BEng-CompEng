@@ -1,0 +1,88 @@
+package it.unibo.paw.dao;
+
+
+import java.util.Calendar;
+import java.util.List;
+
+public class DAOTest {
+	
+	public static final int DAO = DAOFactory.DB2;
+	
+	public static void main(String[] args) {
+		
+		// Creo istanza DAO
+		DAOFactory daoFactoryInstance = DAOFactory.getDAOFactory(DAO);
+		
+		// Creo database
+		Squadra_PallacanestroDAO sDAO = daoFactoryInstance.getSquadra_PallacanestroDAO();
+		sDAO.dropTable();
+		sDAO.createTable();
+		
+		// Creo i DTO e li inserico
+		Squadra_PallacanestroDTO s = new Squadra_PallacanestroDTO();
+		s.setNome("S1");
+		s.setTorneo("Torneo 1");
+		s.setAllenatore("Andrea");
+		int idS1 = sDAO.create(s);
+
+		s.setNome("S2");
+		s.setTorneo("Torneo 1");
+		s.setAllenatore("Lorenzo");
+		int idS2 = sDAO.create(s);
+
+		s.setNome("S3");
+		s.setTorneo("Torneo 2");
+		s.setAllenatore("Alessandro");
+		int idS3 = sDAO.create(s);
+		
+		s.setNome("S4");
+		s.setTorneo("Torneo 3");
+		s.setAllenatore("Poerpaolo");
+		int idS4 = sDAO.create(s);
+		
+		// Creo altro Database
+		GiocatoreDAO gDAO = daoFactoryInstance.getGiocatoreDAO();
+		gDAO.dropTable();
+		gDAO.createTable();
+		
+		// Creo altri DTO e li inserisco
+		GiocatoreDTO g = new GiocatoreDTO();
+		g.setNome("G1");
+		g.setCognome("Pellegrino");
+		g.setCodiceFiscale("Code 1");
+		g.setEta(22);
+		int idG1 = gDAO.create(g);
+		
+		g.setNome("G2");
+		g.setCognome("Pellegrino");
+		g.setCodiceFiscale("Code 2");
+		g.setEta(18);
+		int idG2 = gDAO.create(g);
+		
+		g.setNome("G3");
+		g.setCognome("Pellegrino");
+		g.setCodiceFiscale("Code 3");
+		g.setEta(55);
+		int idG3 = gDAO.create(g);
+		
+		g.setNome("G4");
+		g.setCognome("Mascagni");
+		g.setCodiceFiscale("Code 4");
+		g.setEta(50);
+		int idG4 = gDAO.create(g);
+		
+		// Creo altro database (mapping)
+		TemplateMappingDAO tDAO = daoFactoryInstance.getTemplateMappingDAO();
+		tDAO.dropTable();
+		tDAO.createTable();
+
+		// Compilo tabella
+		tDAO.create(idS1, idG1); tDAO.create(idS1, idG2); tDAO.create(idS1, idG3); tDAO.create(idS1, idG4);
+		tDAO.create(idS2, idG1); tDAO.create(idS1, idG2); tDAO.create(idS1, idG3);
+		tDAO.create(idS3, idG1); tDAO.create(idS1, idG2); 
+		tDAO.create(idS4, idG1);
+		
+		// Scriviamo risultato
+	}
+
+}

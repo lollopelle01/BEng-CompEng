@@ -1,0 +1,24 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm10#opg4" name="Transaction edit Album" transaction="true" gr:x="580" gr:y="420">
+  <OperationUnits>
+    <ModifyUnit id="mov2#opm10#opg4#mfu1" name="Update Artist" gr:x="30" gr:y="0" entity="ent3">
+      <Selector id="mov2#opm10#opg4#mfu1#su26" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm10#opg4#mfu1#su26#kcond14" name="KeyCondition10" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm10#opg4#mfu1#oln30" name="OKFlow27" to="mov2#opm10#opg4#rcnu1">
+        <LinkParameter id="mov2#opm10#opg4#mfu1#oln30#par91" name="oid_KeyCondition20 [oid] [Artista] [ConnectSource]" source="ent3#att7Array" target="mov2#opm10#opg4#rcnu1#su27#kcond15.ent3#att7"/>
+      </OKLink>
+    </ModifyUnit>
+    <ReconnectUnit id="mov2#opm10#opg4#rcnu1" name="Reconnect ArtistiAlbum" gr:x="0" gr:y="170" relationship="rel2#role4">
+      <SourceSelector id="mov2#opm10#opg4#rcnu1#su27" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm10#opg4#rcnu1#su27#kcond15" name="KeyCondition20" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov2#opm10#opg4#rcnu1#su28" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm10#opg4#rcnu1#su28#kcond16" name="KeyCondition21" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov2#opm10#opg4#rcnu1#oln31" name="OKFlow31" to="mov2#opm10#okcu6" automaticCoupling="true"/>
+    </ReconnectUnit>
+  </OperationUnits>
+  <KOLink id="mov2#opm10#opg4#kln14" name="KOFlow13" to="mov2#opm10#kocu7">
+    <LinkParameter id="mov2#opm10#opg4#kln14#par92" name="Impossibile modificare l'album_Error message" target="mov2#opm10#kocu7#ocp9" sourceValue="cannot edit the artist"/>
+  </KOLink>
+</OperationGroup>

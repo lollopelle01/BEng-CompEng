@@ -1,0 +1,24 @@
+package it.unibo.paw.dao;
+
+
+import java.util.List;
+import java.util.Set;
+
+public interface TemplateMappingDAO {
+
+	// --- CRUD ------------
+	
+	public void create(int idPartita, int idStadio);
+
+	public boolean delete(int idPartita, int idStadio);
+	
+	// ----------------------------------
+
+	public boolean createTable();
+
+	public boolean dropTable();
+
+	// Metodi di utility
+	public Set<String> getNumPartitePerCategoria(int idStadio);
+
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="it.unibo.paw.hibernate.Passeggero" table="Passeggero">
+		<!-- Mappiamo l'ID -->
+		<id name="id" column="id"/>
+		
+		<!-- Mappiamo le proprietà -->
+		<property name="codPasseggero" column="codPasseggero" />
+		<property name="nome" column="nome" />
+		<property name="cognome" column="cognome" />
+		<property name="numPassaporto" column="numPassaporto" />
+		
+		<!-- Mappiamo le relazioni (sclegli tra opzioni) : -->
+		<!-- OPZIONE 3: N-M -->
+		<set name="voliAeroportoBO" table="PV" lazy="true" fetch="select" cascade="all">
+			<key column="idPasseggero" not-null="false"/>
+			<many-to-many column="idVolo" class="it.unibo.paw.hibernate.VoloAeroportoBO"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

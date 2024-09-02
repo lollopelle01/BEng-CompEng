@@ -1,0 +1,49 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="75" gr:y="225" id="mov1#opm6#opg3" name="Transaction" transaction="true">
+  <OperationUnits>
+    <TimeUnit gr:x="0" gr:y="20" id="mov1#opm6#opg3#tmu1" name="GetTime">
+      <OKLink id="mov1#opm6#opg3#tmu1#oln16" name="OKFlow16" to="mov1#opm6#opg3#cru5">
+        <LinkParameter id="mov1#opm6#opg3#tmu1#oln16#par52" name="Current/Input Date_data" source="currentDate" target="mov1#opm6#opg3#cru5.ent9#att26"/>
+      </OKLink>
+    </TimeUnit>
+    <CreateUnit id="mov1#opm6#opg3#cru5" name="Create Order" gr:x="135" gr:y="10" entity="ent9" linkOrder="mov1#opm6#opg3#cru5#ln25">
+      <OKLink id="mov1#opm6#opg3#cru5#oln17" name="OKFlow17" to="mov1#opm6#cnu3">
+        <LinkParameter id="mov1#opm6#opg3#cru5#oln17#par103" name="id_KeyCondition7 [oid] [TransazioneUtente] [Source]" source="ent9#att25Array" target="mov1#opm6#cnu3#su31#kcond19.ent11#att27"/>
+      </OKLink>
+      <Link id="mov1#opm6#opg3#cru5#ln25" name="Flow25" to="mov1#opm6#opg3#cru6" type="transport" validate="true" gr:bendpoints="117,78,-248,78;215,78,-150,78">
+        <LinkParameter id="mov1#opm6#opg3#cru5#ln25#par57" name="id_Ordine.id(LineaordineToOrdine)" source="ent9#att25Array" target="mov1#opm6#opg3#cru6.rel6#role11.ent9#att25"/>
+      </Link>
+    </CreateUnit>
+    <GetUnit gr:x="325" gr:y="185" id="mov1#opm6#opg3#gtu2" name="GetUser" contextParameters="UserCtxParam">
+      <Link id="mov1#opm6#opg3#gtu2#ln48" name="Flow34" to="mov1#opm6#cnu3" type="transport" validate="true">
+        <LinkParameter id="mov1#opm6#opg3#gtu2#ln48#par102" name="UserCtxParam.oid_KeyCondition9 [oid] [User] [Target]" source="mov1#opm6#opg3#gtu2.UserCtxParam" target="mov1#opm6#cnu3#su32#kcond20.userOID"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="510" gr:y="0" id="mov1#opm6#opg3#seu3" name="Selector All CartItems" entity="pkg2#ent7">
+      <Selector id="mov1#opm6#opg3#seu3#su13" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#opm6#opg3#seu3#su13#rcond2" name="RoleConditionCartToCartItem" role="rel5#role10" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm6#opg3#seu3#oln18" name="OKFlow18" to="mov1#opm6#opg3#cru6">
+        <LinkParameter id="mov1#opm6#opg3#seu3#oln18#par55" name="quantita_quantita" source="pkg2#ent7#att19Array" target="mov1#opm6#opg3#cru6.ent8#att24"/>
+        <LinkParameter id="mov1#opm6#opg3#seu3#oln18#par56" name="id_supporto_Supporto.oid(LineaordineToSupporto)" source="pkg2#ent7#att22Array" target="mov1#opm6#opg3#cru6.rel7#role13.ent4#att10"/>
+      </OKLink>
+    </SelectorUnit>
+    <CreateUnit gr:x="720" gr:y="10" id="mov1#opm6#opg3#cru6" name="Create OrderLines" entity="ent8" bulk="true">
+      <OKLink id="mov1#opm6#opg3#cru6#oln19" name="OKFlow19" to="mov1#opm6#opg3#dlu2" automaticCoupling="true"/>
+    </CreateUnit>
+    <DeleteUnit gr:x="895" gr:y="0" id="mov1#opm6#opg3#dlu2" name="Delete All CartItems" entity="pkg2#ent7">
+      <Selector id="mov1#opm6#opg3#dlu2#su14" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#opm6#opg3#dlu2#su14#rcond3" name="RoleConditionCartToCartItem" role="rel5#role10" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm6#opg3#dlu2#oln20" name="OKFlow20" to="mov1#opm6#opg3#dlu3" automaticCoupling="true"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="1070" gr:y="0" id="mov1#opm6#opg3#dlu3" name="Delete All Carts" entity="pkg2#ent6">
+      <Selector id="mov1#opm6#opg3#dlu3#su15" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm6#opg3#dlu3#su15#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm6#opg3#dlu3#oln21" name="OKFlow21" to="mov1#opm6#okcu4" automaticCoupling="true"/>
+    </DeleteUnit>
+  </OperationUnits>
+  <KOLink id="mov1#opm6#opg3#kln10" name="KOFlow10" to="mov1#opm6#kocu5">
+    <LinkParameter id="mov1#opm6#opg3#kln10#par61" name="Unable to buy the cart_Error message" sourceValue="Unable to buy the cart" target="mov1#opm6#kocu5#ocp7"/>
+  </KOLink>
+</OperationGroup>

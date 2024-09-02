@@ -1,0 +1,10 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Public" homePage="sv1#page1">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="515" gr:y="430" id="sv1#miu1" action="true" moduleId="mov1#opm1">
+      <OKLink id="sv1#miu1#oln4" name="OKFlow4" to="sv1#page1" automaticCoupling="true" gr:bendpoints="-329,-7,1,243"/>
+      <KOLink id="sv1#miu1#kln3" name="KOFlow1" to="sv1#page2#mssu2">
+        <LinkParameter id="sv1#miu1#kln3#par18" name="ErrorMessage_Shown Messages" source="mov1#opm1#kocu1#ocp1" target="sv1#page2#mssu2.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</SiteView>

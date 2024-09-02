@@ -1,0 +1,44 @@
+-- DROP TABLE --------------------------------------------------------------------------------
+DROP TABLE PERSONA_AUTO ;
+DROP TABLE PERSONA ;
+DROP TABLE AUTO ;
+
+-- CREAZIONE TABELLE --------------------------------------------------------------------------------
+CREATE TABLE PERSONA(
+	ID INT NOT NULL PRIMARY KEY,
+	NOME VARCHAR(50) NOT NULL,
+	COGNOME VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE AUTO(
+	ID INT NOT NULL PRIMARY KEY,
+	TARGA VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE PERSONA_AUTO(
+	ID_PERSONA INT NOT NULL,
+	ID_AUTO INT NOT NULL,
+	PRIMARY KEY (ID_PERSONA, ID_AUTO),
+	FOREIGN KEY (ID_PERSONA) REFERENCES PERSONA(ID),
+	FOREIGN KEY (ID_AUTO) REFERENCES AUTO(ID)
+);
+
+-- POPOLAMENTO TABELLE --------------------------------------------------------------------------------
+INSERT INTO PERSONA (ID, NOME, COGNOME)
+VALUES
+	(1, 'NOME 1', 'COGNOME 1'),
+	(2, 'NOME 2', 'COGNOME 2'),
+	(3, 'NOME 3', 'COGNOME 3');
+
+INSERT INTO AUTO (ID, TARGA)
+VALUES
+	(1, 'TARGA 1'),
+	(2, 'TARGA 2'),
+	(3, 'TARGA 3');
+
+INSERT INTO PERSONA_AUTO (ID_PERSONA, ID_AUTO)
+VALUES
+	(1, 1), (1,2),
+	(2, 3);
+	
+

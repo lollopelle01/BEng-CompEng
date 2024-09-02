@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- SCALETTA SCRITTURA SCHEMA -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Definzione sottotipo1 -->
+	<xs:simpleType name="modalita">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GI"/>
+			<xs:enumeration value="GG"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- Definzione sottotipo2 -->
+    <xs:simpleType name="fascia_eta">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]+\-[0-9]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- GIOCO DIGITALE -->
+	<xs:complexType name="GiocoDigitale">
+		<xs:sequence>
+			<xs:element name="titolo" type="xs:string"/>
+			<xs:element name="autore" type="xs:string"/>
+			<xs:element name="casa_produttrice" type="xs:string"/>
+			<xs:element name="anno_produzione" type="xs:integer"/>
+			<xs:element name="fascia_eta" type="fascia_eta"/>
+			<xs:element name="lingua" type="xs:string"/>
+			<xs:element name="durata" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- GIOCO TRADIZIONALE -->
+	<xs:complexType name="GiocoTradizionale">
+		<xs:sequence>
+			<xs:element name="nome" type="xs:string"/>
+			<xs:element name="autore" type="xs:string"/>
+			<xs:element name="marca" type="xs:string"/>
+			<xs:element name="fascia_eta" type="fascia_eta"/>
+			<xs:element name="lingua" type="xs:string"/>
+			<xs:element name="modalita" type="modalita"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="categoria">
+		<xs:choice>
+			<xs:element name="GD" type="GiocoDigitale"/>
+			<xs:element name="GT" type="GiocoTradizionale"/>
+		</xs:choice>
+	</xs:complexType>
+
+	
+	<xs:complexType name="giocattolo">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="categoria" type="categoria"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- Definizione per istanza finale -->
+	<xs:complexType name="giocattoli">
+		<xs:sequence>
+			<xs:element name="giocattolo" type="giocattolo" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Istanza finale -->
+	<xs:element name="giocattoli" type="giocattoli"/>
+</xs:schema>
