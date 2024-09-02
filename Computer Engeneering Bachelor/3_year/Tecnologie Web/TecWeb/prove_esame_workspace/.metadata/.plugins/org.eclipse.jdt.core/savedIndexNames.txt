@@ -1,7 +1,0 @@
-INDEX VERSION 1.131+/Users/pelle/Desktop/TecWeb/prove_esame_workspace/.metadata/.plugins/org.eclipse.jdt.core
-2888586291.index
-639426706.index
-3580659665.index
-1376987430.index
-1970824132.index
-3668250980.index

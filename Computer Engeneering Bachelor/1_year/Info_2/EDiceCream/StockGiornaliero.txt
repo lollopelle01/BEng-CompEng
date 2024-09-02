@@ -1,4 +1,0 @@
-Rimanenze per gusto:
-stracciatella: 3000
-crema: 1500
-cioccolato: 2000

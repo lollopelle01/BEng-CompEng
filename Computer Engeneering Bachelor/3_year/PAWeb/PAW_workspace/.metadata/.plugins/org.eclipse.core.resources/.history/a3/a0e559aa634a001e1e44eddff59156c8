@@ -1,7 +1,0 @@
-package it.unibo.paw.model;
-
-import java.io.Serializable;
-
-public class ProdottiOfferti implements Serializable{
-
-}

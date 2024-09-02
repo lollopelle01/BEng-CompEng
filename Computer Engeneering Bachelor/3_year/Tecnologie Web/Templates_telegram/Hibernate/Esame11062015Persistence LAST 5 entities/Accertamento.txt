@@ -1,5 +1,0 @@
-Query 1
-Medico1 ha richiesto 1 accertamenti di tipo risonanza a pazienti di sesso femminile
-Query 2:
-Struttura: strut1
-Struttura: strut3

@@ -1,7 +1,0 @@
-- name: Copy SSH public key
-  ansible.builtin.lineinfile:
-    dest: /home/vagrant/.ssh/authorized_keys
-    line: "{{ lookup('file', 'id_rsa_ansible.pub') }}"
-    state: present
-  notify: Restart SSH
-

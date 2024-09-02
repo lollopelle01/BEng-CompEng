@@ -1,7 +1,0 @@
-- name: Copy script createhomes.sh
-  ansible.builtin.copy:
-    src:  createhomes.sh
-    dest:  /bin/createhomes.sh
-    owner: vagrant
-    group: vagrant
-    mode: 0744

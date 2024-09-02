@@ -1,8 +1,0 @@
----
-
-# 3)
-- name: Enable mibs
-  ansible.builtin.replace:
-    path: /etc/snmp/snmp.conf
-    regexp: '^mibs' # da inserire una regex più specifica oppure (sed -i 's/mibs :/# mibs :/g' /etc/snmp/snmp.conf)
-    replace: '# mibs :'

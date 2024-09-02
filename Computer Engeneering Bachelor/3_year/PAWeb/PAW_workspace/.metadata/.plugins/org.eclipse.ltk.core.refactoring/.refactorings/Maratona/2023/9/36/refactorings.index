@@ -1,9 +1,0 @@
-1693900287755	Delete elements
-1693900320256	Rename type 'TemplateDTO'
-1693900558556	Rename type 'Template2DTO'
-1693900815951	Rename type 'TemplateDAO'
-1693900832594	Rename type 'Template2DAO'
-1693901362416	Rename type 'Db2TemplateDAO'
-1693902840584	Rename type 'Db2TemplateDTOProxy'
-1693903723114	Rename type 'Db2Template2DAO'
-1693905096298	Rename type 'Db2Template2DTOProxy'

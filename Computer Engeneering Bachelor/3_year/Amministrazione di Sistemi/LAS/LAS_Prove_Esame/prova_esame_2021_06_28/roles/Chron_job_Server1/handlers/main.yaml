@@ -1,9 +1,0 @@
-- name: Restart Crond
-  become: true
-  ansible.builtin.systemd:
-   name: cron
-   state: restarted
-
-
-
-

@@ -1,3 +1,0 @@
-0:0:0:0:0:0:0:1 - - [07/Feb/2023:16:38:20 +0100] "GET /05_TecWeb_solved/6_loadwait.html?wait=7 HTTP/1.1" 200 795
-0:0:0:0:0:0:0:1 - - [07/Feb/2023:16:38:27 +0100] "GET /05_TecWeb_solved/waitingServlet?wait=7 HTTP/1.1" 200 45
-0:0:0:0:0:0:0:1 - - [07/Feb/2023:16:40:04 +0100] "GET /05_TecWeb_solved/waitingServlet?wait=7 HTTP/1.1" 200 45

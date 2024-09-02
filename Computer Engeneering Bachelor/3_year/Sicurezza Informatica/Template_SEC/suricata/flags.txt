@@ -1,5 +1,0 @@
-# Lancio suricata
-suricata -c /etc/suricata/suricata.yaml -r ~/Desktop/esame/FILE_PCAP
-
-# Catturo output ed estraggo le flag
-OUT=$(cat eve.json | jq 'select(.event_type="alert")' | grep part | sed 's/\\n//g' | cut -d'"' -f4 | sort | uniq) ; echo "La flag è $(echo $OUT | grep first)$(echo $OUT | grep second)$(echo $OUT | grep third)"

@@ -1,9 +1,0 @@
- - name: Restart Slapd
-   become: true
-   ansible.builtin.service:
-     name: slapd
-     state: restarted
-
-- name: Insert User
-  command: ldapadd -LLL -x -D "cn=admin,dc=labammsis" -w "gennaio.marzo" -H ldap:/// -f ~/people.ldif
-

@@ -1,2 +1,0 @@
-alert tcp 192.168.56.1 any <> 192.168.56.12 any (msg:"Trovato"; content:"SEC"; sid:300000005; rev:1;)
-alert udp 192.168.56.1 any <> 192.168.56.12 any (msg:"Trovato"; content:"SEC"; sid:300000006; rev:1;)

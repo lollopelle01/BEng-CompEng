@@ -1,4 +1,0 @@
-WebRatio:
-
-Name=UNIBO
-Serial=wrmlt-30708-38320-02032

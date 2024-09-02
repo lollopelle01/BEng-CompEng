@@ -1,8 +1,0 @@
-jobs:
- - name: 'job: ogni minuto nella fascia oraria 8:00-18:00 dei giorni feriali' 
-   job: /usr/bin/monitor.sh 4.00
-   minute: '*'
-   hour: '8-17'
-   month: '*'
-   dom: '*'
-   dow: '6'

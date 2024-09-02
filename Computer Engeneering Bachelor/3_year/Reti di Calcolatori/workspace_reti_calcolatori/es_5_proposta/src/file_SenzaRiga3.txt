@@ -1,5 +1,0 @@
-ZIPPARE: 
-zip -e [come vuoi chiamare la zip] [file da zippare] (criptare con password)
-CAMBIARE SETUP JAVA:
-1) /usr/libexec/java_home -V 	(per verificare la situa)
-2) export JAVA_HOME=`/usr/libexec/java_home -v [numero della versione]

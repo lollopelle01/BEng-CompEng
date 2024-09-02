@@ -1,3 +1,0 @@
-Piatti piu brevi per ogni chef:
-chef2: piatto2
-chef3: piatto3
