@@ -1,24 +1,7 @@
-# UniBo notes
+# UniBo notes and material
+Repository with all the material i used along my bachelor in Computer Engeneering at UniBO.
 
-My repository with the material used during my barchelor and my master.
-
-## Table of contents
-
-### Artificial Intelligence
-
-#### Courses
-
-1.1. [Machine Learning](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/ML)
-
-1.2. [Statistical and Mathematical Methods for AI](https://github.com/TheNewPelle/UniBo/tree/main/Artificial%20Intelligence/SMMAI)
-
-#### Thesis
-
-#### Projects
-
-### Computer Engeneering
-
-#### Courses
+## Courses
 
 - [Fondamenti di Informatica 1](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/1_year/Info_1)
 - [Fondamenti di Informatica 2](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/1_year/Info_2)
@@ -40,11 +23,12 @@ My repository with the material used during my barchelor and my master.
 - [Elettronica](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Elettronica)
 - [Ingegneria del Software](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Ingegneria%20del%20Software)
 
-#### Thesis
-
-[WasmEdge](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/TESI)
-
-#### Projects
+## Projects
 
 * [Risiko](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Ingegneria%20del%20Software/risiko)
 * [CAT](https://github.com/lollopelle01/UniBo/tree/main/Computer%20Engeneering%20Bachelor/3_year/Controlli%20Automatici/Progetto)
+
+## Thesis
+
+[WasmEdge](https://github.com/TheNewPelle/UniBo/tree/main/Computer%20Engeneering/TESI)
+
